@@ -1,0 +1,46 @@
+﻿
+@model progect_DEPI.Models.Category
+
+<h1>Edit Category</h1>
+
+@if (Model is null)
+{
+    <p>No Categories was found</p>
+}
+else
+{
+    <form method="post">
+        <div class="mt-3">
+            <label class="form-label">Category Id</label>
+            <input type="text" class="form-control" asp-for="CategoryId" readonly />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Category Name</label>
+            <input type="text" class="form-control" asp-for="CategoryName" />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Description</label>
+            <input type="text" class="form-control" asp-for="Description" />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Lesson Count</label>
+            <input type="number" class="form-control" asp-for="LessonsCount" />
+        </div>
+
+        <div class="mt-3">
+            <label class="form-label">Update At</label>
+            <input type="date" class="form-control" asp-for="UpdateAt" />
+        </div>
+
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-danger ms-3"
+            asp-action="Delete"
+            asp-controller="Category">Delete</button>
+
+        </div>
+    </form>
+}

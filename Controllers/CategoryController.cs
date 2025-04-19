@@ -1,0 +1,85 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using progect_DEPI.Models;
+using System.Diagnostics.Contracts;
+using progect_DEPI.ViewModels;
+
+namespace progect_DEPI.Controllers
+{
+    public class CategoryController : Controller
+    {
+        private readonly ApplicationDbContext dbContext;
+
+        public CategoryController(ApplicationDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(AddCategoryViewModel viewModel)
+        {
+            var category = new Category
+            {
+                CategoryName = viewModel.CategoryName,
+                Description = viewModel.Description,
+                LessonsCount = viewModel.LessonsCount,
+                UpdateAt = viewModel.UpdateAt
+            };
+
+            await dbContext.Categories.AddAsync(category);
+            await dbContext.SaveChangesAsync();
+
+
+            return View();
+        }
+
+        [HttpGet] 
+        public async Task<IActionResult> List()
+        {
+            var categories = await dbContext.Categories.ToListAsync();
+            return View(categories);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+           var category = await dbContext.Categories.FindAsync(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Category viewModel)
+        {
+            var category = await dbContext.Categories.FindAsync(viewModel.CategoryId);
+            if (category is not null)
+            {
+                category.CategoryName = viewModel.CategoryName;
+                category.Description = viewModel.Description;
+                category.LessonsCount = viewModel.LessonsCount;
+                category.UpdateAt = viewModel.UpdateAt;
+                await dbContext.SaveChangesAsync();
+            }
+            return RedirectToAction("List", "Category");
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(Category viewModel)
+        {
+            var category = await dbContext.Categories
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.CategoryId == viewModel.CategoryId);
+            if (category is not null)
+            {
+                dbContext.Categories.Remove(viewModel);
+                await dbContext.SaveChangesAsync();
+            }
+
+            return RedirectToAction("List", "Category");
+        }
+    }
+}

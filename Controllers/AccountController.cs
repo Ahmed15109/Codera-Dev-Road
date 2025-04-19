@@ -6,85 +6,84 @@ using progect_DEPI.ViewModels; // هنعمل ViewModels دلوقتي
 
 namespace progect_DEPI.Controllers
 {
-	
 
-public class AccountController : Controller
-	{
-		private readonly UserManager<IdentityUser> _userManager;
-		private readonly SignInManager<IdentityUser> _signInManager;
 
-		public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
-		{
-			_userManager = userManager;
-			_signInManager = signInManager;
-		}
+    public class AccountController : Controller
+    {
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-		// GET: /Account/Register
-		[HttpGet]
-		public IActionResult Register()
-		{
-			return View("Register");
-		}
-
-		// POST: /Account/Register
-		[HttpPost]
-		public async Task<IActionResult> Register(RegisterViewModel model)
-		{
-			if (ModelState.IsValid)
-			{
-				var user = new IdentityUser { UserName = model.Email, Email = model.Email };
-				var result = await _userManager.CreateAsync(user, model.Password);
-
-				if (result.Succeeded)
-				{
-					await _signInManager.SignInAsync(user, isPersistent: false);
-					return RedirectToAction("Index", "Home");
-				}
-
-				foreach (var error in result.Errors)
-					ModelState.AddModelError("", error.Description);
-			}
-
-			return View(model);
-		}
-
-		// GET: /Account/Login
-		[HttpGet]
-		public IActionResult Login()
-		{
-			return View();
-		}
-
-		// POST: /Account/Login
-		[HttpPost]
-		public async Task<IActionResult> Login(LoginViewModel model , string ReturnUrl= "~/Home/Index")
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
-			if (ModelState.IsValid)
-			{
-				var result = await _signInManager.PasswordSignInAsync(
-					model.Email,
-					model.Password,
-					model.RememberMe,
-					lockoutOnFailure: false
-				);
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
 
-				if (result.Succeeded)
-					return LocalRedirect(ReturnUrl);
+        // GET: /Account/Register
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View("Register");
+        }
 
-				ModelState.AddModelError("", "Invalid login attempt.");
-			}
+        // POST: /Account/Register
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+                var result = await _userManager.CreateAsync(user, model.Password);
 
-			return View(model);
-		}
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
 
-		// POST: /Account/Logout
-		[HttpPost]
-		public async Task<IActionResult> Logout()
-		{
-			await _signInManager.SignOutAsync();
-			return RedirectToAction("Login", "Account");
-		}
-	}
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError("", error.Description);
+            }
+
+            return View(model);
+        }
+
+        // GET: /Account/Login
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: /Account/Login
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl = "~/Home/Index")
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(
+                    model.Email,
+                    model.Password,
+                    model.RememberMe,
+                    lockoutOnFailure: false
+                );
+
+                if (result.Succeeded)
+                    return LocalRedirect(ReturnUrl);
+
+                ModelState.AddModelError("", "Invalid login attempt.");
+            }
+
+            return View(model);
+        }
+
+        // POST: /Account/Logout
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Login", "Account");
+        }
+    }
 
 }
-

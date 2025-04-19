@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using progect_DEPI.Models;
 using System.Diagnostics;
 
 namespace progect_DEPI.Controllers
 {
+	//[Authorize(Roles = "Admin")]
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
