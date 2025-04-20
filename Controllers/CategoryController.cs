@@ -15,12 +15,13 @@ namespace progect_DEPI.Controllers
         {
             this.dbContext = dbContext;
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(AddCategoryViewModel viewModel)
         {
@@ -45,14 +46,14 @@ namespace progect_DEPI.Controllers
             var categories = await dbContext.Categories.ToListAsync();
             return View(categories);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
            var category = await dbContext.Categories.FindAsync(id);
             return View(category);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(Category viewModel)
         {
@@ -67,6 +68,7 @@ namespace progect_DEPI.Controllers
             }
             return RedirectToAction("List", "Category");
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(Category viewModel)
         {

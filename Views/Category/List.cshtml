@@ -25,7 +25,16 @@
                 <td>@category.Description</td>
                 <td>@category.LessonsCount</td>
                 <td>@category.UpdateAt</td>
-                <td><a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id="@category.CategoryId">Edit</a></td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id="@category.CategoryId">Edit</a>
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
             </tr>
         }
     </tbody>
