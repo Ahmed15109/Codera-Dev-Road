@@ -83,5 +83,19 @@ namespace progect_DEPI.Controllers
 
             return RedirectToAction("List", "Category");
         }
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var category = await dbContext.Categories
+                .Include(c => c.Courses)
+                .FirstOrDefaultAsync(c => c.CategoryId == id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return View(category);
+        }
     }
 }
