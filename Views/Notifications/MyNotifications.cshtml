@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Notification>
+
+<h2>My Notifications</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Message</th>
+            <th>Created</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td>@n.Message</td>
+                <td>@n.CreatedAt.ToShortDateString()</td>
+                <td>@(n.IsRead ? "Read" : "Unread")</td>
+                <td>
+                    @if (!n.IsRead)
+                    {
+                        <form asp-action="MarkAsRead" method="post" style="display:inline">
+                            <input type="hidden" name="id" value="@n.NotificationId" />
+                            <button type="submit" class="btn btn-sm btn-success">Mark as Read</button>
+                        </form>
+                    }
+
+                    <form asp-action="Delete" method="post" style="display:inline">
+                        <input type="hidden" name="id" value="@n.NotificationId" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
