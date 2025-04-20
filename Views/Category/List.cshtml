@@ -1,9 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model List<progect_DEPI.Models.Category>
+﻿@model List<progect_DEPI.Models.Category>
 
 <h1>All Categories</h1>
 <table class="table">
@@ -14,10 +9,11 @@
             <th>Description</th>
             <th>Lessons</th>
             <th>Updated at</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach(var category in Model)
+        @foreach (var category in Model)
         {
             <tr>
                 <td>@category.CategoryId</td>
@@ -25,16 +21,18 @@
                 <td>@category.Description</td>
                 <td>@category.LessonsCount</td>
                 <td>@category.UpdateAt</td>
-                @if (User.IsInRole("Admin"))
-                {
-                    <td>
-                        <a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id="@category.CategoryId">Edit</a>
-                    </td>
-                }
-                else
-                {
-                    <td></td>
-                }
+                <td>
+                    <a asp-controller="Category" asp-action="Details" asp-route-id="@category.CategoryId" class="btn btn-info">
+                        Details
+                    </a>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-primary" asp-controller="Category" asp-action="Edit" asp-route-id="@category.CategoryId">
+                            Edit
+                        </a>
+                    }
+                </td>
             </tr>
         }
     </tbody>

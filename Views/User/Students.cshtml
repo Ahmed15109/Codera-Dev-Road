@@ -1,0 +1,38 @@
+﻿@model IEnumerable<User>
+@{
+    ViewBag.Title = "Students";
+}
+
+<h2>All Students</h2>
+
+<form method="get" asp-action="Students">
+    <div class="input-group mb-3">
+        <input type="text" name="search" value="@ViewBag.Search" class="form-control" placeholder="Search student..." />
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Joined</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td><img src="@student.Picture" width="50" height="50" class="rounded-circle" /></td>
+                <td>@student.FullName</td>
+                <td>@student.Email</td>
+                <td>@student.CreatedAt.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

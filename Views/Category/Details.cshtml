@@ -1,0 +1,21 @@
+﻿@model progect_DEPI.Models.Category
+
+<h2>@Model.CategoryName</h2>
+
+<h4>Courses in this category:</h4>
+@if (Model.Courses.Any())
+{
+    <ul>
+        @foreach (var course in Model.Courses)
+        {
+            <li>
+                <strong>@course.Title</strong> - @course.Description - $@course.Price
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No courses available in this category.</p>
+}
+

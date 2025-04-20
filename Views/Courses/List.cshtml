@@ -1,0 +1,38 @@
+﻿@model List<progect_DEPI.Models.Course>
+
+<h1>All Courses</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.CourseId</td>
+                <td>@course.Title</td>
+                <td>@course.Description</td>
+                <td>@course.Price</td>
+                <td>@course.CreatedAt</td>
+                <td>@course.UpdateAt</td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Courses" asp-action="Edit" asp-route-id="@course.CourseId">Edit</a>
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

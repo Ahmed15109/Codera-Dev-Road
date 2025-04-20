@@ -1,0 +1,40 @@
+﻿@model progect_DEPI.ViewModels.AddCourseViewModel
+
+<h1>Add Course</h1>
+
+<form method="post">
+    <div class="mt-3">
+        <label class="form-label">Course Title</label>
+        <input type="text" class="form-control" asp-for="Title" />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" asp-for="Description" />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Price</label>
+        <input type="number" class="form-control" asp-for="Price" />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Created At</label>
+        <input type="date" class="form-control" asp-for="CreatedAt" />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Update At</label>
+        <input type="date" class="form-control" asp-for="UpdateAt" />
+    </div>
+    <div class="mt-3">
+        <label class="form-label">Category</label>
+        <select class="form-control" asp-for="CategoryId" asp-items="ViewBag.Categories">
+            <option value="">-- Select Category --</option>
+        </select>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
