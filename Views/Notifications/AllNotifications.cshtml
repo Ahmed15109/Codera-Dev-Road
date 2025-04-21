@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Notification>
+
+<h2>All Notifications</h2>
+
+<form asp-action="SendToAll" method="post">
+    <div class="input-group mb-3">
+        <input type="text" name="message" class="form-control" placeholder="Message to send all users..." />
+        <div class="input-group-append">
+            <button class="btn btn-primary">Send to All</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Message</th>
+            <th>Created</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td>@n.User.FullName</td>
+                <td>@n.Message</td>
+                <td>@n.CreatedAt.ToShortDateString()</td>
+                <td>@(n.IsRead ? "Read" : "Unread")</td>
+            </tr>
+        }
+    </tbody>
+</table>
