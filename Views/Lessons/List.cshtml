@@ -1,0 +1,39 @@
+﻿@model List<progect_DEPI.Models.Lesson>
+
+<h1>Lessons</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Order Number</th>
+            <th>Level</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lesson in Model)
+        {
+            <tr>
+                <td>@lesson.LessonId</td>
+                <td>@lesson.Title</td>
+                <td>@lesson.Content</td>
+                <td>@lesson.OrderNumber</td>
+                <td>@lesson.Level</td>
+                <td>
+                    @* <a asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId" class="btn btn-info"> *@
+                    @*     Details *@
+                    @* </a> *@
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-primary" asp-controller="Lessons" asp-action="List" asp-route-id="@lesson.LessonId">
+                            Edit
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

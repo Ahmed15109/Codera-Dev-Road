@@ -567,3 +567,11 @@ C:\Users\SAMA\Source\Repos\DEPI-Project\obj\Debug\net8.0\refint\progect_DEPI.dll
 C:\Users\SAMA\Source\Repos\DEPI-Project\obj\Debug\net8.0\progect_DEPI.pdb
 C:\Users\SAMA\Source\Repos\DEPI-Project\obj\Debug\net8.0\progect_DEPI.genruntimeconfig.cache
 C:\Users\SAMA\Source\Repos\DEPI-Project\obj\Debug\net8.0\ref\progect_DEPI.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\EntityFramework.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\System.Data.SqlClient.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\DEPI\Final project\progect_DEPI\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
