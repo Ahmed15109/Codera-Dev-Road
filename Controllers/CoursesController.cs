@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using progect_DEPI.Models;
+using Microsoft.EntityFrameworkCore;
 using progect_DEPI.ViewModels;
 
 namespace progect_DEPI.Controllers

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using System;
 
 namespace progect_DEPI.Models
 {
@@ -8,12 +9,9 @@ namespace progect_DEPI.Models
 	{
         public ApplicationDbContext()
         {
-			
-	
-
-
-		}
-		public DbSet<User> Users { get; set; }
+            
+        }
+        public DbSet<User> Users { get; set; }
 		public DbSet<Role> Roles { get; set; }
 		public DbSet<Course> Courses { get; set; }
 		public DbSet<Category> Categories { get; set; }
