@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using progect_DEPI.Models; // استبدل بـ namespace بتاعك
-using progect_DEPI.ViewModels; // هنعمل ViewModels دلوقتي
+using progect_DEPI.Models; 
+using progect_DEPI.ViewModels; 
 
 namespace progect_DEPI.Controllers
 {
@@ -19,14 +19,12 @@ namespace progect_DEPI.Controllers
             _signInManager = signInManager;
         }
 
-        // GET: /Account/Register
         [HttpGet]
         public IActionResult Register()
         {
             return View("Register");
         }
 
-        // POST: /Account/Register
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -48,14 +46,12 @@ namespace progect_DEPI.Controllers
             return View(model);
         }
 
-        // GET: /Account/Login
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: /Account/Login
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl = "~/Home/Index")
         {
@@ -77,7 +73,6 @@ namespace progect_DEPI.Controllers
             return View(model);
         }
 
-        // POST: /Account/Logout
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<progect_DEPI.Models.Enrollment>
+
+<h1>All Enrollments</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <a asp-action="Add" class="btn btn-primary mb-3">+ Add Enrollment</a>
+}
+
+<table class="table table-bordered table-striped mt-3">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Course</th>
+            <th>Status</th>
+            <th>Payment</th>
+            <th>Enrolled At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.User?.FullName</td>
+                <td>@e.Course?.Title</td>
+                <td>@e.Status</td>
+                <td>@e.PaymentStatus</td>
+                <td>@e.EnrolledAt.ToString("g")</td>
+                <td>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        <a asp-action="Details" asp-route-id="@e.EnrollmentId" class="btn btn-info btn-sm">Details</a>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@e.EnrollmentId" class="btn btn-warning btn-sm">Edit</a>
+                            <form asp-action="Delete" asp-route-id="@e.EnrollmentId" method="post" onsubmit="return confirm('Are you sure?')">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

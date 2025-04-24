@@ -1,0 +1,43 @@
+﻿@model IEnumerable<progect_DEPI.Models.Certificate>
+
+<h1>All Certificates</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <a asp-action="Add" class="btn btn-primary mb-3">+ Add Certificate</a>
+}
+
+<table class="table table-bordered table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Content</th>
+            <th>User</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cert in Model)
+        {
+            <tr>
+                <td>@cert.Content</td>
+                <td>@cert.User?.FullName</td>
+                <td>@cert.CreatedAt.ToString("g")</td>
+                <td>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                        <a asp-action="Details" asp-route-id="@cert.CertificateId" class="btn btn-info btn-sm">Details</a>
+                        <a asp-action="Print" asp-route-id="@cert.CertificateId" class="btn btn-success btn-sm" target="_blank">Print</a>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@cert.CertificateId" class="btn btn-warning btn-sm">Edit</a>
+                            <form asp-action="Delete" asp-route-id="@cert.CertificateId" method="post" onsubmit="return confirm('Are you sure?')">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

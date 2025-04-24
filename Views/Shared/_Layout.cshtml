@@ -50,6 +50,17 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Courses" asp-action="List">Courses</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Quizzes" asp-action="List">Quizzes</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Certificates" asp-action="List">Certificates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Enrollments" asp-action="List">Enrollments</a>
+                        </li>
+
                     </ul>
                     <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
@@ -95,3 +106,6 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+ 
+
+

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using progect_DEPI.Models;
+using Rotativa.AspNetCore;
 
 namespace progect_DEPI
 {
@@ -27,7 +28,7 @@ namespace progect_DEPI
             builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-                //.AddDefaultTokenProviders();
+            //.AddDefaultTokenProviders();
 
             var app = builder.Build();
 
@@ -35,7 +36,6 @@ namespace progect_DEPI
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -45,6 +45,9 @@ namespace progect_DEPI
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            // 🧾 تفعيل Rotativa لطباعة الشهادات PDF
+            RotativaConfiguration.Setup(app.Environment.WebRootPath, "Rotativa");
 
             app.MapControllerRoute(
                 name: "default",
@@ -56,7 +59,7 @@ namespace progect_DEPI
                 var roles = new[] { "Admin", "User" };
                 foreach (var role in roles)
                 {
-                    if(!await roleManager.RoleExistsAsync(role))
+                    if (!await roleManager.RoleExistsAsync(role))
                         await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
@@ -67,7 +70,7 @@ namespace progect_DEPI
                    scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
                 string email = "admin@admin.com";
                 string password = "Admin123#";
-                if(await userManager.FindByEmailAsync(email) == null)
+                if (await userManager.FindByEmailAsync(email) == null)
                 {
                     var user = new IdentityUser();
                     user.UserName = email;
@@ -76,6 +79,7 @@ namespace progect_DEPI
                     await userManager.AddToRoleAsync(user, "Admin");
                 }
             }
+
             app.Run();
         }
     }

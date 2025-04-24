@@ -1,0 +1,25 @@
+﻿@model progect_DEPI.Models.Enrollment
+
+<h1>Enrollment Details</h1>
+
+<div class="mt-3">
+    <strong>User:</strong> @Model.User?.FullName
+</div>
+
+<div class="mt-3">
+    <strong>Course:</strong> @Model.Course?.Title
+</div>
+
+<div class="mt-3">
+    <strong>Status:</strong> @Model.Status
+</div>
+
+<div class="mt-3">
+    <strong>Payment Status:</strong> @Model.PaymentStatus
+</div>
+
+<div class="mt-3">
+    <strong>Enrolled At:</strong> @Model.EnrolledAt.ToString("g")
+</div>
+
+<a asp-action="List" class="btn btn-secondary mt-4">Back to List</a>
