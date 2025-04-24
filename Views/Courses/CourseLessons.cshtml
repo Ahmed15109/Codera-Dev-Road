@@ -1,40 +1,34 @@
 ﻿@model progect_DEPI.Models.Course
 
-<h2>Lessons for Course: @Model.Title</h2>
+<div class="container mt-5">
+    <h2 class="text-primary mb-4">Lessons for: @Model.Title</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Level</th>
-            <th>Order</th>
-            <th>Watch</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="row">
         @{
-            bool canAccess = true; // المستخدم يقدر يدخل أول درس فقط في البداية
+            bool canAccess = true;
         }
 
         @foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
         {
-            <tr>
-                <td>@lesson.Title</td>
-                <td>@lesson.Level</td>
-                <td>@lesson.OrderNumber</td>
-                <td>
-                    @if (canAccess)
-                    {
-                        <a class="btn btn-primary" asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">Start</a>
-                        canAccess = false; // بعد أول درس، ممنوع يدخل على اللي بعده
-                    }
-                    else
-                    {
-                        <button class="btn btn-secondary" disabled>Locked</button>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@lesson.Title</h5>
+                        <p class="card-text"><strong>Level:</strong> @lesson.Level</p>
+                        <p class="card-text"><strong>Order:</strong> @lesson.OrderNumber</p>
 
+                        @if (canAccess)
+                        {
+                            <a class="btn btn-primary" asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">Start Lesson</a>
+                            canAccess = false;
+                        }
+                        else
+                        {
+                            <button class="btn btn-secondary" disabled>Locked</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

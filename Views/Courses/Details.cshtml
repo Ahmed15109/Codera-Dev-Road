@@ -1,16 +1,17 @@
 ﻿@model progect_DEPI.Models.Course
 
-<h2>Course Details: @Model.Title</h2>
+<div class="container mt-5">
+    <h2 class="text-primary">Course Details: @Model.Title</h2>
+    <p class="mb-2"><strong>Description:</strong> @Model.Description</p>
+    <p class="mb-4"><strong>Total Lessons:</strong> @Model.Lessons?.Count()</p>
 
-<p><strong>Description:</strong> @Model.Description</p>
-<p><strong>Total Lessons:</strong> @Model.Lessons?.Count()</p>
-
-<h4>Lessons</h4>
-<ul>
-    @foreach (var lesson in Model.Lessons)
-    {
-        <li>
-            <a asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">@lesson.Title</a>
-        </li>
-    }
-</ul>
+    <h4 class="mb-3">Lessons</h4>
+    <ul class="list-group">
+        @foreach (var lesson in Model.Lessons)
+        {
+            <li class="list-group-item">
+                <a asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">@lesson.Title</a>
+            </li>
+        }
+    </ul>
+</div>

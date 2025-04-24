@@ -1,58 +1,50 @@
 ﻿@model progect_DEPI.Models.Course
 
-<h1>Edit Course</h1>
+<div class="container mt-5">
+    <h1 class="text-warning">Edit Course</h1>
 
-@if (Model is null)
-{
-    <p>No Courses were found</p>
-}
-else
-{
-    <form method="post">
-        <div class="mt-3">
-            <label class="form-label">Course Id</label>
-            <input type="text" class="form-control" asp-for="CourseId" readonly />
-        </div>
+    @if (Model is null)
+    {
+        <div class="alert alert-danger mt-3">No Courses were found.</div>
+    }
+    else
+    {
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="CourseId" class="form-label">Course ID</label>
+                <input asp-for="CourseId" class="form-control" readonly />
+            </div>
 
-        <div class="mt-3">
-            <label class="form-label">Course Title</label>
-            <input type="text" class="form-control" asp-for="Title" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Course Title</label>
+                <input asp-for="Title" class="form-control" />
+            </div>
 
-        <div class="mt-3">
-            <label class="form-label">Description</label>
-            <input type="text" class="form-control" asp-for="Description" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label">Description</label>
+                <input asp-for="Description" class="form-control" />
+            </div>
 
-        <div class="mt-3">
-            <label class="form-label">Price</label>
-            <input type="number" class="form-control" asp-for="Price" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="Price" class="form-label">Price</label>
+                <input asp-for="Price" class="form-control" />
+            </div>
 
-        <div class="mt-3">
-            <label class="form-label">Created At</label>
-            <input type="date" class="form-control" asp-for="CreatedAt" />
-        </div>
+            <div class="mb-3">
+                <label asp-for="CreatedAt" class="form-label">Created At</label>
+                <input asp-for="CreatedAt" class="form-control" type="date" />
+            </div>
 
-        <div class="mt-3">
-            <label class="form-label">Update At</label>
-            <input type="date" class="form-control" asp-for="UpdateAt" />
-        </div>
+            <div class="mb-4">
+                <label asp-for="UpdateAt" class="form-label">Updated At</label>
+                <input asp-for="UpdateAt" class="form-control" type="date" />
+            </div>
 
-        <div class="mt-3">
             @if (User.IsInRole("Admin"))
             {
-                <button type="submit" class="btn btn-primary ms-3"
-                        asp-action="Edit"
-                        asp-controller="Courses">
-                    Edit
-                </button>
-                <button type="submit" class="btn btn-danger"
-                        asp-action="Delete"
-                        asp-controller="Courses">
-                    Delete
-                </button>
+                <button type="submit" class="btn btn-success me-2" asp-action="Edit" asp-controller="Courses">Save</button>
+                <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Courses">Delete</button>
             }
-        </div>
-    </form>
-}
+        </form>
+    }
+</div>

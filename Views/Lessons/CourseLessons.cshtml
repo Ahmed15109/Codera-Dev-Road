@@ -1,30 +1,40 @@
 ﻿@model progect_DEPI.Models.Course
 
-<h2>Lessons for course: @Model.Title</h2>
+<div class="container mt-4">
+    <h2 class="mb-4">Lessons for course: @Model.Title</h2>
 
-@{
-    int index = 0;
-}
-
-@foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
-{
-    <div class="lesson">
-        <h4>@lesson.Title</h4>
-
-        @if (index == 0)
-        {
-            <video width="400" controls>
-                <source src="@lesson.VideoUrl" type="video/mp4" />
-                Your browser does not support video.
-            </video>
+    <div class="row g-4">
+        @{
+            int index = 0;
         }
-        else
+
+        @foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
         {
-            <div style="opacity: 0.5;">
-                <p>You need to complete the previous lesson to unlock this video.</p>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@lesson.Title</h5>
+
+                        @if (index == 0)
+                        {
+                            <div class="ratio ratio-16x9 mb-3">
+                                <video controls>
+                                    <source src="@lesson.VideoUrl" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-secondary text-center" style="opacity: 0.5;">
+                                You need to complete the previous lesson to unlock this video.
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
-        }
 
-        index++;
+            index++;
+        }
     </div>
-}
+</div>

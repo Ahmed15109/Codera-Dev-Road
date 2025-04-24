@@ -1,21 +1,29 @@
 ﻿@model progect_DEPI.Models.Lesson
 
-<h2>@Model.Title</h2>
-<p><strong>Level:</strong> @Model.Level</p>
-<p><strong>Description:</strong> @Model.Content</p>
+<div class="container mt-4">
+    <h2 class="mb-3">@Model.Title</h2>
 
-@if (!string.IsNullOrEmpty(Model.VideoUrl))
-{
-    <video width="640" height="360" controls>
-        <source src="@Model.VideoUrl" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-}
-else if (!string.IsNullOrEmpty(Model.ImageUrl))
-{
-    <img src="@Model.ImageUrl" alt="Lesson Image" style="max-width: 640px;" />
-}
-else
-{
-    <p>No media available for this lesson.</p>
-}
+    <p><strong>Level:</strong> @Model.Level</p>
+    <p><strong>Description:</strong></p>
+    <div class="mb-4">@Model.Content</div>
+
+    @if (!string.IsNullOrEmpty(Model.VideoUrl))
+    {
+        <div class="ratio ratio-16x9 mb-4">
+            <video controls>
+                <source src="@Model.VideoUrl" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <div class="text-center">
+            <img src="@Model.ImageUrl" alt="Lesson Image" class="img-fluid" style="max-width: 640px;" />
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">No media available for this lesson.</div>
+    }
+</div>
