@@ -9,125 +9,177 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = progect_DEPI
 build_property.RootNamespace = progect_DEPI
-build_property.ProjectDir = E:\DEPI\Final project\progect_DEPI\
+build_property.ProjectDir = C:\Users\Ahmed\Source\Repos\DEPI-Project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\DEPI\Final project\progect_DEPI
+build_property.MSBuildProjectDirectory = C:\Users\Ahmed\Source\Repos\DEPI-Project
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Account/Login.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Account/Register.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Category/Add.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Category/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Category/Details.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Category/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Category/Edit.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Category/List.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Category/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Courses/Add.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Certificates/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Certificates/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Certificates/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Certificates/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Certificates/Print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXFByaW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Courses/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Courses/CourseLessons.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Courses/CourseLessons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xDb3Vyc2VMZXNzb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Courses/Details.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Courses/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Courses/Edit.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Courses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Courses/List.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Courses/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Home/Index.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Enrollments/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Enrollments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Enrollments/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Enrollments/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Home/Privacy.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Lessons/CourseLessons.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Lessons/CourseLessons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xDb3Vyc2VMZXNzb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Lessons/Create.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Lessons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Lessons/Details.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Lessons/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Lessons/Edit.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Lessons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Notifications/AllNotifications.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Notifications/AllNotifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xBbGxOb3RpZmljYXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Notifications/MyNotifications.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Notifications/MyNotifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xNeU5vdGlmaWNhdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Shared/Error.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Quizzes/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Quizzes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Quizzes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Quizzes/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/User/Eidt.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/User/Eidt.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFaWR0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/User/Instructors.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/User/Instructors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbnN0cnVjdG9ycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/User/Profile.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/User/Students.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/User/Students.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTdHVkZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/_ViewImports.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/_ViewStart.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/DEPI/Final project/progect_DEPI/Views/Shared/_Layout.cshtml]
+[C:/Users/Ahmed/Source/Repos/DEPI-Project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1r87qd64ps
