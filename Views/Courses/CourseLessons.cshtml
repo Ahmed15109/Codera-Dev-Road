@@ -1,0 +1,40 @@
+﻿@model progect_DEPI.Models.Course
+
+<h2>Lessons for Course: @Model.Title</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Level</th>
+            <th>Order</th>
+            <th>Watch</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            bool canAccess = true; // المستخدم يقدر يدخل أول درس فقط في البداية
+        }
+
+        @foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
+        {
+            <tr>
+                <td>@lesson.Title</td>
+                <td>@lesson.Level</td>
+                <td>@lesson.OrderNumber</td>
+                <td>
+                    @if (canAccess)
+                    {
+                        <a class="btn btn-primary" asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">Start</a>
+                        canAccess = false; // بعد أول درس، ممنوع يدخل على اللي بعده
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary" disabled>Locked</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

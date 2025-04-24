@@ -1098,6 +1098,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\progect_DEPI.iq3jcayg16.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>progect_DEPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/progect_DEPI</BasePath>
+      <RelativePath>uploads/images/IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9wdgurl4e7</Fingerprint>
+      <Integrity>p9vUvHNNhzjjGuv/9sF7SnAqJzHVWJ94A0aTZ7c599w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>progect_DEPI</SourceId>
@@ -1116,6 +1134,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>progect_DEPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/progect_DEPI</BasePath>
+      <RelativePath>uploads/images/IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6szmaia2yv</Fingerprint>
+      <Integrity>plBhTy1yQiEB7pUNNEEhn2AlbnNPR0wYtWna3J3VqEU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\images\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\1f6f347b6eb624190a59d83bd154cecd.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>progect_DEPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/progect_DEPI</BasePath>
+      <RelativePath>uploads/videos/1f6f347b6eb624190a59d83bd154cecd.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>9c8zw3gg93</Fingerprint>
+      <Integrity>B9+YFtm88AvbvyqDXLNIgDqNSfUZd5Yh+CYyiT96UoI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\1f6f347b6eb624190a59d83bd154cecd.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\651ec518ebb6dad1126979e28e43b1de.mp4'))">
       <SourceType>Package</SourceType>
       <SourceId>progect_DEPI</SourceId>
@@ -1133,6 +1187,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\651ec518ebb6dad1126979e28e43b1de.mp4'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\d4925d5eab958c868824d5e0ea0cfb4c.mp4'))">
+      <SourceType>Package</SourceType>
+      <SourceId>progect_DEPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/progect_DEPI</BasePath>
+      <RelativePath>uploads/videos/d4925d5eab958c868824d5e0ea0cfb4c.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nsu7zqri67</Fingerprint>
+      <Integrity>p3L0ovbsHrJrVL73UbziLRLdyZWNWhrNVao+Tm4op1w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\d4925d5eab958c868824d5e0ea0cfb4c.mp4'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

@@ -2,29 +2,29 @@
 
 <h2>Lessons for course: @Model.Title</h2>
 
-<a class="btn btn-success" asp-action="Create" asp-route-courseId="@Model.CourseId">Add Lesson</a>
+@{
+    int index = 0;
+}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Order</th>
-            <th>Level</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var lesson in Model.Lessons)
+@foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
+{
+    <div class="lesson">
+        <h4>@lesson.Title</h4>
+
+        @if (index == 0)
         {
-            <tr>
-                <td>@lesson.Title</td>
-                <td>@lesson.OrderNumber</td>
-                <td>@lesson.Level</td>
-                <td>
-                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@lesson.LessonId">Edit</a>
-                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@lesson.LessonId">Delete</a>
-                </td>
-            </tr>
+            <video width="400" controls>
+                <source src="@lesson.VideoUrl" type="video/mp4" />
+                Your browser does not support video.
+            </video>
         }
-    </tbody>
-</table>
+        else
+        {
+            <div style="opacity: 0.5;">
+                <p>You need to complete the previous lesson to unlock this video.</p>
+            </div>
+        }
+
+        index++;
+    </div>
+}

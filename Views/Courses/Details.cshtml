@@ -1,0 +1,16 @@
+﻿@model progect_DEPI.Models.Course
+
+<h2>Course Details: @Model.Title</h2>
+
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Total Lessons:</strong> @Model.Lessons?.Count()</p>
+
+<h4>Lessons</h4>
+<ul>
+    @foreach (var lesson in Model.Lessons)
+    {
+        <li>
+            <a asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">@lesson.Title</a>
+        </li>
+    }
+</ul>

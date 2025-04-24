@@ -97,18 +97,18 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("CourseLessons", "Lessons", new { courseId = model.CourseId });
         }
         [HttpGet]
-        public async Task<IActionResult> CourseLessons(int courseId)
+        public IActionResult CourseLessons(int courseId)
         {
-            var course = await dbContext.Courses
-    .Include(c => c.Lessons)
-    .FirstOrDefaultAsync(c => c.CourseId == courseId);
-
+            var course = dbContext.Courses
+                .Include(c => c.Lessons.OrderBy(l => l.OrderNumber))
+                .FirstOrDefault(c => c.CourseId == courseId);
 
             if (course == null)
                 return NotFound();
 
             return View(course);
         }
+
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
@@ -150,6 +150,16 @@ namespace progect_DEPI.Controllers
 
             return RedirectToAction("CourseLessons", new { courseId = lesson.CourseId });
         }
+
+        public IActionResult Details(int id)
+        {
+            var lesson = dbContext.Lessons.FirstOrDefault(l => l.LessonId == id);
+            if (lesson == null)
+                return NotFound();
+
+            return View(lesson);
+        }
+
 
         [Authorize(Roles = "Admin")]
         [HttpPost]

@@ -51,6 +51,18 @@ namespace progect_DEPI.Controllers
             var courses = await dbContext.Courses.ToListAsync();
             return View(courses);
         }
+        public IActionResult Details(int id)
+        {
+            var course = dbContext.Courses
+                .Include(c => c.Lessons)
+                .FirstOrDefault(c => c.CourseId == id);
+
+            if (course == null)
+                return NotFound();
+
+            return View(course);
+        }
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
@@ -89,5 +101,17 @@ namespace progect_DEPI.Controllers
 
             return RedirectToAction("List", "Courses");
         }
+        public IActionResult CourseLessons(int courseId)
+        {
+            var course = dbContext.Courses
+                .Include(c => c.Lessons.OrderBy(l => l.OrderNumber)) // أو .ThenBy() حسب EF
+                .FirstOrDefault(c => c.CourseId == courseId);
+
+            if (course == null)
+                return NotFound();
+
+            return View(course);
+        }
+
     }
 }

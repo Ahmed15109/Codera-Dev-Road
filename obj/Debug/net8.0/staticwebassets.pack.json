@@ -245,12 +245,28 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg"
+    },
+    {
       "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg"
     },
     {
+      "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg"
+    },
+    {
+      "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\videos\\1f6f347b6eb624190a59d83bd154cecd.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\1f6f347b6eb624190a59d83bd154cecd.mp4"
+    },
+    {
       "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4",
       "PackagePath": "staticwebassets\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4"
+    },
+    {
+      "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\videos\\d4925d5eab958c868824d5e0ea0cfb4c.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\d4925d5eab958c868824d5e0ea0cfb4c.mp4"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.progect_DEPI.props",
