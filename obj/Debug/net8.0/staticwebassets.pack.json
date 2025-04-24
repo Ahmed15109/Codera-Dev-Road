@@ -245,6 +245,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg"
+    },
+    {
+      "Id": "E:\\DEPI\\Final project\\progect_DEPI\\wwwroot\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.progect_DEPI.props",
       "PackagePath": "build\\progect_DEPI.props"
     },
