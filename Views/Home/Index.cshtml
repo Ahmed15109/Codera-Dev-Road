@@ -1,5 +1,4 @@
 ﻿@using Microsoft.AspNetCore.Identity
-
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
@@ -7,12 +6,37 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px; background-image: url('img/home.jpg'); background-size: cover; background-position: center;">
+    <div class="container text-center my-5 py-5">
+        <h1 class="text-white mt-4 mb-4">"Dev_Road helps you navigate your programming journey."</h1>
+        <h5 class="text-white display-1 mb-5">"Guiding you to your programming future."</h5>
+        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Tracks
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Data Science</a>
+                        <a class="dropdown-item" href="#">Front-End Developer</a>
+                        <a class="dropdown-item" href="#">Backend Developer</a>
+                    </div>
+                </div>
+                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary px-4 px-lg-5">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- Header End -->
 
-@if(User.IsInRole("Admin"))
+
+
+@* @if (User.IsInRole("Admin"))
 {
     <h1>Hi Admin</h1>
 }
@@ -20,3 +44,4 @@ else
 {
     <h1>Welcome user</h1>
 }
+ *@

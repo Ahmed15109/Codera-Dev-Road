@@ -1,0 +1,142 @@
+﻿@using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dev_Road</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Bootstrap & Custom CSS -->
+    <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand ml-lg-3">
+                <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-book-reader mr-3"></i>Dev_Road</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <a asp-controller="Home" asp-action="Index" class="nav-item nav-link">Home</a>
+                    <a asp-controller="Home" asp-action="About" class="nav-item nav-link">About</a>
+                    <a asp-controller="Category" asp-action="List" class="nav-item nav-link">Tracks</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Courses</a>
+                        <div class="dropdown-menu m-0">
+                            <a asp-controller="Courses" asp-action="List" class="dropdown-item">Course Detail</a>
+                            <a asp-controller="Home" asp-action="Feature" class="dropdown-item"> Enrollments</a>
+                            <a asp-controller="Home" asp-action="Team" class="dropdown-item">Certificates</a>
+                            <a asp-controller="Home" asp-action="Testimonial" class="dropdown-item">Quizzes</a>
+                        </div>
+                    </div>
+                    <a asp-controller="Home" asp-action="Privacy" class="nav-item nav-link"> Contact</a>
+                </div>
+
+                <ul class="navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <form asp-controller="Account" asp-action="Logout" method="post" class="form-inline">
+                                <button type="submit" class="btn btn-outline-primary">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    <!-- Page Content -->
+    
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid position-relative overlay-top bg-dark text-white-50 py-5" style="margin-top: 90px;">
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">
+                        <h1 class="mt-n2 text-uppercase text-white"><i class="fa fa-book-reader mr-3"></i>Dev_Road</h1>
+                    </a>
+                    <p class="m-0">We are committed to helping beginners find the right learning path in tech.</p>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <h3 class="text-white mb-4">Newsletter</h3>
+                    <div class="w-100">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-4">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h3 class="text-white mb-4">Get In Touch</h3>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, Egypt,Assuit</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <p><i class="fa fa-envelope mr-2"></i>devroad123.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
+                            <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
+                            <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
+                            <a class="text-white" href="#"><i class="fab fa-2x fa-instagram"></i></a>
+                        </div>
+         
+                </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark text-white-50 border-top py-4">
+        <div class="container text-center">
+            <p class="m-0">&copy; @DateTime.Now.Year Dev_Road. All Rights Reserved.</p>
+        </div>
+    </div>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- Footer End -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/counterup/counterup.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
