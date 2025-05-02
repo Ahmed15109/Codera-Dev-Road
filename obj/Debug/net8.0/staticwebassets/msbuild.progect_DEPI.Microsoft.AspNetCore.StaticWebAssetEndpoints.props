@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/progect_DEPI/css/login.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\login.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-oUUvaCGf0E7gHxnasUAk5lMTtcJU1\u002BLrpJfd/SA6MYs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3086"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022oUUvaCGf0E7gHxnasUAk5lMTtcJU1\u002BLrpJfd/SA6MYs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 02:41:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/progect_DEPI/css/login.j3ad2dbk35.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\login.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"j3ad2dbk35"},{"Name":"integrity","Value":"sha256-oUUvaCGf0E7gHxnasUAk5lMTtcJU1\u002BLrpJfd/SA6MYs="},{"Name":"label","Value":"_content/progect_DEPI/css/login.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3086"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022oUUvaCGf0E7gHxnasUAk5lMTtcJU1\u002BLrpJfd/SA6MYs=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 02:41:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/progect_DEPI/css/site.c2tiyv64ts.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

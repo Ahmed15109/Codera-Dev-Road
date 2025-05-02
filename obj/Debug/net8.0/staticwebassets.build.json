@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "h25OPq5lNiIIhXBg2EBG4HTRkVgcF5pCird8P+fbvwk=",
+  "Hash": "IyaWDV/Ti1E6863BruW0WrGClCzD7W73SeRW56CQQ2A=",
   "Source": "progect_DEPI",
   "BasePath": "_content/progect_DEPI",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\progect_DEPI.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\login.css",
+      "SourceId": "progect_DEPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\",
+      "BasePath": "_content/progect_DEPI",
+      "RelativePath": "css/login#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "j3ad2dbk35",
+      "Integrity": "oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\site.css",
@@ -3945,6 +3966,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3086"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 02:41:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.j3ad2dbk35.css",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3086"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 02:41:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j3ad2dbk35"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs="
+        }
+      ]
+    },
     {
       "Route": "css/site.c2tiyv64ts.css",
       "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\site.css",
