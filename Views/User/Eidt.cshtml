@@ -1,4 +1,4 @@
-﻿@model User
+﻿@model progect_DEPI.Models.User
 @{
     ViewBag.Title = "Edit User";
 }
@@ -21,9 +21,8 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" class="form-control" type="password" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+        <label>New Password</label>
+        <input name="NewPassword" class="form-control" type="password" />
     </div>
 
     <div class="form-group">

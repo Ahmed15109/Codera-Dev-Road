@@ -259,6 +259,9 @@ namespace progect_DEPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -266,6 +269,8 @@ namespace progect_DEPI.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("CertificateId");
+
+                    b.HasIndex("CourseId");
 
                     b.HasIndex("UserId");
 
@@ -548,12 +553,11 @@ namespace progect_DEPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("IdentityId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Picture")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("RoleId")
@@ -622,11 +626,19 @@ namespace progect_DEPI.Migrations
 
             modelBuilder.Entity("progect_DEPI.Models.Certificate", b =>
                 {
+                    b.HasOne("progect_DEPI.Models.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("progect_DEPI.Models.User", "User")
                         .WithMany("Certificates")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Course");
 
                     b.Navigation("User");
                 });

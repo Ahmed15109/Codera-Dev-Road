@@ -2,10 +2,13 @@
 
 <h1>All Certificates</h1>
 
-@if (User.IsInRole("Admin"))
-{
-    <a asp-action="Add" class="btn btn-primary mb-3">+ Add Certificate</a>
-}
+<div class="d-flex mb-3" style="gap: 10px;">
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Add" class="btn btn-primary">+ Add Certificate</a>
+    }
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">🏠 Home</a>
+</div>
 
 <table class="table table-bordered table-striped mt-3">
     <thead>
@@ -31,7 +34,7 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <a asp-action="Edit" asp-route-id="@cert.CertificateId" class="btn btn-warning btn-sm">Edit</a>
-                            <form asp-action="Delete" asp-route-id="@cert.CertificateId" method="post" onsubmit="return confirm('Are you sure?')">
+                            <form asp-action="Delete" asp-route-id="@cert.CertificateId" method="post" onsubmit="return confirm('Are you sure?')" style="display:inline;">
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                             </form>
                         }
