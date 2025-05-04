@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\progect_DEPI.iq3jcayg16.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\libwkhtmltox.a",
+      "PackagePath": "staticwebassets\\Rotativa\\libwkhtmltox.a"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltox.dll"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

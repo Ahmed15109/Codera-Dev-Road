@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[8.0.14, )"
             },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.15, )"
@@ -74,9 +78,13 @@
               "target": "Package",
               "version": "[8.0.15, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "Microsoft.SqlServer.Server": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[1.0.0, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.4.0, )"
             }
           },
           "imports": [

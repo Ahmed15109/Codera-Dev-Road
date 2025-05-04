@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IyaWDV/Ti1E6863BruW0WrGClCzD7W73SeRW56CQQ2A=",
+  "Hash": "0aXLMZlSuL1KPf/Ml76XR82GflrwOwKtOsK6Bx8KDOY=",
   "Source": "progect_DEPI",
   "BasePath": "_content/progect_DEPI",
   "Mode": "Default",
@@ -1905,6 +1905,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\libwkhtmltox.a",
+      "SourceId": "progect_DEPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\",
+      "BasePath": "_content/progect_DEPI",
+      "RelativePath": "Rotativa/libwkhtmltox#[.{fingerprint}]?.a",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f2g608d7gt",
+      "Integrity": "10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\libwkhtmltox.a"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "SourceId": "progect_DEPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\",
+      "BasePath": "_content/progect_DEPI",
+      "RelativePath": "Rotativa/wkhtmltopdf#[.{fingerprint}]?.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cuquy3615b",
+      "Integrity": "ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Identity": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "SourceId": "progect_DEPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\",
+      "BasePath": "_content/progect_DEPI",
+      "RelativePath": "Rotativa/wkhtmltox#[.{fingerprint}]?.dll",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kz17487uij",
+      "Integrity": "0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltox.dll"
     },
     {
       "Identity": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
@@ -11205,7 +11268,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 12:42:54 GMT"
+          "Value": "Fri, 02 May 2025 18:24:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11242,7 +11305,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 12:42:54 GMT"
+          "Value": "Fri, 02 May 2025 18:24:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11287,7 +11350,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 12:42:54 GMT"
+          "Value": "Fri, 02 May 2025 18:24:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11332,7 +11395,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 26 Apr 2025 12:42:54 GMT"
+          "Value": "Fri, 02 May 2025 18:24:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -11343,6 +11406,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-qq047vmPehBOF3yaVqT41U0cFDxzI4RKbWm9IL9IyPY="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/libwkhtmltox.a",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\libwkhtmltox.a",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "134958"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 03:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/libwkhtmltox.f2g608d7gt.a",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\libwkhtmltox.a",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "134958"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 03:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f2g608d7gt"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/libwkhtmltox.a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-10bVv63LVpw6O3/ddTnexdzYX4pr2cR9/Lr0dZYYzKQ="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltopdf.cuquy3615b.exe",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41563648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 03:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cuquy3615b"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltopdf.exe"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltopdf.exe",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41563648"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.microsoft.portable-executable"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 03:21:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZNF2gjIL/9RbIgjtE7E21ZE56CVzdF8UVWzyXpXL2Ag="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltox.dll",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41382912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 03:21:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0="
+        }
+      ]
+    },
+    {
+      "Route": "Rotativa/wkhtmltox.kz17487uij.dll",
+      "AssetFile": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41382912"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 02 May 2025 03:21:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kz17487uij"
+        },
+        {
+          "Name": "label",
+          "Value": "Rotativa/wkhtmltox.dll"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0JnDQt6YXXk6Kp6pDQBSCOkPuJB/EkUzKmodlSgtnJ0="
         }
       ]
     },

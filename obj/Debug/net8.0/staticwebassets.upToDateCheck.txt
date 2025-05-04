@@ -86,6 +86,9 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\Rotativa\libwkhtmltox.a
+wwwroot\Rotativa\wkhtmltopdf.exe
+wwwroot\Rotativa\wkhtmltox.dll
 wwwroot\scss\bootstrap\scss\_alert.scss
 wwwroot\scss\bootstrap\scss\_badge.scss
 wwwroot\scss\bootstrap\scss\_breadcrumb.scss

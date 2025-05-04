@@ -467,7 +467,7 @@ namespace progect_DEPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("QuizId");
@@ -704,9 +704,7 @@ namespace progect_DEPI.Migrations
 
                     b.HasOne("progect_DEPI.Models.User", "User")
                         .WithMany("Quizzes")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Course");
 

@@ -1,0 +1,33 @@
+﻿@model progect_DEPI.ViewModels.AddCertificateViewModel
+
+<h1>Add Certificate</h1>
+
+<form method="post">
+    <div class="mt-3">
+        <label class="form-label">Content</label>
+        <textarea class="form-control" asp-for="Content"></textarea>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Created At</label>
+        <input type="datetime-local" class="form-control" asp-for="CreatedAt" />
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">User</label>
+        <select class="form-control" asp-for="UserId" asp-items="ViewBag.Users">
+            <option value="">-- Select User --</option>
+        </select>
+    </div>
+
+    <div class="mt-3">
+        <label class="form-label">Course</label>
+        <select class="form-control" asp-for="CourseId" asp-items="ViewBag.Courses">
+            <option value="">-- Select Course --</option>
+        </select>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
