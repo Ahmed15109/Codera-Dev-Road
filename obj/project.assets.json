@@ -3583,23 +3583,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ahmed\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\progect_DEPI.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\progect_DEPI.csproj",
       "projectName": "progect_DEPI",
-      "projectPath": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\progect_DEPI.csproj",
-      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\obj\\",
+      "projectPath": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\progect_DEPI.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DELL\\Source\\Repos\\DEPI-Project\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

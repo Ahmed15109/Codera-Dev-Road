@@ -2,47 +2,84 @@
 
 @{
     ViewData["Title"] = "Register";
+    Layout = "_layoutlogin"; // إذا كنت لا تريد استخدام الـLayout
 }
 
-<h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
 
-<h4>RegisterViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="FullName" class="control-label"></label>
-                <input asp-for="FullName" class="form-control" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+
+    <div class="wrapper bg-white">
+        <div class="h2 text-center">Dev_Road</div>
+        <div class="h4 text-muted text-center pt-2"> Let`s Join With us!</div>
+
+        <form asp-action="Register" method="post" class="pt-3">
+            <div asp-validation-summary="All" class="text-danger text-center"></div>
+
+            <!-- Name -->
+            <div class="form-group py-2">
+                <div class="input-field">
+                    <span class="far fa-user p-2"></span>
+                    <input asp-for="FullName" placeholder="Full Name" class="form-control border-0" />
+                </div>
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+
+            <!-- Email -->
+            <div class="form-group py-2">
+                <div class="input-field">
+                    <span class="far fa-envelope p-2"></span>
+                    <input asp-for="Email" placeholder="Email Address" class="form-control border-0" />
+                </div>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+
+            <!-- Password -->
+            <div class="form-group py-1">
+                <div class="input-field d-flex align-items-center">
+                    <span class="fas fa-lock p-2"></span>
+                    <input asp-for="Password" placeholder="Password" class="form-control border-0" />
+                    <button class="btn bg-white text-muted" type="button">
+                        <span class="far fa-eye-slash"></span>
+                    </button>
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword" class="control-label"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
+
+            <!-- Confirm Password -->
+            <div class="form-group py-1 pb-2">
+                <div class="input-field d-flex align-items-center">
+                    <span class="fas fa-lock p-2"></span>
+                    <input asp-for="ConfirmPassword" placeholder="Confirm Password" class="form-control border-0" />
+                    <button class="btn bg-white text-muted" type="button">
+                        <span class="far fa-eye-slash"></span>
+                    </button>
+                </div>
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-primary" />
-            </div>
+
+            <button type="submit" class="btn btn-block text-center my-3 btn-primary">Sign up</button>
+            <div class="text-center pt-3 text-muted">Already a member? <a asp-action="Login">Log in</a></div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="login">login</a>
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+</body>
+</html>
