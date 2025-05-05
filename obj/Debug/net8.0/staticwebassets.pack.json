@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\Rotativa\\wkhtmltox.dll"
     },
     {
+      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

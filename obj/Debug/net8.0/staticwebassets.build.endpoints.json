@@ -249,6 +249,88 @@
       ]
     },
     {
+      "Route": "css/login.css",
+      "AssetFile": "css/login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3086"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 04 May 2025 21:42:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.j3ad2dbk35.css",
+      "AssetFile": "css/login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3086"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 04 May 2025 21:42:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j3ad2dbk35"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oUUvaCGf0E7gHxnasUAk5lMTtcJU1+LrpJfd/SA6MYs="
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        }
+      ]
+    },
+    {
       "Route": "css/site.c2tiyv64ts.css",
       "AssetFile": "css/site.css",
       "Selectors": [],
@@ -7409,7 +7491,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 04 May 2025 14:55:26 GMT"
+          "Value": "Sun, 04 May 2025 21:50:57 GMT"
         }
       ],
       "EndpointProperties": [
@@ -7454,7 +7536,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 04 May 2025 14:55:26 GMT"
+          "Value": "Sun, 04 May 2025 21:50:57 GMT"
         }
       ],
       "EndpointProperties": [

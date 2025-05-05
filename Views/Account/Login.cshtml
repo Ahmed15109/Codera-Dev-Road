@@ -2,42 +2,77 @@
 
 @{
     ViewData["Title"] = "Login";
+        Layout = "_layout2"; // تستخدم Layout عام للموقع
 }
 
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dev_Road</title>
 
-<h4>LoginViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- ملف CSS خاص للتنسيق -->
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+
+    <div class="wrapper bg-white p-4 rounded shadow mx-auto mt-5" style="max-width: 400px;">
+        <div class="h2 text-center">Dev_Road</div>
+        <div class="h5 text-muted text-center pt-2">  Sign In!  </div>
+
+        <form asp-action="Login" method="post" class="pt-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger text-center mb-3"></div>
+
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-user"></i></span>
+                    </div>
+                    <input asp-for="Email" class="form-control" placeholder="Email Address" />
+                </div>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    </div>
+                    <input asp-for="Password" class="form-control" placeholder="Password" type="password" />
+                </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+
+            <div class="form-group form-check d-flex justify-content-between">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                    <input asp-for="RememberMe" class="form-check-input" />
+                    @Html.DisplayNameFor(model => model.RememberMe)
                 </label>
+                <a href="#" class="text-muted small"></a>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+
+            <div class="text-center pt-3 text-muted small">Not a member? <a asp-action="Register">Sign up</a></div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+</body>
+</html>
