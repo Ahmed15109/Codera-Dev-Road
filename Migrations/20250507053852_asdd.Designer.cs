@@ -12,8 +12,8 @@ using progect_DEPI.Models;
 namespace progect_DEPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250504183156_last")]
-    partial class last
+    [Migration("20250507053852_asdd")]
+    partial class asdd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,6 +223,31 @@ namespace progect_DEPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("progect_DEPI.Models.Answer", b =>
+                {
+                    b.Property<int>("AnswerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnswerId"));
+
+                    b.Property<bool>("IsCorrect")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AnswerId");
+
+                    b.HasIndex("QuestionId");
+
+                    b.ToTable("Answers");
+                });
+
             modelBuilder.Entity("progect_DEPI.Models.Category", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -296,6 +321,9 @@ namespace progect_DEPI.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -446,7 +474,58 @@ namespace progect_DEPI.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("progect_DEPI.Models.Quiz", b =>
+            modelBuilder.Entity("progect_DEPI.Models.Question", b =>
+                {
+                    b.Property<int>("QuestionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionId"));
+
+                    b.Property<int>("QuizId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("QuestionId");
+
+                    b.HasIndex("QuizId");
+
+                    b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("progect_DEPI.Models.QuizResult", b =>
+                {
+                    b.Property<int>("QuizResultId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuizResultId"));
+
+                    b.Property<int>("QuizId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("TakenAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("QuizResultId");
+
+                    b.HasIndex("QuizId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("QuizResults");
+                });
+
+            modelBuilder.Entity("progect_DEPI.Models.Quizzes", b =>
                 {
                     b.Property<int>("QuizId")
                         .ValueGeneratedOnAdd()
@@ -475,14 +554,9 @@ namespace progect_DEPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("QuizId");
 
                     b.HasIndex("CourseId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Quizzes");
                 });
@@ -520,23 +594,6 @@ namespace progect_DEPI.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("progect_DEPI.Models.Role", b =>
-                {
-                    b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RoleId"));
-
-                    b.Property<string>("RoleName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("RoleId");
-
-                    b.ToTable("Roles");
-                });
-
             modelBuilder.Entity("progect_DEPI.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -563,15 +620,10 @@ namespace progect_DEPI.Migrations
                     b.Property<string>("Picture")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("UserId");
-
-                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
                 });
@@ -625,6 +677,17 @@ namespace progect_DEPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("progect_DEPI.Models.Answer", b =>
+                {
+                    b.HasOne("progect_DEPI.Models.Question", "Question")
+                        .WithMany("Answers")
+                        .HasForeignKey("QuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Question");
                 });
 
             modelBuilder.Entity("progect_DEPI.Models.Certificate", b =>
@@ -709,7 +772,37 @@ namespace progect_DEPI.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("progect_DEPI.Models.Quiz", b =>
+            modelBuilder.Entity("progect_DEPI.Models.Question", b =>
+                {
+                    b.HasOne("progect_DEPI.Models.Quizzes", "Quiz")
+                        .WithMany("Questions")
+                        .HasForeignKey("QuizId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Quiz");
+                });
+
+            modelBuilder.Entity("progect_DEPI.Models.QuizResult", b =>
+                {
+                    b.HasOne("progect_DEPI.Models.Quizzes", "Quiz")
+                        .WithMany()
+                        .HasForeignKey("QuizId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("progect_DEPI.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Quiz");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("progect_DEPI.Models.Quizzes", b =>
                 {
                     b.HasOne("progect_DEPI.Models.Course", "Course")
                         .WithMany("Quizzes")
@@ -717,13 +810,7 @@ namespace progect_DEPI.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("progect_DEPI.Models.User", "User")
-                        .WithMany("Quizzes")
-                        .HasForeignKey("UserId");
-
                     b.Navigation("Course");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("progect_DEPI.Models.Review", b =>
@@ -745,17 +832,6 @@ namespace progect_DEPI.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("progect_DEPI.Models.User", b =>
-                {
-                    b.HasOne("progect_DEPI.Models.Role", "Role")
-                        .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-                });
-
             modelBuilder.Entity("progect_DEPI.Models.Category", b =>
                 {
                     b.Navigation("Courses");
@@ -772,9 +848,14 @@ namespace progect_DEPI.Migrations
                     b.Navigation("Reviews");
                 });
 
-            modelBuilder.Entity("progect_DEPI.Models.Role", b =>
+            modelBuilder.Entity("progect_DEPI.Models.Question", b =>
                 {
-                    b.Navigation("Users");
+                    b.Navigation("Answers");
+                });
+
+            modelBuilder.Entity("progect_DEPI.Models.Quizzes", b =>
+                {
+                    b.Navigation("Questions");
                 });
 
             modelBuilder.Entity("progect_DEPI.Models.User", b =>
@@ -786,8 +867,6 @@ namespace progect_DEPI.Migrations
                     b.Navigation("Notifications");
 
                     b.Navigation("Payments");
-
-                    b.Navigation("Quizzes");
 
                     b.Navigation("Reviews");
                 });

@@ -1,0 +1,26 @@
+﻿@model progect_DEPI.Models.QuizResult
+
+<h1 class="text-primary text-center mt-4">Quiz Result Details</h1>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title"><i class="fas fa-trophy"></i> Quiz: @Model.Quiz?.Title</h4>
+        <p class="card-text"><strong>User:</strong> @Model.User?.FullName</p>
+        <p class="card-text">
+            <strong>Score:</strong>
+            @if (Model.Score >= (Model.Quiz?.Questions.Count / 2))
+            {
+                <span class="text-success">@Model.Score</span> <i class="fas fa-smile"></i> <!-- Happy face if score is high -->
+            }
+            else
+            {
+                <span class="text-danger">@Model.Score</span> <i class="fas fa-sad-tear"></i> <!-- Sad face if score is low -->
+            }
+        </p>
+        <p class="card-text"><strong>Taken At:</strong> @Model.TakenAt.ToString("dd/MM/yyyy HH:mm")</p>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <a asp-action="MyResults" class="btn btn-secondary">Back</a>
+</div>

@@ -1,0 +1,54 @@
+﻿@model progect_DEPI.Models.QuizResult
+
+<h1 class="text-primary">Submit Quiz Result</h1>
+
+<form asp-action="SubmitResult" method="post" class="mt-4">
+    <div class="form-group">
+        <label for="quizId">Select Quiz</label>
+        <select class="form-control" id="quizId" name="quizId" required>
+            <option value="">-- Select Quiz --</option>
+            @foreach (var quiz in ViewBag.Quizzes as List<SelectListItem>)
+            {
+                <option value="@quiz.Value">@quiz.Text</option>
+            }
+        </select>
+        <span class="text-danger" id="quizError" style="display:none;">Please select a quiz.</span>
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="score">Score</label>
+        <input type="number" class="form-control" id="score" name="score" min="0" max="100" required />
+        <span class="text-danger" id="scoreError" style="display:none;">Score must be between 0 and 100.</span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3" onclick="return validateForm()">Submit</button>
+</form>
+
+@section Scripts {
+    <script>
+        function validateForm() {
+            // Validate quiz selection
+            var quizId = document.getElementById('quizId').value;
+            var score = document.getElementById('score').value;
+            var valid = true;
+
+            // Show error for quiz selection
+            if (quizId === "") {
+                document.getElementById('quizError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('quizError').style.display = 'none';
+            }
+
+            // Validate score input
+            if (score < 0 || score > 100) {
+                document.getElementById('scoreError').style.display = 'block';
+                valid = false;
+            } else {
+                document.getElementById('scoreError').style.display = 'none';
+            }
+
+            return valid;
+        }
+    </script>
+}

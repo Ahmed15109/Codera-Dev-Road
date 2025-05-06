@@ -1,85 +1,44 @@
 ﻿@model List<progect_DEPI.Models.Course>
 
-<!-- Header Start -->
-<div class="jumbotron jumbotron-fluid page-header position-relative overlay-bottom" style="margin-bottom: 90px;">
-    <div class="container text-center py-5">
-        <h1 class="text-white display-1">Courses</h1>
-        <div class="d-inline-flex text-white mb-5">
-            <p class="m-0 text-uppercase"><a class="text-white" href="/">Home</a></p>
-            <i class="fa fa-angle-double-right pt-1 px-3"></i>
-            <p class="m-0 text-uppercase">Courses</p>
+<div class="container mt-5">
+    <div class="row mb-4 text-center">
+        <div class="col">
+            <h1 class="display-5 text-primary">Our Courses</h1>
+            <p class="text-muted">Explore our latest available courses</p>
         </div>
-        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Courses
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Html</a>
-                        <a class="dropdown-item" href="#"> Css</a>
-                        <a class="dropdown-item" href="#"> c#</a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var course in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    @if (!string.IsNullOrEmpty(course.ImageUrl))
+                    {
+                        <img src="@course.ImageUrl" class="card-img-top" style="height: 180px; object-fit: cover;" alt="@course.Title image" />
+                    }
+                    else
+                    {
+                        <img src="~/img/default-course.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Default image" />
+                    }
+
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">@course.Title</h5>
+                        <p class="card-text text-muted">@course.Description?.Substring(0, Math.Min(100, course.Description.Length))...</p>
+                        <p class="card-text"><strong>Price:</strong> $@course.Price</p>
+                        <p class="card-text"><strong>Lessons:</strong> @course.Lessons?.Count() ?? 0</p>
                     </div>
-                </div>
-                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary px-4 px-lg-5">Search</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
-<!-- Our Courses Title Section -->
-<div class="container py-3">
-    <div class="row mx-0 justify-content-center">
-        <div class="col-lg-8">
-            <div class="section-title text-center position-relative mb-5">
-                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
-                <h1 class="display-4">Checkout New Releases Of Our Courses</h1>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="card-footer bg-white border-0 d-flex flex-wrap gap-2">
+                        <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId" class="btn btn-sm btn-outline-primary">Details</a>
 
-<!-- Course Table -->
-<div class="container mt-3">
-    <h2 class="text-primary mb-4">All Courses</h2>
-
-    <table class="table table-bordered table-hover shadow-sm">
-        <thead class="table-light">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var course in Model)
-            {
-                <tr>
-                    <td>@course.CourseId</td>
-                    <td>@course.Title</td>
-                    <td>@course.Description</td>
-                    <td>@course.Price</td>
-                    <td>@course.CreatedAt.ToShortDateString()</td>
-                    <td>@course.UpdateAt</td>
-                    <td>
                         @if (User.IsInRole("Admin"))
                         {
-                            <a class="btn btn-sm btn-primary mb-1" asp-controller="Courses" asp-action="Edit" asp-route-id="@course.CourseId">Edit</a>
-                            <a class="btn btn-sm btn-success mb-1" asp-controller="Courses" asp-action="CourseLessons" asp-route-courseId="@course.CourseId">Lessons</a>
+                            <a asp-controller="Courses" asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-sm btn-outline-warning">Edit</a>
+                            <a asp-controller="Courses" asp-action="CourseLessons" asp-route-courseId="@course.CourseId" class="btn btn-sm btn-outline-success">Lessons</a>
                         }
-
-                        <a class="btn btn-sm btn-info mb-1" asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId">Details</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

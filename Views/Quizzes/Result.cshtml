@@ -1,0 +1,63 @@
+﻿@model progect_DEPI.ViewModels.QuizResultViewModel
+
+@{
+    ViewBag.Title = "Quiz Result";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h2 class="text-success fw-bold">✅ Quiz Result: @Model.QuizTitle</h2>
+        <p class="fs-5">
+            <strong>Your Score:</strong>
+            <span class="badge bg-secondary">@Model.Score</span> / <span class="badge bg-light">@Model.TotalQuestions</span>
+        </p>
+        <p class="text-muted">👏 Great effort! Here's how you did on each question.</p>
+    </div>
+
+    <div class="mt-4">
+        <h4 class="mb-3"><i class="bi bi-journal-check"></i> Review Your Answers</h4>
+
+        @foreach (var question in Model.Questions)
+        {
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-header bg-dark text-white">
+                    <strong>Q:</strong> @question.Text
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var answer in question.Answers)
+                    {
+                        var cssClass = "list-group-item";
+                        if (answer.IsCorrect)
+                        {
+                            cssClass += " list-group-item-success";
+                        }
+                        else if (answer.IsSelectedByUser)
+                        {
+                            cssClass += " list-group-item-danger";
+                        }
+
+                        <li class="@cssClass d-flex justify-content-between align-items-center">
+                            @answer.Text
+                            <div>
+                                @if (answer.IsCorrect)
+                                {
+                                    <span class="badge bg-success">✔ Correct</span>
+                                }
+                                @if (answer.IsSelectedByUser && !answer.IsCorrect)
+                                {
+                                    <span class="badge bg-danger">✖ Your Answer</span>
+                                }
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-controller="QuizResults" asp-action="MyResults" class="btn btn-outline-primary px-4">
+            <i class="bi bi-arrow-left-circle"></i> View All My Results
+        </a>
+    </div>
+</div>

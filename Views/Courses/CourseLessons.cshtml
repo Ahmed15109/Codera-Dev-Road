@@ -1,4 +1,5 @@
-﻿@model progect_DEPI.Models.Course
+﻿
+ @model progect_DEPI.Models.Course
 
 <div class="container mt-5">
     <h2 class="text-primary mb-4">Lessons for: @Model.Title</h2>
@@ -31,4 +32,22 @@
             </div>
         }
     </div>
+
+    <h4 class="mb-3">All Lessons</h4>
+    <ul class="list-group">
+        @foreach (var lesson in Model.Lessons)
+        {
+            <li class="list-group-item">
+                <a asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId">@lesson.Title</a>
+            </li>
+        }
+    </ul>
+
+    <div class="d-flex justify-content-end gap-2 mt-3">
+        <form method="post" asp-controller="Courses" asp-action="Delete" asp-route-id="@Model.CourseId" onsubmit="return confirm('Are you sure you want to delete this course?');">
+            <button type="submit" class="btn btn-danger">Delete Course</button>
+        </form>
+    </div>
 </div>
+
+

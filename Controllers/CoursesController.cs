@@ -15,6 +15,7 @@ namespace progect_DEPI.Controllers
         {
             this.dbContext = dbContext;
         }
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
@@ -23,6 +24,7 @@ namespace progect_DEPI.Controllers
             ViewBag.Categories = new SelectList(categories, "CategoryId", "CategoryName");
             return View();
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(AddCourseViewModel viewModel)
@@ -40,7 +42,6 @@ namespace progect_DEPI.Controllers
             await dbContext.Courses.AddAsync(course);
             await dbContext.SaveChangesAsync();
 
-
             ViewBag.Message = "Course Added successfully!";
             return View();
         }
@@ -51,6 +52,7 @@ namespace progect_DEPI.Controllers
             var courses = await dbContext.Courses.ToListAsync();
             return View(courses);
         }
+
         public IActionResult Details(int id)
         {
             var course = dbContext.Courses
@@ -70,6 +72,7 @@ namespace progect_DEPI.Controllers
             var course = await dbContext.Courses.FindAsync(id);
             return View(course);
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(Course viewModel)
@@ -86,25 +89,28 @@ namespace progect_DEPI.Controllers
             }
             return RedirectToAction("List", "Courses");
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Delete(Course viewModel)
+        public async Task<IActionResult> Delete(int id)
         {
             var course = await dbContext.Courses
                 .AsNoTracking()
-                .FirstOrDefaultAsync(c => c.CourseId == viewModel.CourseId);
+                .FirstOrDefaultAsync(c => c.CourseId == id);
+
             if (course is not null)
             {
-                dbContext.Courses.Remove(viewModel);
+                dbContext.Courses.Remove(course);
                 await dbContext.SaveChangesAsync();
             }
 
             return RedirectToAction("List", "Courses");
         }
+
         public IActionResult CourseLessons(int courseId)
         {
             var course = dbContext.Courses
-                .Include(c => c.Lessons.OrderBy(l => l.OrderNumber)) // أو .ThenBy() حسب EF
+                .Include(c => c.Lessons.OrderBy(l => l.OrderNumber))
                 .FirstOrDefault(c => c.CourseId == courseId);
 
             if (course == null)
@@ -112,6 +118,5 @@ namespace progect_DEPI.Controllers
 
             return View(course);
         }
-
     }
 }

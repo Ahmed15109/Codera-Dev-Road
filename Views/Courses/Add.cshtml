@@ -1,41 +1,52 @@
 ﻿@model progect_DEPI.ViewModels.AddCourseViewModel
 
 <div class="container mt-5">
-    <h1 class="text-primary mb-4">Add Course</h1>
+    <div class="card shadow rounded-4 border-0 p-4">
+        <h2 class="text-center text-primary mb-4">➕ Add New Course</h2>
 
-    <form method="post">
-        <div class="mb-3">
-            <label asp-for="Title" class="form-label">Course Title</label>
-            <input asp-for="Title" class="form-control" />
-        </div>
+        <form method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Title" class="form-label">Course Title</label>
+                    <input asp-for="Title" class="form-control" placeholder="Enter course title" />
+                </div>
 
-        <div class="mb-3">
-            <label asp-for="Description" class="form-label">Description</label>
-            <input asp-for="Description" class="form-control" />
-        </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Price" class="form-label">Price</label>
+                    <input asp-for="Price" class="form-control" placeholder="$100" />
+                </div>
 
-        <div class="mb-3">
-            <label asp-for="Price" class="form-label">Price</label>
-            <input asp-for="Price" class="form-control" />
-        </div>
+                <div class="col-md-12 mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="3" placeholder="Enter course description"></textarea>
+                </div>
 
-        <div class="mb-3">
-            <label asp-for="CreatedAt" class="form-label">Created At</label>
-            <input asp-for="CreatedAt" class="form-control" type="date" />
-        </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="CreatedAt" class="form-label">Created At</label>
+                    <input asp-for="CreatedAt" class="form-control" type="date" />
+                </div>
 
-        <div class="mb-3">
-            <label asp-for="UpdateAt" class="form-label">Updated At</label>
-            <input asp-for="UpdateAt" class="form-control" type="date" />
-        </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="UpdateAt" class="form-label">Updated At</label>
+                    <input asp-for="UpdateAt" class="form-control" type="date" />
+                </div>
 
-        <div class="mb-4">
-            <label asp-for="CategoryId" class="form-label">Category</label>
-            <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
-                <option value="">-- Select Category --</option>
-            </select>
-        </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="ImageUrl" class="form-label">Image URL</label>
+                    <input asp-for="ImageUrl" class="form-control" placeholder="https://example.com/image.jpg" />
+                </div>
 
-        <button type="submit" class="btn btn-success">Add Course</button>
-    </form>
+                <div class="col-md-6 mb-4">
+                    <label asp-for="CategoryId" class="form-label">Category</label>
+                    <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
+                        <option value="">-- Select Category --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-success px-4">Add Course</button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -1,111 +1,4 @@
-﻿
-//using Microsoft.AspNetCore.Identity;
-//using Microsoft.AspNetCore.Mvc;
-//using progect_DEPI.Models;
-//using progect_DEPI.ViewModels;
-//using System.Threading.Tasks;
-
-//namespace progect_DEPI.Controllers
-//{
-//    public class AccountController : Controller
-//    {
-//        private readonly UserManager<IdentityUser> _userManager;
-//        private readonly SignInManager<IdentityUser> _signInManager;
-//        private readonly ApplicationDbContext _dbContext;
-
-//        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext dbContext)
-//        {
-//            _userManager = userManager;
-//            _signInManager = signInManager;
-//            _dbContext = dbContext;
-//        }
-
-//        [HttpGet]
-//        public IActionResult Register()
-//        {
-//            return View("Register");
-//        }
-
-//        [HttpPost]
-//        public async Task<IActionResult> Register(RegisterViewModel model)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                var identityUser = new IdentityUser
-//                {
-//                    UserName = model.Email,
-//                    Email = model.Email
-//                };
-
-//                var result = await _userManager.CreateAsync(identityUser, model.Password);
-
-//                if (result.Succeeded)
-//                {
-//                    // Add user to custom Users table
-//                    var appUser = new User
-//                    {
-//                        FullName = model.name, // هنا عملنا المابنج بين name و FullName
-//                        Email = model.Email,
-//                        Picture = null,
-//                        CreatedAt = DateTime.Now,
-//                        UpdateAt = DateTime.Now,
-//                        RoleId = 2 // مثلا 2 = Student
-//                    };
-
-//                    _dbContext.Users.Add(appUser);
-//                    await _dbContext.SaveChangesAsync();
-
-//                    await _signInManager.SignInAsync(identityUser, isPersistent: false);
-//                    return RedirectToAction("Index", "Home");
-//                }
-
-//                foreach (var error in result.Errors)
-//                {
-//                    ModelState.AddModelError("", error.Description);
-//                }
-//            }
-
-//            return View(model);
-//        }
-
-//        [HttpGet]
-//        public IActionResult Login()
-//        {
-//            return View();
-//        }
-
-//        [HttpPost]
-//        public async Task<IActionResult> Login(LoginViewModel model, string ReturnUrl = "~/Home/Index")
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                var result = await _signInManager.PasswordSignInAsync(
-//                    model.Email,
-//                    model.Password,
-//                    model.RememberMe,
-//                    lockoutOnFailure: false
-//                );
-
-//                if (result.Succeeded)
-//                {
-//                    return LocalRedirect(ReturnUrl);
-//                }
-
-//                ModelState.AddModelError("", "Invalid login attempt.");
-//            }
-
-//            return View(model);
-//        }
-
-//        [HttpPost]
-//        public async Task<IActionResult> Logout()
-//        {
-//            await _signInManager.SignOutAsync();
-//            return RedirectToAction("Login", "Account");
-//        }
-//    }
-//}
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using progect_DEPI.Models;
 using progect_DEPI.ViewModels;
@@ -147,7 +40,6 @@ namespace progect_DEPI.Controllers
 
                 if (result.Succeeded)
                 {
-                    // بعد نجاح التسجيل في AspNetUsers، نحط كمان نسخة في جدول Users
                     var appUser = new User
                     {
                         FullName = model.FullName,
@@ -155,8 +47,7 @@ namespace progect_DEPI.Controllers
                         Picture = null,
                         CreatedAt = DateTime.Now,
                         UpdateAt = DateTime.Now,
-                        RoleId = 2, // Assume role 2 = Student
-                        IdentityId = identityUser.Id // ربط الجدولين ببعض
+                        IdentityId = identityUser.Id 
                     };
 
                     _dbContext.Users.Add(appUser);

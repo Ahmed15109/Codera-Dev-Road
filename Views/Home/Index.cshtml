@@ -1,32 +1,87 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px; background-image: url('img/home.jpg'); background-size: cover; background-position: center;">
+<!-- ✅ Hero Section -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom text-white" style="margin-bottom: 90px; background-image: url('img/home.jpg'); background-size: cover; background-position: center;">
     <div class="container text-center my-5 py-5">
-        <h1 class="text-white mt-4 mb-4">"Dev_Road helps you navigate your programming journey."</h1>
-        <h5 class="text-white display-1 mb-5">"Guiding you to your programming future."</h5>
-        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Tracks
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Data Science</a>
-                        <a class="dropdown-item" href="#">Front-End Developer</a>
-                        <a class="dropdown-item" href="#">Backend Developer</a>
+        <h1 class="mt-4 mb-4 fw-bold">Dev_Road helps you navigate your programming journey</h1>
+        <h5 class="display-6 mb-5">Guiding you to your programming future</h5>
+        <div class="mx-auto mb-5" style="max-width: 600px;">
+            <a class="btn btn-outline-light btn-lg mx-2" asp-controller="Courses" asp-action="List">Browse Courses</a>
+            <a class="btn btn-info btn-lg text-white mx-2" asp-controller="Account" asp-action="Register">Join Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ About Section -->
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+            <img class="img-fluid rounded shadow" src="~/img/about1.jpg" alt="About Us">
+        </div>
+        <div class="col-lg-7">
+            <h6 class="text-uppercase text-primary fw-bold mb-2">About Us</h6>
+            <h2 class="fw-bold mb-3">First Choice For Online Education Anywhere</h2>
+            <p class="mb-4">Dev_Road is an educational platform helping beginners choose the right programming track with structured hands-on learning.</p>
+            <div class="row text-center">
+                <div class="col-md-3"><h4 class="fw-bold text-primary">123</h4><p>Subjects</p></div>
+                <div class="col-md-3"><h4 class="fw-bold text-primary">1234</h4><p>Courses</p></div>
+                <div class="col-md-3"><h4 class="fw-bold text-primary">123</h4><p>Instructors</p></div>
+                <div class="col-md-3"><h4 class="fw-bold text-primary">1234</h4><p>Students</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ Why Choose Us -->
+<div class="bg-light py-5">
+    <div class="container py-4">
+        <h2 class="text-center fw-bold mb-5">Why You Should Start Learning with Us</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i class="fa fa-graduation-cap fa-3x text-primary mb-3"></i>
+                <h5 class="fw-bold">Skilled Instructors</h5>
+                <p>Experienced mentors guide your learning journey step by step.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-certificate fa-3x text-success mb-3"></i>
+                <h5 class="fw-bold">International Certificate</h5>
+                <p>Get certified with industry-recognized qualifications.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-book-reader fa-3x text-warning mb-3"></i>
+                <h5 class="fw-bold">Online Access</h5>
+                <p>Learn at your own pace, anytime and anywhere.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ Contact Form Only -->
+<div class="container-fluid bg-white py-5 border-top">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h4 class="fw-bold mb-4 text-center">Send Us A Message</h4>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required />
+                        </div>
                     </div>
-                </div>
-                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary px-4 px-lg-5">Search</button>
-                </div>
+                    <input type="text" class="form-control mb-3" placeholder="Subject" required />
+                    <textarea class="form-control mb-3" rows="4" placeholder="Message" required></textarea>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-info text-white px-4">Send</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

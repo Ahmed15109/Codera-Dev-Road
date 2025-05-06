@@ -1,38 +1,242 @@
 ﻿@model IEnumerable<Notification>
+@{
+    ViewBag.Title = "My Notifications";
 
-<h2>My Notifications</h2>
+}
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Message</th>
-            <th>Created</th>
-            <th>Status</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var n in Model)
-        {
-            <tr>
-                <td>@n.Message</td>
-                <td>@n.CreatedAt.ToShortDateString()</td>
-                <td>@(n.IsRead ? "Read" : "Unread")</td>
-                <td>
-                    @if (!n.IsRead)
-                    {
-                        <form asp-action="MarkAsRead" method="post" style="display:inline">
-                            <input type="hidden" name="id" value="@n.NotificationId" />
-                            <button type="submit" class="btn btn-sm btn-success">Mark as Read</button>
-                        </form>
-                    }
-
-                    <form asp-action="Delete" method="post" style="display:inline">
-                        <input type="hidden" name="id" value="@n.NotificationId" />
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
         }
-    </tbody>
-</table>
+
+        body {
+            background-color: #f5f7fa;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .notifications-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .table {
+            margin-top: 1.5rem;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+            .table thead th {
+                background-color: var(--primary-color);
+                color: white;
+                font-weight: 600;
+                border: none;
+                padding: 1rem;
+            }
+
+            .table tbody tr {
+                transition: all 0.2s ease;
+            }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(67, 97, 238, 0.03);
+        }
+
+        .table tbody tr:hover {
+            background-color: rgba(67, 97, 238, 0.05) !important;
+        }
+
+        .table td {
+            padding: 1rem;
+            vertical-align: middle;
+            border-top: 1px solid #eee;
+        }
+
+        .status-badge {
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .status-read {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: var(--success-color);
+        }
+
+        .status-unread {
+            background-color: rgba(220, 53, 69, 0.1);
+            color: var(--danger-color);
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-sm {
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8125rem;
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+            .btn-success:hover {
+                background-color: #218838;
+                border-color: #1e7e34;
+                transform: translateY(-1px);
+            }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                border-color: #bd2130;
+                transform: translateY(-1px);
+            }
+
+        .actions-cell {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .form-inline {
+            display: inline-block;
+        }
+
+        @@media (max-width: 768px) {
+            .notifications-container {
+                padding: 1.5rem;
+            }
+
+            .table-responsive {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .actions-cell {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notifications-container">
+        <h2>
+            <i class="fas fa-bell"></i>
+            My Notifications
+        </h2>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Message</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var n in Model)
+                    {
+                        <tr>
+                            <td>@n.Message</td>
+                            <td>@n.CreatedAt.ToString("MMM dd, yyyy")</td>
+                            <td>
+                                <span class="status-badge @(n.IsRead ? "status-read" : "status-unread")">
+                                    @(n.IsRead ? "Read" : "Unread")
+                                </span>
+                            </td>
+                            <td class="actions-cell">
+                                @if (!n.IsRead)
+                                {
+                                    <form asp-action="MarkAsRead" method="post" class="form-inline">
+                                        <input type="hidden" name="id" value="@n.NotificationId" />
+                                        <button type="submit" class="btn btn-sm btn-success">
+                                            <i class="fas fa-check-circle"></i> Mark as Read
+                                        </button>
+                                    </form>
+                                }
+
+                                <form asp-action="Delete" method="post" class="form-inline">
+                                    <input type="hidden" name="id" value="@n.NotificationId" />
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="fas fa-trash-alt"></i> Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add confirmation for delete actions
+        document.querySelectorAll('form[asp-action="Delete"]').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                if (!confirm('Are you sure you want to delete this notification?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

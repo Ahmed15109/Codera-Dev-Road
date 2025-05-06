@@ -1,39 +1,49 @@
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using progect_DEPI.Models;
 using System.Diagnostics;
 
 namespace progect_DEPI.Controllers
 {
-	//[Authorize(Roles = "Admin")]
-	public class HomeController : Controller
-	{
-		private readonly ILogger<HomeController> _logger;
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
 
-		public HomeController(ILogger<HomeController> logger)
-		{
-			_logger = logger;
-		}
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
 
-		public IActionResult Index()
-		{
-			return View();
-		}
+        public IActionResult Index()
+        {
+            // ✅ توجيه حسب الصلاحيات
+            if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                    return RedirectToAction("List", "Courses");
 
-		public IActionResult Privacy()
-		{
-			return View();
-		}
+                if (User.IsInRole("Student"))
+                    return RedirectToAction("MyResults", "QuizResults");
+            }
+
+            // ✅ للي مش مسجل دخول يفضل في Landing Page
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
         public IActionResult About()
         {
-            return View(); 
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-		public IActionResult Error()
-		{
-			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-		}
-	}
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
 }

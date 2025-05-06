@@ -8,5 +8,6 @@
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdateAt { get; set; }
         public int CategoryId { get; set; }
+        public string? ImageUrl { get; set; }
     }
 }

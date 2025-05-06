@@ -1,21 +1,55 @@
 ﻿@model progect_DEPI.Models.Category
 
-<h2>@Model.CategoryName</h2>
-
-<h4>Courses in this category:</h4>
-@if (Model.Courses.Any())
-{
-    <ul>
-        @foreach (var course in Model.Courses)
-        {
-            <li>
-                <strong>@course.Title</strong> - @course.Description - $@course.Price
-            </li>
-        }
-    </ul>
-}
-else
-{
-    <p>No courses available in this category.</p>
+@{
+    ViewBag.Title = "Track Details";
 }
 
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary fw-bold">Track: @Model.CategoryName</h2>
+    <p class="lead text-muted">@Model.Description</p>
+
+    @if (Model.Courses != null && Model.Courses.Any())
+    {
+        <div class="row">
+            @foreach (var course in Model.Courses)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@course.Title</h5>
+                            <p class="card-text text-muted">@course.Description</p>
+                            <p><span class="fw-bold">Price:</span> $@course.Price</p>
+
+                            <div class="d-flex justify-content-between">
+                                <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId" class="btn btn-outline-primary btn-sm">
+                                    View Details
+                                </a>
+
+                                @if (User.IsInRole("Student"))
+                                {
+                                    <form asp-controller="Enrollments" asp-action="Enroll" asp-route-courseId="@course.CourseId" method="post" class="d-inline">
+                                        <button type="submit" class="btn btn-info btn-sm text-white">
+                                            Enroll Now
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning mt-4">
+            No courses available in this track.
+        </div>
+    }
+
+    <div class="mt-4">
+        <a asp-controller="Category" asp-action="List" class="btn btn-secondary">
+            <i class="bi bi-arrow-left-circle"></i> Back to Tracks
+        </a>
+    </div>
+</div>

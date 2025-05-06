@@ -10,11 +10,12 @@ namespace progect_DEPI.Models
         public decimal Price { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdateAt { get; set; }
+        public string? ImageUrl { get; set; } 
 
         public virtual ICollection<Lesson> Lessons { get; set; } = new List<Lesson>();
         public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
         public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
-        public virtual ICollection<Quiz> Quizzes { get; set; } = new List<Quiz>();
+        public virtual ICollection<Quizzes> Quizzes { get; set; } = new List<Quizzes>();
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }

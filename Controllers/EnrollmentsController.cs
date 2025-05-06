@@ -15,6 +15,8 @@ namespace progect_DEPI.Controllers
             this.dbContext = dbContext;
         }
 
+        // ✅ Admin only: View all enrollments
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> List()
         {
@@ -26,6 +28,7 @@ namespace progect_DEPI.Controllers
             return View(enrollments);
         }
 
+        // ✅ Admin only: Add enrollment manually
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
@@ -45,6 +48,7 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
+        // ✅ Admin only: Edit enrollment
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
@@ -73,6 +77,7 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
+        // ✅ Admin only: Delete enrollment
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
@@ -86,6 +91,8 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
+        // ✅ Admin can view all, Student can only view his own
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
@@ -95,7 +102,66 @@ namespace progect_DEPI.Controllers
                 .FirstOrDefaultAsync(e => e.EnrollmentId == id);
 
             if (enrollment == null) return NotFound();
-            return View(enrollment);
+
+            var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+
+            if (User.IsInRole("Admin") || enrollment.User.IdentityId == currentUserId)
+            {
+                return View(enrollment);
+            }
+
+            return Forbid();
+        }
+
+        // ✅ Student only: Enroll in a course
+        [Authorize(Roles = "Student")]
+        [HttpPost]
+        public async Task<IActionResult> Enroll(int courseId)
+        {
+            var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
+            if (user == null) return Unauthorized();
+
+            bool alreadyEnrolled = await dbContext.Enrollments
+                .AnyAsync(e => e.UserId == user.UserId && e.CourseId == courseId);
+
+            if (alreadyEnrolled)
+            {
+                TempData["Error"] = "You are already enrolled in this course.";
+                return RedirectToAction("Details", "Courses", new { id = courseId });
+            }
+
+            var enrollment = new Enrollment
+            {
+                CourseId = courseId,
+                UserId = user.UserId,
+                EnrolledAt = DateTime.Now,
+                Status = "Active",
+                PaymentStatus = "Pending"
+            };
+
+            dbContext.Enrollments.Add(enrollment);
+            await dbContext.SaveChangesAsync();
+
+            TempData["Success"] = "Enrolled successfully!";
+            return RedirectToAction("MyEnrollments");
+        }
+
+        // ✅ Student only: View their own enrollments
+        [Authorize(Roles = "Student")]
+        [HttpGet]
+        public async Task<IActionResult> MyEnrollments()
+        {
+            var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
+            if (user == null) return Unauthorized();
+
+            var enrollments = await dbContext.Enrollments
+                .Include(e => e.Course)
+                .Where(e => e.UserId == user.UserId)
+                .ToListAsync();
+
+            return View(enrollments);
         }
     }
 }

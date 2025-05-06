@@ -1,0 +1,50 @@
+﻿@model IEnumerable<progect_DEPI.Models.QuizResult>
+
+<h1 class="text-primary">My Quiz Results</h1>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">You haven't taken any quizzes yet.</div>
+}
+else
+{
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="thead-dark">
+            <tr>
+                <th>Quiz</th>
+                <th>Score</th>
+                <th>Taken At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in Model)
+            {
+                <tr>
+                    <td>@result.Quiz?.Title</td>
+                    <td>
+                        @if (result.Score >= 80)
+                        {
+                            <span class="text-success">@result.Score</span> <i class="fas fa-smile"></i>
+                        }
+                        else if (result.Score >= 50)
+                        {
+                            <span class="text-warning">@result.Score</span> <i class="fas fa-meh"></i>
+                        }
+                        else
+                        {
+                            <span class="text-danger">@result.Score</span> <i class="fas fa-sad-tear"></i>
+                        }
+                    </td>
+                    <td>@result.TakenAt.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a asp-action="Details" asp-route-id="@result.QuizResultId" class="btn btn-info btn-sm">Details</a>
+                            <!-- يمكن إضافة أزرار أخرى مثل إعادة المحاولة أو التعديل هنا -->
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

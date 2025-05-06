@@ -1,46 +1,66 @@
 ﻿@model IEnumerable<progect_DEPI.Models.Enrollment>
-
-<h1>All Enrollments</h1>
-
-@if (User.IsInRole("Admin"))
-{
-    <a asp-action="Add" class="btn btn-primary mb-3">+ Add Enrollment</a>
+@{
+    ViewBag.Title = "Enrollments";
 }
+<div class="container mt-4">
+    <h2 class="text-primary mb-4"><i class="bi bi-person-lines-fill"></i> Enrollment Records</h2>
 
-<table class="table table-bordered table-striped mt-3">
-    <thead>
-        <tr>
-            <th>User</th>
-            <th>Course</th>
-            <th>Status</th>
-            <th>Payment</th>
-            <th>Enrolled At</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var e in Model)
-        {
-            <tr>
-                <td>@e.User?.FullName</td>
-                <td>@e.Course?.Title</td>
-                <td>@e.Status</td>
-                <td>@e.PaymentStatus</td>
-                <td>@e.EnrolledAt.ToString("g")</td>
-                <td>
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-                        <a asp-action="Details" asp-route-id="@e.EnrollmentId" class="btn btn-info btn-sm">Details</a>
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="d-flex justify-content-end mb-3">
+            <a asp-action="Add" class="btn btn-success">
+                <i class="bi bi-plus-circle me-1"></i> Add Enrollment
+            </a>
+        </div>
+    }
 
-                        @if (User.IsInRole("Admin"))
-                        {
-                            <a asp-action="Edit" asp-route-id="@e.EnrollmentId" class="btn btn-warning btn-sm">Edit</a>
-                            <form asp-action="Delete" asp-route-id="@e.EnrollmentId" method="post" onsubmit="return confirm('Are you sure?')">
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
-                        }
-                    </div>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered shadow-sm align-middle">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>User</th>
+                    <th>Course</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Enrolled At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model)
+                {
+                    <tr class="text-center">
+                        <td class="text-start">@e.User?.FullName</td>
+                        <td>@e.Course?.Title</td>
+                        <td><span class="badge bg-primary">@e.Status</span></td>
+                        <td><span class="badge bg-info text-dark">@e.PaymentStatus</span></td>
+                        <td>@e.EnrolledAt.ToString("g")</td>
+                        <td>
+                            <div class="btn-group btn-group-sm gap-1" role="group">
+                                <a asp-action="Details" asp-route-id="@e.EnrollmentId" class="btn btn-outline-info" title="Details">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-action="Edit" asp-route-id="@e.EnrollmentId" class="btn btn-outline-warning" title="Edit">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <form asp-action="Delete" asp-route-id="@e.EnrollmentId" method="post" class="d-inline"
+                                          onsubmit="return confirm('Are you sure you want to delete this enrollment?');">
+                                        <button type="submit" class="btn btn-outline-danger" title="Delete">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+}

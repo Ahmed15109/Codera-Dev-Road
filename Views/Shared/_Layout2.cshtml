@@ -1,4 +1,4 @@
-﻿
+﻿@* 
     @using Microsoft.AspNetCore.Identity
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,6 @@
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav mx-auto py-0">
                     <a asp-controller="Home" asp-action="Index" class="nav-item nav-link">Home</a>
-                    <a asp-controller="Home" asp-action="About" class="nav-item nav-link">About</a>
                     <a asp-controller="Category" asp-action="List" class="nav-item nav-link">Tracks</a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Courses</a>
@@ -46,6 +45,8 @@
                             <a asp-controller="Quizzes" asp-action="List" class="dropdown-item">Quizzes</a>
                         </div>
                     </div>
+                    <a asp-controller="Home" asp-action="About" class="nav-item nav-link">About</a>
+
                     <a asp-controller="Home" asp-action="Privacy" class="nav-item nav-link">Contact</a>
                 </div>
 
@@ -100,25 +101,13 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-4 mb-5">
-                    <h3 class="text-white mb-4">Get In Touch</h3>
-                    <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, Egypt, Assuit</p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope mr-2"></i>devroad123.com</p>
-                    <div class="d-flex justify-content-start mt-4">
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
-                        <a class="text-white" href="#"><i class="fab fa-2x fa-instagram"></i></a>
-                    </div>
             
                 <div class="row">
                     <div class="col-md-4 mb-5">
                         <h3 class="text-white mb-4">Get In Touch</h3>
                         <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, Egypt,Assuit</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
-                        <p><i class="fa fa-envelope mr-2"></i>devroad123@gmail.com</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+01024842730</p>
+                            <p><i class="fa fa-envelope mr-2"></i>ahmedalshafei755@gmail.com</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-twitter"></i></a>
                             <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
@@ -151,5 +140,142 @@
     <script src="~/js/main.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
+</body>
+</html>
+ *@
+ @using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - progect_DEPI</title>
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/progect_DEPI.styles.css" asp-append-version="true" />
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- ✅ Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">progect_DEPI</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="List">Tracks</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="List">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Quizzes" asp-action="List">Quizzes</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Certificates" asp-action="List">Certificates</a></li>
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Enrollments" asp-action="List">Enrollments</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="QuizResults" asp-action="List">All Results</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Quizzes" asp-action="Add">Add Quiz</a></li>
+                        }
+                        else if (User.IsInRole("Student"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Enrollments" asp-action="MyEnrollments">My Enrollments</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="QuizResults" asp-action="MyResults">My Results</a></li>
+                        }
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <span class="navbar-text text-light me-2">Hello, @User.Identity.Name</span>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-outline-light">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Login">Login</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Account" asp-action="Register">Register</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ✅ Main Content -->
+    <div class="container">
+        <main role="main" class="pb-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- ✅ Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+        <div class="container">
+            <div class="row text-center text-md-start">
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-info fw-bold mb-3">DEV_ROAD</h5>
+                    <p>We help beginners find their path into tech by offering structured, hands-on learning experiences.</p>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <p><i class="bi bi-geo-alt-fill me-2"></i> Assiut, Egypt</p>
+                    <p><i class="bi bi-telephone-fill me-2"></i> 01024842730</p>
+                    <p><i class="bi bi-envelope-fill me-2"></i> ahmedalshafei755@gmail.com</p>
+                    <div class="mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" />
+                            <button class="btn btn-info text-white">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="my-3" />
+            <div class="text-center">
+                <small>&copy; 2025 DEV_ROAD. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

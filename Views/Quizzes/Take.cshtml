@@ -1,0 +1,42 @@
+﻿@model progect_DEPI.ViewModels.TakeQuizViewModel
+
+@{
+    ViewBag.Title = "Take Quiz";
+}
+
+<h1 class="text-primary">Quiz: @Model.QuizTitle</h1>
+
+<form asp-action="SubmitAnswers" asp-controller="Quizzes" method="post">
+    <input type="hidden" name="QuizId" value="@Model.QuizId" />
+
+    @for (var index = 0; index < Model.Questions.Count; index++)
+    {
+        var question = Model.Questions[index];
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <strong>Q@(@index + 1):</strong> @question.Text
+            </div>
+            <div class="card-body">
+                @foreach (var answer in question.Answers)
+                {
+                    <div class="form-check mb-2">
+                        <input class="form-check-input"
+                               type="radio"
+                               name="Submissions[@index].SelectedAnswerId"
+                               value="@answer.AnswerId"
+                               required />
+                        <label class="form-check-label">@answer.Text</label>
+                    </div>
+                }
+
+                <input type="hidden" name="Submissions[@index].QuestionId" value="@question.QuestionId" />
+            </div>
+        </div>
+    }
+
+    <div class="d-flex justify-content-between">
+        <a href="@Url.Action("List", "Quizzes")" class="btn btn-secondary">Back to Quizzes</a>
+        <button type="submit" class="btn btn-success">Submit Quiz</button>
+    </div>
+</form>
