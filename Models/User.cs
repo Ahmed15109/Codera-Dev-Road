@@ -18,7 +18,7 @@
         public virtual ICollection<Notification> Notifications { get; set; }
         public virtual ICollection<Quiz> Quizzes { get; set; }
 
-        public int RoleId { get; set; }
-        public virtual Role Role { get; set; }
+        
+        
     }
 }

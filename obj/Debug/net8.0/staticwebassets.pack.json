@@ -1,763 +1,763 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\progect_DEPI.bundle.scp.css",
-      "PackagePath": "staticwebassets\\progect_DEPI.iq3jcayg16.bundle.scp.css"
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\progect_DEPI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\progect_DEPI.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\libwkhtmltox.a",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\Rotativa\\libwkhtmltox.a",
       "PackagePath": "staticwebassets\\Rotativa\\libwkhtmltox.a"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
       "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\Rotativa\\wkhtmltox.dll",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\Rotativa\\wkhtmltox.dll",
       "PackagePath": "staticwebassets\\Rotativa\\wkhtmltox.dll"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\login.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\style.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\css\\style.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\css\\style.min.css",
       "PackagePath": "staticwebassets\\css\\style.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\Icon.jpeg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\Icon.jpeg",
       "PackagePath": "staticwebassets\\img\\Icon.jpeg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\about.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\about.jpg",
       "PackagePath": "staticwebassets\\img\\about.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\about1.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\about1.jpg",
       "PackagePath": "staticwebassets\\img\\about1.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\about2.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\about2.jpg",
       "PackagePath": "staticwebassets\\img\\about2.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\bg-image.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\bg-image.jpg",
       "PackagePath": "staticwebassets\\img\\bg-image.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-1.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-1.jpg",
       "PackagePath": "staticwebassets\\img\\courses-1.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-2.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-2.jpg",
       "PackagePath": "staticwebassets\\img\\courses-2.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-3.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-3.jpg",
       "PackagePath": "staticwebassets\\img\\courses-3.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-4.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-4.jpg",
       "PackagePath": "staticwebassets\\img\\courses-4.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-5.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-5.jpg",
       "PackagePath": "staticwebassets\\img\\courses-5.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-6.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-6.jpg",
       "PackagePath": "staticwebassets\\img\\courses-6.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\courses-80x80.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\courses-80x80.jpg",
       "PackagePath": "staticwebassets\\img\\courses-80x80.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\feature.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\feature.jpg",
       "PackagePath": "staticwebassets\\img\\feature.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\header.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\header.jpg",
       "PackagePath": "staticwebassets\\img\\header.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\home.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\home.jpg",
       "PackagePath": "staticwebassets\\img\\home.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\overlay-bottom.png",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\overlay-bottom.png",
       "PackagePath": "staticwebassets\\img\\overlay-bottom.png"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\overlay-top.png",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\overlay-top.png",
       "PackagePath": "staticwebassets\\img\\overlay-top.png"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\page-header.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\page-header.jpg",
       "PackagePath": "staticwebassets\\img\\page-header.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\team-1.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\team-1.jpg",
       "PackagePath": "staticwebassets\\img\\team-1.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\team-2.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\team-2.jpg",
       "PackagePath": "staticwebassets\\img\\team-2.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\team-3.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\team-3.jpg",
       "PackagePath": "staticwebassets\\img\\team-3.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\team-4.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\team-4.jpg",
       "PackagePath": "staticwebassets\\img\\team-4.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\testimonial-1.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-1.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\img\\testimonial-2.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\img\\testimonial-2.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-2.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\js\\main.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\js\\main.js",
       "PackagePath": "staticwebassets\\js\\main.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_badge.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_button-group.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_buttons.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_card.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_carousel.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_close.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_code.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_code.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_code.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_custom-forms.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_custom-forms.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_custom-forms.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_dropdown.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_forms.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_functions.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_grid.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_images.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_input-group.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_input-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_input-group.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_jumbotron.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_jumbotron.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_jumbotron.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_list-group.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_media.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_media.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_media.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_mixins.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_modal.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_nav.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_navbar.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_pagination.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_popover.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_print.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_print.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_print.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_progress.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_reboot.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_root.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_spinners.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tables.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_toasts.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tooltip.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_transitions.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_type.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_utilities.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_background-variant.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_badge.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_badge.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_float.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_float.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_float.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid-framework.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_hover.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_hover.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_nav-divider.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_screen-reader.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_size.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_size.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_size.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-row.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_table-row.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-emphasis.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-hide.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visibility.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_visibility.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_align.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_align.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_align.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_background.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_background.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_background.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_borders.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_borders.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_clearfix.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_display.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_display.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_display.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_embed.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_embed.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_flex.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_flex.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_float.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_float.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_float.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_interactions.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_interactions.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_overflow.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_overflow.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_position.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_position.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_position.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_screenreaders.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_shadows.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_shadows.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_sizing.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_sizing.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_spacing.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_spacing.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_stretched-link.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_text.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_text.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_text.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_visibility.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_visibility.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\scss\\style.scss",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\scss\\style.scss",
       "PackagePath": "staticwebassets\\scss\\style.scss"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\images\\2d824be4c7e915cb19377f1f02ac8c38.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\images\\2d824be4c7e915cb19377f1f02ac8c38.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\2d824be4c7e915cb19377f1f02ac8c38.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\images\\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\videos\\1f6f347b6eb624190a59d83bd154cecd.mp4",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\videos\\1f6f347b6eb624190a59d83bd154cecd.mp4",
       "PackagePath": "staticwebassets\\uploads\\videos\\1f6f347b6eb624190a59d83bd154cecd.mp4"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4",
       "PackagePath": "staticwebassets\\uploads\\videos\\651ec518ebb6dad1126979e28e43b1de.mp4"
     },
     {
-      "Id": "C:\\Users\\Ahmed\\Source\\Repos\\DEPI-Project\\wwwroot\\uploads\\videos\\d4925d5eab958c868824d5e0ea0cfb4c.mp4",
+      "Id": "C:\\Users\\SAMA\\Source\\Repos\\Codora-DEPI\\wwwroot\\uploads\\videos\\d4925d5eab958c868824d5e0ea0cfb4c.mp4",
       "PackagePath": "staticwebassets\\uploads\\videos\\d4925d5eab958c868824d5e0ea0cfb4c.mp4"
     },
     {
@@ -771,10 +771,6 @@
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.progect_DEPI.props",
       "PackagePath": "buildTransitive\\progect_DEPI.props"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.progect_DEPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.progect_DEPI.Microsoft.AspNetCore.StaticWebAssets.props",

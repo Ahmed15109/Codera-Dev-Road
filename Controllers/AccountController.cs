@@ -155,7 +155,6 @@ namespace progect_DEPI.Controllers
                         Picture = null,
                         CreatedAt = DateTime.Now,
                         UpdateAt = DateTime.Now,
-                        RoleId = 2, // Assume role 2 = Student
                         IdentityId = identityUser.Id // ربط الجدولين ببعض
                     };
 

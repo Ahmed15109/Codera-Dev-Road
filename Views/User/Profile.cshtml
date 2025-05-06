@@ -1,18 +1,287 @@
 ﻿@model User
-
 @{
-    ViewBag.Title = "Profile";
+
 }
 
-<h2>@Model.FullName's Profile</h2>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.FullName Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+            :root {
+            --primary-color: #4361ee;
 
-<div class="card" style="width: 20rem;">
-    <img class="card-img-top" src="@Model.Picture" alt="Profile Picture" />
-    <div class="card-body">
-        <h5 class="card-title">@Model.FullName</h5>
-        <p class="card-text"><strong>Email:</strong> @Model.Email</p>
-        <p class="card-text"><strong>Role:</strong> @Model.Role?.RoleName</p>
-        <p class="card-text"><strong>Joined:</strong> @Model.CreatedAt.ToShortDateString()</p>
-        <a asp-action="Edit" asp-route-id="@Model.UserId" class="btn btn-primary">Edit Profile</a>
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-header h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-image-section {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .profile-info-section {
+            flex: 2;
+            padding: 2rem;
+        }
+
+        .info-section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 1.2rem;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 1rem;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--dark-color);
+        }
+
+        .info-content p {
+            color: #6c757d;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>@Model.FullName's Profile</h1>
+            <p>View and manage your profile information</p>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-image-section">
+                <img src="@Model.Picture" alt="Profile Picture" class="profile-img">
+                <h2 class="profile-name">@Model.FullName</h2>
+
+
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="profile-info-section">
+                <h3 class="info-section-title">Personal Details</h3>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Email</h4>
+                        <p>@Model.Email</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Joined Date</h4>
+                        <p>@Model.CreatedAt.ToShortDateString()</p>
+                    </div>
+                </div>
+
+                @if (Model.UpdateAt.HasValue)
+                {
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Last Updated</h4>
+                            <p>@Model.UpdateAt.Value.ToShortDateString()</p>
+                        </div>
+                    </div>
+                }
+
+                <div class="action-buttons">
+                    <a asp-action="Eidt" asp-route-id="@Model.UserId" class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </a>
+
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</body>
+</html>

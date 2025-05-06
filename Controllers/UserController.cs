@@ -22,7 +22,6 @@ namespace progect_DEPI.Controllers
             if (id == null) return NotFound();
 
             var user = await _context.Users
-                .Include(u => u.Role)
                 .FirstOrDefaultAsync(u => u.UserId == id);
 
             if (user == null) return NotFound();
@@ -39,9 +38,6 @@ namespace progect_DEPI.Controllers
             var user = await _context.Users.FindAsync(id);
             if (user == null) return NotFound();
 
-            ViewBag.Role = new SelectList(await _context.Roles
-                .Where(r => r.RoleName == "Instructor" || r.RoleName == "Student")
-                .ToListAsync(), "RoleId", "Name", user.RoleId);
 
             return View(user);
         }
@@ -69,46 +65,14 @@ namespace progect_DEPI.Controllers
                         throw;
                 }
             }
-
-            ViewBag.Roles = new SelectList(_context.Roles, "RoleId", "Name", user.RoleId);
             return View(user);
         }
 
         
-        public async Task<IActionResult> Instructors(string search)
-        {
-            var query = _context.Users
-                .Include(u => u.Role)
-                .Where(u => u.Role.RoleName == "Instructor");
-
-            if (!string.IsNullOrEmpty(search))
-            {
-                query = query.Where(u => u.FullName.Contains(search) || u.Email.Contains(search));
-            }
-
-            var instructors = await query.ToListAsync();
-            ViewBag.Search = search;
-
-            return View(instructors);
-        }
+        
 
         
-        public async Task<IActionResult> Students(string search)
-        {
-            var query = _context.Users
-                .Include(u => u.Role)
-                .Where(u => u.Role.RoleName == "Student");
-
-            if (!string.IsNullOrEmpty(search))
-            {
-                query = query.Where(u => u.FullName.Contains(search) || u.Email.Contains(search));
-            }
-
-            var students = await query.ToListAsync();
-            ViewBag.Search = search;
-
-            return View(students);
-        }
+        
     }
 
 }
