@@ -1,5 +1,47 @@
-﻿@model progect_DEPI.Models.Course
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using progect_DEPI.Models
+@model progect_DEPI.Models.Course
+@inject UserManager<IdentityUser> UserManager
+@inject ApplicationDbContext dbContext
 
+@{
+    var currentUser = await UserManager.GetUserAsync(User);
+    var isAdmin = User.IsInRole("Admin");
+    var isEnrolled = false;
+
+    if (!isAdmin && currentUser != null)
+    {
+        var userId = currentUser.Id;
+        isEnrolled = dbContext.Enrollments
+            .Any(e => e.User.IdentityId == userId && e.CourseId == Model.CourseId);
+    }
+}
+
+<div class="container mt-4">
+    <!-- باقي محتوى الصفحة -->
+    @if (isAdmin)
+    {
+        <div class="alert alert-info">
+            <i class="bi bi-shield-lock"></i> Admin cannot enroll in courses.
+        </div>
+    }
+    else if (isEnrolled)
+    {
+        <div class="alert alert-success">
+            <i class="bi bi-check-circle"></i> You are already enrolled in this course.
+        </div>
+    }
+    else
+    {
+        <form asp-controller="Enrollments" asp-action="Enroll" method="post">
+            <input type="hidden" name="courseId" value="@Model.CourseId" />
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-journal-plus"></i> Enroll Now
+            </button>
+        </form>
+    }
 <div class="container mt-4">
     <!-- Course Header -->
     <div class="course-header bg-light p-4 rounded-3 mb-4">

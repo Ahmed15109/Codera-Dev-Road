@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using progect_DEPI.Models;
+using System.Security.Claims;
 
 namespace progect_DEPI.Controllers
 {
@@ -108,41 +109,93 @@ namespace progect_DEPI.Controllers
             return Forbid();
         }
 
+        //[Authorize(Roles = "User")]
+        //[HttpPost]
+        //public async Task<IActionResult> Enroll(int courseId)
+        //{
+        //    var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+        //    var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
+
+        //    if (user == null)
+        //    {
+        //        return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("CourseLessons", "Courses", new { courseId }) });
+        //    }
+
+        //    bool alreadyEnrolled = await dbContext.Enrollments
+        //        .AnyAsync(e => e.UserId == user.UserId && e.CourseId == courseId);
+
+        //    if (alreadyEnrolled)
+        //    {
+        //        TempData["Message"] = "You are already enrolled in this course.";
+        //        return RedirectToAction("CourseLessons", "Courses", new { courseId });
+        //    }
+
+        //    var enrollment = new Enrollment
+        //    {
+        //        CourseId = courseId,
+        //        UserId = user.UserId,
+        //        EnrolledAt = DateTime.Now,
+        //        Status = "Active",
+        //        PaymentStatus = "Pending"
+        //    };
+
+        //    dbContext.Enrollments.Add(enrollment);
+        //    await dbContext.SaveChangesAsync();
+
+        //    TempData["Message"] = "You have been successfully enrolled in the course!";
+        //    return RedirectToAction("CourseLessons", "Courses", new { courseId });
+        //}
         [Authorize(Roles = "User")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Enroll(int courseId)
         {
-            var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
-
-            if (user == null)
+            try
             {
-                return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("CourseLessons", "Courses", new { courseId }) });
-            }
+                var identityId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
 
-            bool alreadyEnrolled = await dbContext.Enrollments
-                .AnyAsync(e => e.UserId == user.UserId && e.CourseId == courseId);
+                if (user == null)
+                {
+                    return RedirectToAction("Login", "Account", new { returnUrl = $"/Courses/CourseLessons/{courseId}" });
+                }
 
-            if (alreadyEnrolled)
-            {
-                TempData["Message"] = "You are already enrolled in this course.";
+                var course = await dbContext.Courses.FindAsync(courseId);
+                if (course == null)
+                {
+                    TempData["ErrorMessage"] = "Course not found.";
+                    return RedirectToAction("Index", "Courses");
+                }
+
+                var existingEnrollment = await dbContext.Enrollments
+                    .FirstOrDefaultAsync(e => e.UserId == user.UserId && e.CourseId == courseId);
+
+                if (existingEnrollment != null)
+                {
+                    TempData["ErrorMessage"] = "You are already enrolled in this course.";
+                    return RedirectToAction("CourseLessons", "Courses", new { courseId });
+                }
+
+                var enrollment = new Enrollment
+                {
+                    CourseId = courseId,
+                    UserId = user.UserId,
+                    EnrolledAt = DateTime.Now,
+                    Status = "Active",
+                    PaymentStatus = "Pending"
+                };
+
+                dbContext.Enrollments.Add(enrollment);
+                await dbContext.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "You have been successfully enrolled in the course!";
                 return RedirectToAction("CourseLessons", "Courses", new { courseId });
             }
-
-            var enrollment = new Enrollment
+            catch (Exception ex)
             {
-                CourseId = courseId,
-                UserId = user.UserId,
-                EnrolledAt = DateTime.Now,
-                Status = "Active",
-                PaymentStatus = "Pending"
-            };
-
-            dbContext.Enrollments.Add(enrollment);
-            await dbContext.SaveChangesAsync();
-
-            TempData["Message"] = "You have been successfully enrolled in the course!";
-            return RedirectToAction("CourseLessons", "Courses", new { courseId });
+                TempData["ErrorMessage"] = $"An error occurred: {ex.Message}";
+                return RedirectToAction("Index", "Courses");
+            }
         }
 
         [Authorize(Roles = "User")]
@@ -160,5 +213,6 @@ namespace progect_DEPI.Controllers
 
             return View(enrollments);
         }
+
     }
 }
