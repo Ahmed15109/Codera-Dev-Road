@@ -9,217 +9,217 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = progect_DEPI
 build_property.RootNamespace = progect_DEPI
-build_property.ProjectDir = C:\Users\Ahmed\Source\Repos\Codora-DEPI\
+build_property.ProjectDir = C:\Users\org\Source\Repos\Codera-Dev-Road\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Ahmed\Source\Repos\Codora-DEPI
+build_property.MSBuildProjectDirectory = C:\Users\org\Source\Repos\Codera-Dev-Road
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Shared/Component.razor]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Shared/Component.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Account/Login.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Account/Register.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Category/Add.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Category/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Category/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Category/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Category/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Category/List.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Category/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Certificates/Add.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Certificates/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Certificates/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Certificates/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Certificates/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Certificates/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Certificates/List.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Certificates/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Certificates/Print.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Certificates/Print.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2VydGlmaWNhdGVzXFByaW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Courses/Add.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Courses/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Courses/CourseLessons.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Courses/CourseLessons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xDb3Vyc2VMZXNzb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Courses/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Courses/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Courses/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Courses/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Courses/List.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Courses/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlc1xMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Enrollments/Add.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Enrollments/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Enrollments/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Enrollments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Enrollments/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Enrollments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Enrollments/List.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Enrollments/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Enrollments/MyEnrollments.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Enrollments/MyEnrollments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5yb2xsbWVudHNcTXlFbnJvbGxtZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Home/About.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Home/Index.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Home/Privacy.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Lessons/CourseLessons.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Lessons/CourseLessons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xDb3Vyc2VMZXNzb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Lessons/Create.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Lessons/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Lessons/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Lessons/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Lessons/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Lessons/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVzc29uc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Notifications/AllNotifications.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Notifications/AllNotifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xBbGxOb3RpZmljYXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Notifications/MyNotifications.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Notifications/MyNotifications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uc1xNeU5vdGlmaWNhdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Questions/Add.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Questions/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Questions/QuizQuestions.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Questions/QuizQuestions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25zXFF1aXpRdWVzdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/QuizResults/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/QuizResults/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelJlc3VsdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/QuizResults/MyResults.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/QuizResults/MyResults.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelJlc3VsdHNcTXlSZXN1bHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/QuizResults/SubmitResult.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/QuizResults/SubmitResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpelJlc3VsdHNcU3VibWl0UmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Quizzes/Add.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Quizzes/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Quizzes/Details.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Quizzes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Quizzes/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Quizzes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Quizzes/List.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Quizzes/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Quizzes/Result.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Quizzes/Result.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xSZXN1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Quizzes/Take.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Quizzes/Take.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVpenplc1xUYWtlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Shared/Error.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Shared/_Layout2.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Shared/_Layoutlogin.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Shared/_Layoutlogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/User/Edit.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/User/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/User/Profile.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/User/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/_ViewImports.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/_ViewStart.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Ahmed/Source/Repos/Codora-DEPI/Views/Shared/_Layout.cshtml]
+[C:/Users/org/Source/Repos/Codera-Dev-Road/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1r87qd64ps

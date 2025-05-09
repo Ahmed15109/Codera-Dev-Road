@@ -12068,23 +12068,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ahmed\\.nuget\\packages\\": {},
+    "C:\\Users\\org\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\progect_DEPI.csproj",
+      "projectUniqueName": "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\progect_DEPI.csproj",
       "projectName": "progect_DEPI",
-      "projectPath": "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\progect_DEPI.csproj",
-      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\obj\\",
+      "projectPath": "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\progect_DEPI.csproj",
+      "packagesPath": "C:\\Users\\org\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\org\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -12109,9 +12109,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -12177,8 +12177,580 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Http' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-hxrm-9w7p-39cc",
+      "libraryId": "Microsoft.AspNetCore.Http",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Abstractions' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Abstractions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Abstractions' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Abstractions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Abstractions' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Abstractions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Abstractions' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Abstractions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ApiExplorer' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ApiExplorer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ApiExplorer' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ApiExplorer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ApiExplorer' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ApiExplorer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ApiExplorer' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ApiExplorer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Core' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-3rp6-rjw4-cq39",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Core' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Core' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Core' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Core' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Core",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Cors' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-3rp6-rjw4-cq39",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Cors",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Cors' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Cors",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Cors' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Cors",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Cors' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Cors",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Cors' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Cors",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.DataAnnotations' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.DataAnnotations' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.DataAnnotations' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.DataAnnotations' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.DataAnnotations",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Formatters.Json' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Formatters.Json' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Formatters.Json' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Formatters.Json' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Formatters.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Localization' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Localization",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Localization' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Localization",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Localization' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Localization",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Localization' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Localization",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor.Host' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor.Host",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor.Host' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor.Host",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor.Host' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor.Host",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.Razor.Host' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.Razor.Host",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.TagHelpers' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.TagHelpers",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.TagHelpers' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.TagHelpers",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.TagHelpers' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.TagHelpers",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.TagHelpers' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.TagHelpers",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ViewFeatures' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-6xh7-4v2w-36q6",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ViewFeatures' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-ch6p-4jcm-h8vh",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ViewFeatures' 1.0.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-j8f4-2w4p-mhjc",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNetCore.Mvc.ViewFeatures' 1.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qhqf-ghgh-x2m4",
+      "libraryId": "Microsoft.AspNetCore.Mvc.ViewFeatures",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.NETCore.App' 1.0.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-7mfr-774f-w5r9",
+      "libraryId": "Microsoft.NETCore.App",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.NETCore.App' 1.0.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-8884-xcr4-r68p",
+      "libraryId": "Microsoft.NETCore.App",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.NETCore.Jit' 1.0.7 has a known high severity vulnerability, https://github.com/advisories/GHSA-xcvr-qv8h-m7xw",
+      "libraryId": "Microsoft.NETCore.Jit",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json' 9.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Net.Http' 4.1.2 has a known high severity vulnerability, https://github.com/advisories/GHSA-7jgj-8wvc-jh57",
+      "libraryId": "System.Net.Http",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Security.Cryptography.X509Certificates' 4.1.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-7mfr-774f-w5r9",
+      "libraryId": "System.Security.Cryptography.X509Certificates",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

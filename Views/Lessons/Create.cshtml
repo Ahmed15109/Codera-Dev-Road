@@ -1,46 +1,69 @@
 ﻿@model progect_DEPI.ViewModels.AddLessonViewModel
 
 <div class="container mt-4">
-    <h2 class="mb-4">Add Lesson</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Add New Lesson</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label asp-for="Title" class="form-label fw-bold">Lesson Title</label>
+                            <input asp-for="Title" class="form-control" placeholder="Enter lesson title" />
+                            <span asp-validation-for="Title" class="text-danger small"></span>
+                        </div>
 
-    <form asp-action="Create" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label asp-for="Title" class="form-label"></label>
-            <input asp-for="Title" class="form-control" />
+                        <div class="mb-3">
+                            <label asp-for="Content" class="form-label fw-bold">Lesson Content</label>
+                            <textarea asp-for="Content" class="form-control" rows="5" placeholder="Enter detailed content for this lesson"></textarea>
+                            <span asp-validation-for="Content" class="text-danger small"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="OrderNumber" class="form-label fw-bold">Order Number</label>
+                                <input asp-for="OrderNumber" class="form-control" placeholder="Sequence in course" />
+                                <span asp-validation-for="OrderNumber" class="text-danger small"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Level" class="form-label fw-bold">Difficulty Level</label>
+                                <input asp-for="Level" class="form-control" placeholder="Beginner/Intermediate/Advanced" />
+                                <span asp-validation-for="Level" class="text-danger small"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CourseId" class="form-label fw-bold">Select Course</label>
+                            <select asp-for="CourseId" asp-items="Model.Courses" class="form-select">
+                                <option value="">-- Select Course --</option>
+                            </select>
+                            <span asp-validation-for="CourseId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Video File</label>
+                                    <input type="file" name="videoFile" class="form-control" accept="video/*" />
+                                    <div class="form-text">MP4 format recommended</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label fw-bold">Image File</label>
+                                    <input type="file" name="imageFile" class="form-control" accept="image/*" />
+                                    <div class="form-text">JPG or PNG format</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("CourseLessons", new { courseId = Model.CourseId })" class="btn btn-outline-secondary">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Create Lesson</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <div class="mb-3">
-            <label asp-for="Content" class="form-label"></label>
-            <textarea asp-for="Content" class="form-control"></textarea>
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="OrderNumber" class="form-label"></label>
-            <input asp-for="OrderNumber" class="form-control" />
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="Level" class="form-label"></label>
-            <input asp-for="Level" class="form-control" />
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="CourseId" class="form-label">Select Course</label>
-            <select asp-for="CourseId" asp-items="Model.Courses" class="form-select">
-                <option value="">-- Select Course --</option>
-            </select>
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Video</label>
-            <input type="file" name="videoFile" class="form-control" />
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label">Image</label>
-            <input type="file" name="imageFile" class="form-control" />
-        </div>
-
-        <button type="submit" class="btn btn-success">Create</button>
-    </form>
+    </div>
 </div>

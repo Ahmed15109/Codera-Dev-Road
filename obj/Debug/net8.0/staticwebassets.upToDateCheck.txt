@@ -183,6 +183,8 @@ wwwroot\scss\style.scss
 wwwroot\uploads\images\2d824be4c7e915cb19377f1f02ac8c38.jpg
 wwwroot\uploads\images\IMG_٢٠٢٢٠٣١٨_١٤٠٩٣٧_٩.jpg
 wwwroot\uploads\images\IMG_٢٠٢٢٠٣٢١_١٠٢٩٠٨_٧.jpg
+wwwroot\uploads\images\IMG_٢٠٢٢٠٤١٣_١٤١٧٣٣_٨.jpg
+wwwroot\uploads\images\IMG_٢٠٢٢٠٤١٣_١٤١٧٥٢_٧.jpg
 wwwroot\uploads\images\IMG_٢٠٢٢٠٤٢١_١٢٥٢٥٨_٢.jpg
 wwwroot\uploads\videos\1f6f347b6eb624190a59d83bd154cecd.mp4
 wwwroot\uploads\videos\651ec518ebb6dad1126979e28e43b1de.mp4

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\progect_DEPI.csproj": {}
+    "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\progect_DEPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\progect_DEPI.csproj": {
+    "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\progect_DEPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\progect_DEPI.csproj",
+        "projectUniqueName": "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\progect_DEPI.csproj",
         "projectName": "progect_DEPI",
-        "projectPath": "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\progect_DEPI.csproj",
-        "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ahmed\\Source\\Repos\\Codora-DEPI\\obj\\",
+        "projectPath": "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\progect_DEPI.csproj",
+        "packagesPath": "C:\\Users\\org\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\org\\Source\\Repos\\Codera-Dev-Road\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\org\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -42,9 +42,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -110,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

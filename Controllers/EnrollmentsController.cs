@@ -15,7 +15,7 @@ namespace progect_DEPI.Controllers
             this.dbContext = dbContext;
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> List()
         {
@@ -27,7 +27,7 @@ namespace progect_DEPI.Controllers
             return View(enrollments);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
         {
@@ -36,7 +36,7 @@ namespace progect_DEPI.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Add(Enrollment enrollment)
         {
@@ -46,7 +46,7 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
@@ -58,7 +58,7 @@ namespace progect_DEPI.Controllers
             return View(enrollment);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Edit(Enrollment model)
         {
@@ -74,7 +74,7 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
@@ -108,21 +108,25 @@ namespace progect_DEPI.Controllers
             return Forbid();
         }
 
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> Enroll(int courseId)
         {
             var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
             var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
-            if (user == null) return Unauthorized();
+
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("CourseLessons", "Courses", new { courseId }) });
+            }
 
             bool alreadyEnrolled = await dbContext.Enrollments
                 .AnyAsync(e => e.UserId == user.UserId && e.CourseId == courseId);
 
             if (alreadyEnrolled)
             {
-                TempData["Message"] = "You are already enrolled in this course."; 
-                return RedirectToAction("MyEnrollments");
+                TempData["Message"] = "You are already enrolled in this course.";
+                return RedirectToAction("CourseLessons", "Courses", new { courseId });
             }
 
             var enrollment = new Enrollment
@@ -138,10 +142,10 @@ namespace progect_DEPI.Controllers
             await dbContext.SaveChangesAsync();
 
             TempData["Message"] = "You have been successfully enrolled in the course!";
-            return RedirectToAction("MyEnrollments");
+            return RedirectToAction("CourseLessons", "Courses", new { courseId });
         }
 
-        [Authorize(Roles = "Student")]
+        [Authorize(Roles = "User")]
         [HttpGet]
         public async Task<IActionResult> MyEnrollments()
         {

@@ -12,7 +12,10 @@ namespace progect_DEPI.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ApplicationDbContext _dbContext;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ApplicationDbContext dbContext)
+        public AccountController(
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
+            ApplicationDbContext dbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -40,6 +43,7 @@ namespace progect_DEPI.Controllers
 
                 if (result.Succeeded)
                 {
+
                     var appUser = new User
                     {
                         FullName = model.FullName,
@@ -47,7 +51,7 @@ namespace progect_DEPI.Controllers
                         Picture = null,
                         CreatedAt = DateTime.Now,
                         UpdateAt = DateTime.Now,
-                        IdentityId = identityUser.Id 
+                        IdentityId = identityUser.Id
                     };
 
                     _dbContext.Users.Add(appUser);
@@ -86,6 +90,26 @@ namespace progect_DEPI.Controllers
 
                 if (result.Succeeded)
                 {
+                    var identityUser = await _userManager.FindByEmailAsync(model.Email);
+
+
+                    var appUser = _dbContext.Users
+                        .FirstOrDefault(u => u.IdentityId == identityUser.Id);
+
+                    if (appUser != null)
+                    {
+
+                        var cookieOptions = new CookieOptions
+                        {
+                            Expires = DateTimeOffset.Now.AddDays(7),
+                            HttpOnly = true,
+                            Secure = false,
+                            SameSite = SameSiteMode.Strict
+                        };
+
+                        Response.Cookies.Append("UserId", appUser.UserId.ToString(), cookieOptions);
+                    }
+
                     return LocalRedirect(ReturnUrl);
                 }
 
@@ -98,6 +122,9 @@ namespace progect_DEPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
+
+            Response.Cookies.Delete("UserId");
+
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }

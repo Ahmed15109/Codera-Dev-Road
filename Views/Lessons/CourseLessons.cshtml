@@ -1,40 +1,28 @@
 ﻿@model progect_DEPI.Models.Course
 
 <div class="container mt-4">
-    <h2 class="mb-4">Lessons for course: @Model.Title</h2>
+    <div class="course-header bg-light p-4 rounded-3 mb-4">
+        <h1 class="display-5 fw-bold">@Model.Title</h1>
+        <p class="lead">Browse all lessons in this course</p>
+    </div>
 
     <div class="row g-4">
-        @{
-            int index = 0;
-        }
-
         @foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
         {
-            <div class="col-md-6">
-                <div class="card h-100">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h5 class="card-title">@lesson.Title</h5>
-
-                        @if (index == 0)
-                        {
-                            <div class="ratio ratio-16x9 mb-3">
-                                <video controls>
-                                    <source src="@lesson.VideoUrl" type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="alert alert-secondary text-center" style="opacity: 0.5;">
-                                You need to complete the previous lesson to unlock this video.
-                            </div>
-                        }
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title mb-0">@lesson.Title</h5>
+                            <span class="badge bg-primary">Lesson @lesson.OrderNumber</span>
+                        </div>
+                        <p class="text-muted small mb-3">Level: @lesson.Level</p>
+                        <div class="d-grid">
+                            <a href="@Url.Action("Details", new { id = lesson.LessonId })" class="btn btn-outline-primary">View Lesson</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            index++;
         }
     </div>
 </div>

@@ -10,12 +10,12 @@ namespace progect_DEPI.Controllers
 {
     public class LessonsController : Controller
     {
-            private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext dbContext;
 
-            public LessonsController(ApplicationDbContext dbContext)
-            {
-                this.dbContext = dbContext;
-            }
+        public LessonsController(ApplicationDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create(int? courseId = null)
@@ -35,54 +35,54 @@ namespace progect_DEPI.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public async Task<IActionResult> Create(AddLessonViewModel model, IFormFile videoFile, IFormFile imageFile)
-            {
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(AddLessonViewModel model, IFormFile videoFile, IFormFile imageFile)
+        {
 
 
             string videoPath = null;
-                string imagePath = null;
+            string imagePath = null;
 
-                // رفع الفيديو
-                if (videoFile != null && videoFile.Length > 0)
+            // رفع الفيديو
+            if (videoFile != null && videoFile.Length > 0)
+            {
+                var videoFileName = Path.GetFileName(videoFile.FileName);
+                var videoSavePath = Path.Combine("wwwroot/uploads/videos", videoFileName);
+
+                using (var stream = new FileStream(videoSavePath, FileMode.Create))
                 {
-                    var videoFileName = Path.GetFileName(videoFile.FileName);
-                    var videoSavePath = Path.Combine("wwwroot/uploads/videos", videoFileName);
-
-                    using (var stream = new FileStream(videoSavePath, FileMode.Create))
-                    {
-                        await videoFile.CopyToAsync(stream);
-                    }
-
-                    videoPath = "/uploads/videos/" + videoFileName;
+                    await videoFile.CopyToAsync(stream);
                 }
 
-                // رفع الصورة
-                if (imageFile != null && imageFile.Length > 0)
+                videoPath = "/uploads/videos/" + videoFileName;
+            }
+
+            // رفع الصورة
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imageFileName = Path.GetFileName(imageFile.FileName);
+                var imageSavePath = Path.Combine("wwwroot/uploads/images", imageFileName);
+
+                using (var stream = new FileStream(imageSavePath, FileMode.Create))
                 {
-                    var imageFileName = Path.GetFileName(imageFile.FileName);
-                    var imageSavePath = Path.Combine("wwwroot/uploads/images", imageFileName);
-
-                    using (var stream = new FileStream(imageSavePath, FileMode.Create))
-                    {
-                        await imageFile.CopyToAsync(stream);
-                    }
-
-                    imagePath = "/uploads/images/" + imageFileName;
+                    await imageFile.CopyToAsync(stream);
                 }
 
-                // إنشاء Lesson جديد
-                var lesson = new Lesson
-                {
-                    Title = model.Title,
-                    Content = model.Content,
-                    OrderNumber = model.OrderNumber,
-                    Level = model.Level,
-                    CourseId = model.CourseId,
-                    VideoUrl = videoPath,
-                    ImageUrl = imagePath
-                };
+                imagePath = "/uploads/images/" + imageFileName;
+            }
+
+            // إنشاء Lesson جديد
+            var lesson = new Lesson
+            {
+                Title = model.Title,
+                Content = model.Content,
+                OrderNumber = model.OrderNumber,
+                Level = model.Level,
+                CourseId = model.CourseId,
+                VideoUrl = videoPath,
+                ImageUrl = imagePath
+            };
             if (ModelState.IsValid)
             {
                 dbContext.Lessons.Add(lesson);
@@ -91,7 +91,7 @@ namespace progect_DEPI.Controllers
             }
 
             dbContext.Lessons.Add(lesson);
-                await dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync();
 
 
             return RedirectToAction("CourseLessons", "Lessons", new { courseId = model.CourseId });
