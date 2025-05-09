@@ -16,7 +16,6 @@ namespace progect_DEPI.Controllers
 
         public IActionResult Index()
         {
-            // ✅ توجيه حسب الصلاحيات
             if (User.Identity.IsAuthenticated)
             {
                 if (User.IsInRole("Admin"))
@@ -26,7 +25,6 @@ namespace progect_DEPI.Controllers
                     return RedirectToAction("MyResults", "QuizResults");
             }
 
-            // ✅ للي مش مسجل دخول يفضل في Landing Page
             return View();
         }
 

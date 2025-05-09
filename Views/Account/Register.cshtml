@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Register";
-    Layout = "_layoutlogin"; // إذا كنت لا تريد استخدام الـLayout
+    Layout = "_layoutlogin"; 
 }
 
 <!DOCTYPE html>
@@ -25,7 +25,6 @@
         <form asp-action="Register" method="post" class="pt-3">
             <div asp-validation-summary="All" class="text-danger text-center"></div>
 
-            <!-- Name -->
             <div class="form-group py-2">
                 <div class="input-field">
                     <span class="far fa-user p-2"></span>
@@ -34,7 +33,6 @@
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
 
-            <!-- Email -->
             <div class="form-group py-2">
                 <div class="input-field">
                     <span class="far fa-envelope p-2"></span>
@@ -43,7 +41,6 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
-            <!-- Password -->
             <div class="form-group py-1">
                 <div class="input-field d-flex align-items-center">
                     <span class="fas fa-lock p-2"></span>
@@ -55,7 +52,6 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <!-- Confirm Password -->
             <div class="form-group py-1 pb-2">
                 <div class="input-field d-flex align-items-center">
                     <span class="fas fa-lock p-2"></span>

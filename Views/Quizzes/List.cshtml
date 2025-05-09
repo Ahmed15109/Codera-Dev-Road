@@ -35,6 +35,10 @@
                 {
                     var isActive = quiz.Status?.ToLower() == "active";
                     <tr class="text-center @(isActive ? "table-light" : "table-warning")">
+                        <a asp-controller="Quizzes" asp-action="Take" asp-route-id="@quiz.QuizId" class="btn btn-sm btn-outline-warning" title="take">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                       
                         <td class="text-start fw-semibold">@quiz.Title</td>
                         <td>@quiz.Course?.Title</td>
                         <td>

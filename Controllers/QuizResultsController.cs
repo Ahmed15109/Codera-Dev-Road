@@ -16,7 +16,6 @@ namespace progect_DEPI.Controllers
             this.dbContext = dbContext;
         }
 
-        // ✅ عرض نتائج الطالب الحالي
         [HttpGet]
         public async Task<IActionResult> MyResults()
         {
@@ -28,29 +27,28 @@ namespace progect_DEPI.Controllers
                 return Unauthorized();
 
             var results = await dbContext.QuizResults
-                                         .Include(q => q.Quiz)
-                                         .Where(r => r.UserId == user.UserId)
-                                         .AsNoTracking()  // تحسين الأداء
-                                         .ToListAsync();
+              .Include(q => q.Quiz)
+              .Where(r => r.UserId == user.UserId)
+              .AsNoTracking()  
+              .ToListAsync();
+
 
             return View(results);
         }
 
-        // ✅ عرض كل النتائج (Admin)
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> List()
         {
             var results = await dbContext.QuizResults
-                                         .Include(r => r.Quiz)
-                                         .Include(r => r.User)
-                                         .AsNoTracking()  // تحسين الأداء
-                                         .ToListAsync();
+              .Include(r => r.Quiz)
+              .Include(r => r.User)
+              .AsNoTracking()  
+              .ToListAsync();
 
             return View(results);
         }
 
-        // ✅ عرض فورم تسجيل نتيجة كويز
         [HttpGet]
         public IActionResult SubmitResult()
         {
@@ -64,11 +62,10 @@ namespace progect_DEPI.Controllers
             return View();
         }
 
-        // ✅ تسجيل النتيجة فعليًا
         [HttpPost]
         public async Task<IActionResult> SubmitResult(int quizId, int score)
         {
-            if (score < 0 || score > 100)  // التأكد من صحة النتيجة
+            if (score < 0 || score > 100)  
             {
                 ModelState.AddModelError("score", "Score must be between 0 and 100.");
                 ViewBag.Quizzes = dbContext.Quizzes
@@ -102,7 +99,6 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("MyResults");
         }
 
-        // ✅ تفاصيل نتيجة معينة
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
@@ -116,7 +112,6 @@ namespace progect_DEPI.Controllers
             return View(result);
         }
 
-        // ✅ Admin فقط يقدر يحذف نتيجة
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)

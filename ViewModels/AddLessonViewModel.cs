@@ -12,7 +12,7 @@ namespace progect_DEPI.ViewModels
         public string Level { get; set; }
 
         public int CourseId { get; set; }
-        public List<SelectListItem> Courses { get; set; } // جديدة
+        public List<SelectListItem> Courses { get; set; }
     }
 
 }

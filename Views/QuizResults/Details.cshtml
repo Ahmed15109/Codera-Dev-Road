@@ -10,11 +10,11 @@
             <strong>Score:</strong>
             @if (Model.Score >= (Model.Quiz?.Questions.Count / 2))
             {
-                <span class="text-success">@Model.Score</span> <i class="fas fa-smile"></i> <!-- Happy face if score is high -->
+                <span class="text-success">@Model.Score</span> <i class="fas fa-smile"></i> 
             }
             else
             {
-                <span class="text-danger">@Model.Score</span> <i class="fas fa-sad-tear"></i> <!-- Sad face if score is low -->
+                <span class="text-danger">@Model.Score</span> <i class="fas fa-sad-tear"></i> 
             }
         </p>
         <p class="card-text"><strong>Taken At:</strong> @Model.TakenAt.ToString("dd/MM/yyyy HH:mm")</p>

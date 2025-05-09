@@ -15,7 +15,6 @@ namespace progect_DEPI.Controllers
             this.dbContext = dbContext;
         }
 
-        // ✅ Admin only: View all enrollments
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> List()
@@ -28,7 +27,6 @@ namespace progect_DEPI.Controllers
             return View(enrollments);
         }
 
-        // ✅ Admin only: Add enrollment manually
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Add()
@@ -48,7 +46,6 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
-        // ✅ Admin only: Edit enrollment
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
@@ -77,7 +74,6 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
-        // ✅ Admin only: Delete enrollment
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
@@ -91,7 +87,6 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("List");
         }
 
-        // ✅ Admin can view all, Student can only view his own
         [Authorize]
         [HttpGet]
         public async Task<IActionResult> Details(int id)
@@ -113,7 +108,6 @@ namespace progect_DEPI.Controllers
             return Forbid();
         }
 
-        // ✅ Student only: Enroll in a course
         [Authorize(Roles = "Student")]
         [HttpPost]
         public async Task<IActionResult> Enroll(int courseId)
@@ -127,8 +121,8 @@ namespace progect_DEPI.Controllers
 
             if (alreadyEnrolled)
             {
-                TempData["Error"] = "You are already enrolled in this course.";
-                return RedirectToAction("Details", "Courses", new { id = courseId });
+                TempData["Message"] = "You are already enrolled in this course."; 
+                return RedirectToAction("MyEnrollments");
             }
 
             var enrollment = new Enrollment
@@ -143,11 +137,10 @@ namespace progect_DEPI.Controllers
             dbContext.Enrollments.Add(enrollment);
             await dbContext.SaveChangesAsync();
 
-            TempData["Success"] = "Enrolled successfully!";
+            TempData["Message"] = "You have been successfully enrolled in the course!";
             return RedirectToAction("MyEnrollments");
         }
 
-        // ✅ Student only: View their own enrollments
         [Authorize(Roles = "Student")]
         [HttpGet]
         public async Task<IActionResult> MyEnrollments()

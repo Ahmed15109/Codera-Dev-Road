@@ -1,4 +1,5 @@
-﻿@model progect_DEPI.Models.Course
+﻿
+ @model progect_DEPI.Models.Course
 
 @{
     ViewBag.Title = "Course Details";
@@ -35,10 +36,12 @@
         else if (User.IsInRole("Student"))
         {
             <div class="mt-4 text-center">
-                <a asp-controller="Enrollments" asp-action="Enroll" asp-route-courseId="@Model.CourseId"
-                   class="btn btn-info btn-lg text-white">
-                    <i class="bi bi-check-circle me-2"></i>Enroll Now
-                </a>
+                <form asp-controller="Enrollments" asp-action="Enroll" method="post">
+                    <input type="hidden" name="courseId" value="@Model.CourseId" />
+                    <button type="submit" class="btn btn-info btn-lg text-white">
+                        <i class="bi bi-check-circle me-2"></i>Enroll Now
+                    </button>
+                </form>
             </div>
         }
     </div>

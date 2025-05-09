@@ -4,29 +4,12 @@
     var keyword = ViewBag.Keyword as string;
 }
 
-<!-- Header Start -->
 <div class="container-fluid bg-dark text-white py-4">
     <div class="container text-center">
         <h1 class="display-5 fw-bold">Explore Our Tracks</h1>
         <p class="lead">Find your learning path and start your journey today.</p>
     </div>
 </div>
-<!-- Header End -->
-<!-- Search Section -->
-<div class="container py-4">
-    <form asp-action="List" method="get" class="row justify-content-center">
-        <div class="col-md-6 col-sm-10">
-            <div class="input-group shadow-sm">
-                <input type="text" name="keyword" value="@keyword" class="form-control form-control-lg rounded-start" placeholder="Search for a track...">
-                <button class="btn btn-primary px-4 rounded-end" type="submit">
-                    <i class="fa fa-search me-1"></i> Search
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-
-<!-- Track Section -->
 <div class="container pb-5">
     <div class="text-center mb-5">
         <h6 class="text-secondary text-uppercase">Our Tracks</h6>
@@ -57,14 +40,8 @@
                                 </div>
                                 <div class="text-center mt-3">
                                     <a asp-controller="Category" asp-action="Details" asp-route-id="@category.CategoryId" class="btn btn-sm btn-outline-info me-2">
-                                        <i class="fa fa-eye"></i> Details
+                                        <i class="fa fa-eye"></i> View Courses
                                     </a>
-                                    @if (User.IsInRole("Admin"))
-                                    {
-                                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.CategoryId" class="btn btn-sm btn-outline-primary">
-                                            <i class="fa fa-edit"></i> Edit
-                                        </a>
-                                    }
                                 </div>
                             </div>
                         </div>

@@ -27,12 +27,10 @@
 @section Scripts {
     <script>
         function validateForm() {
-            // Validate quiz selection
             var quizId = document.getElementById('quizId').value;
             var score = document.getElementById('score').value;
             var valid = true;
 
-            // Show error for quiz selection
             if (quizId === "") {
                 document.getElementById('quizError').style.display = 'block';
                 valid = false;
@@ -40,7 +38,6 @@
                 document.getElementById('quizError').style.display = 'none';
             }
 
-            // Validate score input
             if (score < 0 || score > 100) {
                 document.getElementById('scoreError').style.display = 'block';
                 valid = false;

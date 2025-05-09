@@ -9,6 +9,13 @@
         <i class="bi bi-journal-check"></i> My Enrolled Courses
     </h2>
 
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-info">
+            @TempData["Message"]
+        </div>
+    }
+
     @if (!Model.Any())
     {
         <div class="alert alert-warning">You haven't enrolled in any courses yet.</div>

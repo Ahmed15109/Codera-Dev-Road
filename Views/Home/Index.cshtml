@@ -5,19 +5,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-<!-- ✅ Hero Section -->
 <div class="jumbotron jumbotron-fluid position-relative overlay-bottom text-white" style="margin-bottom: 90px; background-image: url('img/home.jpg'); background-size: cover; background-position: center;">
     <div class="container text-center my-5 py-5">
         <h1 class="mt-4 mb-4 fw-bold">Dev_Road helps you navigate your programming journey</h1>
         <h5 class="display-6 mb-5">Guiding you to your programming future</h5>
         <div class="mx-auto mb-5" style="max-width: 600px;">
-            <a class="btn btn-outline-light btn-lg mx-2" asp-controller="Courses" asp-action="List">Browse Courses</a>
-            <a class="btn btn-info btn-lg text-white mx-2" asp-controller="Account" asp-action="Register">Join Now</a>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a class="btn btn-outline-light btn-lg mx-2" asp-controller="Courses" asp-action="List">Browse Courses</a>
+                <a class="btn btn-info btn-lg text-white mx-2" asp-controller="Account" asp-action="Register">Join Now</a>
+            }
         </div>
     </div>
 </div>
 
-<!-- ✅ About Section -->
 <div class="container py-5">
     <div class="row align-items-center">
         <div class="col-lg-5 mb-4 mb-lg-0">
@@ -37,7 +38,6 @@
     </div>
 </div>
 
-<!-- ✅ Why Choose Us -->
 <div class="bg-light py-5">
     <div class="container py-4">
         <h2 class="text-center fw-bold mb-5">Why You Should Start Learning with Us</h2>
@@ -61,7 +61,6 @@
     </div>
 </div>
 
-<!-- ✅ Contact Form Only -->
 <div class="container-fluid bg-white py-5 border-top">
     <div class="container py-4">
         <div class="row justify-content-center">

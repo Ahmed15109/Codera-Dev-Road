@@ -1,11 +1,13 @@
-﻿@model List<progect_DEPI.Models.Course>
+﻿
+ @model List<progect_DEPI.Models.Course>
 
 <div class="container mt-5">
-    <div class="row mb-4 text-center">
-        <div class="col">
-            <h1 class="display-5 text-primary">Our Courses</h1>
-            <p class="text-muted">Explore our latest available courses</p>
-        </div>
+    <div class="d-flex mb-3" style="gap: 10px;">
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="Add" class="btn btn-primary">+ Add Course</a>
+        }
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">🏠 Home</a>
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -31,9 +33,20 @@
                     <div class="card-footer bg-white border-0 d-flex flex-wrap gap-2">
                         <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId" class="btn btn-sm btn-outline-primary">Details</a>
 
+                        @if (!User.IsInRole("Admin"))
+                        {
+                            <a asp-controller="Enrollments" asp-action="Add" class="btn btn-sm btn-outline-primary">enroll</a>
+
+                        }
+
                         @if (User.IsInRole("Admin"))
                         {
                             <a asp-controller="Courses" asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-sm btn-outline-warning">Edit</a>
+
+                            <form method="post" asp-controller="Courses" asp-action="Delete" asp-route-id="@course.CourseId" class="d-inline">
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure you want to delete this course?');">Delete</button>
+                            </form>
+
                             <a asp-controller="Courses" asp-action="CourseLessons" asp-route-courseId="@course.CourseId" class="btn btn-sm btn-outline-success">Lessons</a>
                         }
                     </div>
