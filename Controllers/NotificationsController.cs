@@ -52,11 +52,23 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("AllNotifications");
         }
 
-        
-        public async Task<IActionResult> MyNotifications(int? userId)
-        {
-            if (userId == null) return NotFound();
 
+        public async Task<IActionResult> MyNotifications()
+        {
+            // 🔍 جيب الـ UserId من الـ Cookie
+            string userIdStr = Request.Cookies["UserId"];
+
+            if (string.IsNullOrEmpty(userIdStr))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            if (!int.TryParse(userIdStr, out int userId))
+            {
+                return BadRequest("Invalid User ID in cookie.");
+            }
+
+            // 💾 جيب الإشعارات بناءً على userId
             var notifications = await _context.Notifications
                 .Where(n => n.UserId == userId)
                 .OrderByDescending(n => n.CreatedAt)
@@ -65,7 +77,7 @@ namespace progect_DEPI.Controllers
             return View(notifications);
         }
 
- 
+
         [HttpPost]
         public async Task<IActionResult> MarkAsRead(int id)
         {

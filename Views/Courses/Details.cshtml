@@ -1,5 +1,4 @@
-﻿
- @model progect_DEPI.Models.Course
+﻿@model progect_DEPI.Models.Course
 
 @{
     ViewBag.Title = "Course Details";
@@ -33,13 +32,14 @@
                 </form>
             </div>
         }
-        else if (User.IsInRole("Student"))
+        else 
         {
             <div class="mt-4 text-center">
-                <form asp-controller="Enrollments" asp-action="Enroll" method="post">
+                <form asp-controller="Enrollment" asp-action="Enroll" method="post">
+                    @Html.AntiForgeryToken()
                     <input type="hidden" name="courseId" value="@Model.CourseId" />
-                    <button type="submit" class="btn btn-info btn-lg text-white">
-                        <i class="bi bi-check-circle me-2"></i>Enroll Now
+                    <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-check-circle me-2"></i>سجل في الكورس
                     </button>
                 </form>
             </div>

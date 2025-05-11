@@ -1,160 +1,186 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using progect_DEPI.Models;
+using System.Security.Claims;
 
 namespace progect_DEPI.Controllers
 {
-    public class EnrollmentsController : Controller
+    [Authorize]
+    public class EnrollmentController : Controller
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext _context;
 
-        public EnrollmentsController(ApplicationDbContext dbContext)
+        public EnrollmentController(ApplicationDbContext context)
         {
-            this.dbContext = dbContext;
+            _context = context;
         }
 
-        [Authorize(Roles = "Admin")]
-        [HttpGet]
-        public async Task<IActionResult> List()
-        {
-            var enrollments = await dbContext.Enrollments
-                .Include(e => e.User)
-                .Include(e => e.Course)
-                .ToListAsync();
-
-            return View(enrollments);
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpGet]
-        public IActionResult Add()
-        {
-            ViewBag.Users = new SelectList(dbContext.Users.ToList(), "UserId", "FullName");
-            ViewBag.Courses = new SelectList(dbContext.Courses.ToList(), "CourseId", "Title");
-            return View();
-        }
-
-        [Authorize(Roles = "Admin")]
+        // تسجيل الطالب في كورس باستخدام UserId من الكوكيز
         [HttpPost]
-        public async Task<IActionResult> Add(Enrollment enrollment)
-        {
-            enrollment.EnrolledAt = DateTime.Now;
-            await dbContext.Enrollments.AddAsync(enrollment);
-            await dbContext.SaveChangesAsync();
-            return RedirectToAction("List");
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpGet]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var enrollment = await dbContext.Enrollments.FindAsync(id);
-            if (enrollment == null) return NotFound();
-
-            ViewBag.Users = new SelectList(dbContext.Users.ToList(), "UserId", "FullName", enrollment.UserId);
-            ViewBag.Courses = new SelectList(dbContext.Courses.ToList(), "CourseId", "Title", enrollment.CourseId);
-            return View(enrollment);
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPost]
-        public async Task<IActionResult> Edit(Enrollment model)
-        {
-            var enrollment = await dbContext.Enrollments.FindAsync(model.EnrollmentId);
-            if (enrollment != null)
-            {
-                enrollment.Status = model.Status;
-                enrollment.PaymentStatus = model.PaymentStatus;
-                enrollment.CourseId = model.CourseId;
-                enrollment.UserId = model.UserId;
-                await dbContext.SaveChangesAsync();
-            }
-            return RedirectToAction("List");
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPost]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var enrollment = await dbContext.Enrollments.FindAsync(id);
-            if (enrollment != null)
-            {
-                dbContext.Enrollments.Remove(enrollment);
-                await dbContext.SaveChangesAsync();
-            }
-            return RedirectToAction("List");
-        }
-
-        [Authorize]
-        [HttpGet]
-        public async Task<IActionResult> Details(int id)
-        {
-            var enrollment = await dbContext.Enrollments
-                .Include(e => e.User)
-                .Include(e => e.Course)
-                .FirstOrDefaultAsync(e => e.EnrollmentId == id);
-
-            if (enrollment == null) return NotFound();
-
-            var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-
-            if (User.IsInRole("Admin") || enrollment.User.IdentityId == currentUserId)
-            {
-                return View(enrollment);
-            }
-
-            return Forbid();
-        }
-
-        [Authorize(Roles = "Student")]
-        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Enroll(int courseId)
         {
-            var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
-            if (user == null) return Unauthorized();
+            // 👇 نبدأ باستخدام الكوكيز هنا
+            string userIdStr = Request.Cookies["UserId"];
 
-            bool alreadyEnrolled = await dbContext.Enrollments
-                .AnyAsync(e => e.UserId == user.UserId && e.CourseId == courseId);
-
-            if (alreadyEnrolled)
+            if (string.IsNullOrEmpty(userIdStr))
             {
-                TempData["Message"] = "You are already enrolled in this course."; 
-                return RedirectToAction("MyEnrollments");
+                return RedirectToAction("Login", "Account");
             }
 
+            if (!int.TryParse(userIdStr, out int userId))
+            {
+                return BadRequest("Invalid User ID in cookie.");
+            }
+
+            // 👇 التحقق من وجود المستخدم في جدول Users
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            // 👇 التحقق من وجود الكورس
+            var course = await _context.Courses.FindAsync(courseId);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            // 👇 التحقق من عدم التسجيل المسبق
+            var existingEnrollment = await _context.Enrollments
+                .FirstOrDefaultAsync(e => e.UserId == userId && e.CourseId == courseId);
+
+            if (existingEnrollment != null)
+            {
+                TempData["Message"] = "أنت مسجل بالفعل في هذا الكورس";
+                return RedirectToAction("Details", "Courses", new { id = courseId });
+            }
+
+            // 👇 إنشاء تسجيل جديد
             var enrollment = new Enrollment
             {
+                UserId = userId,
                 CourseId = courseId,
-                UserId = user.UserId,
                 EnrolledAt = DateTime.Now,
                 Status = "Active",
                 PaymentStatus = "Pending"
             };
 
-            dbContext.Enrollments.Add(enrollment);
-            await dbContext.SaveChangesAsync();
+            _context.Enrollments.Add(enrollment);
+            await _context.SaveChangesAsync();
 
-            TempData["Message"] = "You have been successfully enrolled in the course!";
-            return RedirectToAction("MyEnrollments");
+            TempData["Success"] = "تم التسجيل في الكورس بنجاح";
+            return RedirectToAction("CourseContent", new { courseId });
         }
 
-        [Authorize(Roles = "Student")]
+        // عرض محتوى الكورس بعد التسجيل
         [HttpGet]
-        public async Task<IActionResult> MyEnrollments()
+        public async Task<IActionResult> CourseContent(int courseId)
         {
-            var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
-            if (user == null) return Unauthorized();
+            string userIdStr = Request.Cookies["UserId"];
+            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out int userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
 
-            var enrollments = await dbContext.Enrollments
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            // 👇 التحقق من تسجيل الطالب في الكورس
+            var isEnrolled = await _context.Enrollments
+                .AnyAsync(e => e.UserId == userId && e.CourseId == courseId && e.Status == "Active");
+
+            if (!isEnrolled)
+            {
+                TempData["Error"] = "يجب التسجيل في الكورس أولاً";
+                return RedirectToAction("Details", "Courses", new { id = courseId });
+            }
+
+            // 👇 جلب محتوى الكورس مع الدروس مرتبة
+            var courseContent = await _context.Courses
+                .Include(c => c.Lessons.OrderBy(l => l.OrderNumber))
+                .Include(c => c.Quizzes)
+                .FirstOrDefaultAsync(c => c.CourseId == courseId);
+
+            ViewBag.CourseId = courseId;
+            return View(courseContent);
+        }
+
+        // عرض جميع الكورسات المسجل فيها الطالب
+        public async Task<IActionResult> MyCourses()
+        {
+            string userIdStr = Request.Cookies["UserId"];
+            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out int userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var enrolledCourses = await _context.Enrollments
+                .Where(e => e.UserId == userId)
                 .Include(e => e.Course)
-                .Where(e => e.UserId == user.UserId)
+                    .ThenInclude(c => c.Category)
+                .Select(e => e.Course)
                 .ToListAsync();
 
-            return View(enrollments);
+            return View(enrolledCourses);
+        }
+
+        // عرض محتوى درس معين
+        public async Task<IActionResult> LessonContent(int lessonId)
+        {
+            string userIdStr = Request.Cookies["UserId"];
+            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out int userId))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var lesson = await _context.Lessons
+                .Include(l => l.Course)
+                .FirstOrDefaultAsync(l => l.LessonId == lessonId);
+
+            if (lesson == null)
+            {
+                return NotFound();
+            }
+
+            // 👇 التحقق من تسجيل الطالب في الكورس التابع لهذا الدرس
+            var isEnrolled = await _context.Enrollments
+                .AnyAsync(e => e.UserId == userId && e.CourseId == lesson.CourseId && e.Status == "Active");
+
+            if (!isEnrolled)
+            {
+                TempData["Error"] = "غير مصرح لك بالوصول لهذا الدرس";
+                return RedirectToAction("MyCourses");
+            }
+
+            ViewBag.PreviousLesson = await _context.Lessons
+                .Where(l => l.CourseId == lesson.CourseId && l.OrderNumber < lesson.OrderNumber)
+                .OrderByDescending(l => l.OrderNumber)
+                .FirstOrDefaultAsync();
+
+            ViewBag.NextLesson = await _context.Lessons
+                .Where(l => l.CourseId == lesson.CourseId && l.OrderNumber > lesson.OrderNumber)
+                .OrderBy(l => l.OrderNumber)
+                .FirstOrDefaultAsync();
+
+            return View(lesson);
         }
     }
 }

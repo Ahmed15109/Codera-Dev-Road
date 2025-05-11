@@ -1,0 +1,116 @@
+﻿@model progect_DEPI.Models.Course
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container py-5">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["Success"]</div>
+    }
+
+    <div class="row g-4">
+        <!-- Main Course Content -->
+        <div class="col-md-8">
+            <h1 class="mb-4">@Model.Title</h1>
+            <p class="lead text-muted">@Model.Description</p>
+
+            <!-- Course Image -->
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <div class="course-image mb-4">
+                    <img src="@Model.ImageUrl" alt="@Model.Title" class="img-fluid rounded shadow-sm w-100" style="max-height: 400px; object-fit: cover;">
+                </div>
+            }
+
+            <!-- Lessons List -->
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Course Lessons</h3>
+                </div>
+                <div class="card-body">
+                    @if (Model.Lessons.Any())
+                    {
+                        foreach (var lesson in Model.Lessons.OrderBy(l => l.OrderNumber))
+                        {
+                            <div class="lesson-item p-3 mb-3 border rounded hover-shadow">
+                                <h5>@lesson.Title</h5>
+                                <p class="text-secondary">
+                                    @if (lesson.Content.Length > 100)
+                                    {
+                                        @lesson.Content.Substring(0, 100) <span>...</span>
+                                    }
+                                    else
+                                    {
+                                        @lesson.Content
+                                    }
+                                </p>
+                                <a asp-action="LessonContent" asp-route-lessonId="@lesson.LessonId" class="btn btn-outline-primary btn-sm">
+                                    View Lesson <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-center text-danger">No lessons available for this course.</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar - Course Info -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 sticky-top">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0 text-center">Course Information</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Price:</strong>
+                            <span class="text-success fw-bold">@Model.Price.ToString("C")</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Category:</strong>
+                            <span>@Model.Category?.CategoryName</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Lessons Count:</strong>
+                            <span>@Model.Lessons.Count</span>
+                        </li>
+                    </ul>
+
+                    <hr />
+
+                    <a asp-controller="Courses" asp-action="Details" asp-route-id="@Model.CourseId"
+                       class="btn btn-outline-secondary w-100 mt-3">
+                        Back to Course Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .hover-shadow:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .sticky-top {
+            position: sticky;
+            top: 70px;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+}

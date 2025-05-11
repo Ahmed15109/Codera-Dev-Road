@@ -16,63 +16,188 @@ namespace progect_DEPI.Controllers
             _context = context;
         }
 
-        
-        public async Task<IActionResult> Profile(int? id)
+        [HttpGet]
+       
+        public async Task<IActionResult> Profile()
         {
-            if (id == null) return NotFound();
+            string userIdStr = Request.Cookies["UserId"];
+
+            if (string.IsNullOrEmpty(userIdStr))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            if (!int.TryParse(userIdStr, out int userId))
+            {
+                return BadRequest("Invalid User ID in cookie.");
+            }
 
             var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.UserId == id);
+                .FirstOrDefaultAsync(u => u.UserId == userId);
 
-            if (user == null) return NotFound();
-
-            return View("Profile", user);
-        }
-
-        
-        [HttpGet]
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null) return NotFound();
-
-            var user = await _context.Users.FindAsync(id);
-            if (user == null) return NotFound();
-
+            if (user == null)
+            {
+                return NotFound();
+            }
 
             return View(user);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, User user)
+        public async Task<IActionResult> UpdateProfileImage(IFormFile profileImage, int userId)
         {
-            if (id != user.UserId) return NotFound();
-
-            if (ModelState.IsValid)
+            try
             {
-                try
+                var user = await _context.Users.FindAsync(userId);
+                if (user == null)
                 {
+                    return Json(new { success = false, message = "User not found" });
+                }
+
+                if (profileImage != null && profileImage.Length > 0)
+                {
+                    var uploadsDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "img");
+                    if (!Directory.Exists(uploadsDir))
+                    {
+                        Directory.CreateDirectory(uploadsDir);
+                    }
+
+                    // Delete old image if exists
+                    if (!string.IsNullOrEmpty(user.Picture))
+                    {
+                        var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", user.Picture.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    var fileName = $"user_{userId}_{DateTime.Now:yyyyMMddHHmmss}{Path.GetExtension(profileImage.FileName)}";
+                    var filePath = Path.Combine(uploadsDir, fileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await profileImage.CopyToAsync(stream);
+                    }
+
+                    user.Picture = $"/uploads/img/{fileName}";
                     user.UpdateAt = DateTime.Now;
-                    _context.Update(user);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Profile), new { id = user.UserId });
+
+                    return Json(new { success = true, newImagePath = user.Picture });
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Users.Any(u => u.UserId == id))
-                        return NotFound();
-                    else
-                        throw;
-                }
+
+                return Json(new { success = false, message = "No image provided" });
             }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
+        // GET: عرض نموذج التعديل
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            string userIdStr = Request.Cookies["UserId"];
+
+            if (string.IsNullOrEmpty(userIdStr))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            if (!int.TryParse(userIdStr, out int userId))
+            {
+                return BadRequest("Invalid User ID in cookie.");
+            }
+
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.UserId == userId);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
             return View(user);
         }
 
-        
-        
+        // POST: حفظ التعديلات
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(User user)
+        {
+            string userIdStr = Request.Cookies["UserId"];
 
-        
-        
+            if (string.IsNullOrEmpty(userIdStr))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            if (!int.TryParse(userIdStr, out int userId))
+            {
+                return BadRequest("Invalid User ID in cookie.");
+            }
+
+            if (userId != user.UserId)
+            {
+                return BadRequest("Mismatched user ID.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(user);
+            }
+
+            try
+            {
+                // الحصول على بيانات المستخدم الحالية من قاعدة البيانات
+                var existingUser = await _context.Users.FindAsync(user.UserId);
+                if (existingUser == null)
+                {
+                    return NotFound();
+                }
+
+                // تحديث الخصائص النصية فقط
+                existingUser.FullName = user.FullName;
+                existingUser.Email = user.Email;
+                // يمكنك إضافة المزيد من الخصائص هنا حسب الحاجة
+
+                // الاحتفاظ بقيمة الصورة الحالية
+                user.Picture = existingUser.Picture;
+
+                // تحديث تاريخ التعديل
+                existingUser.UpdateAt = DateTime.Now;
+
+                // حفظ التغييرات
+                _context.Update(existingUser);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Profile));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Users.Any(u => u.UserId == user.UserId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "حدث خطأ أثناء حفظ التعديلات: " + ex.Message);
+                return View(user);
+            }
+        }
+
+
+
+
+
+
     }
 
 }
