@@ -4,7 +4,7 @@
     <div class="card shadow rounded-4 border-0 p-4">
         <h2 class="text-center text-primary mb-4">➕ Add New Course</h2>
 
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label asp-for="Title" class="form-label">Course Title</label>
@@ -31,11 +31,12 @@
                     <input asp-for="UpdateAt" class="form-control" type="date" />
                 </div>
 
-                <div class="col-md-6 mb-3">
-                    <label asp-for="ImageUrl" class="form-label">Image URL</label>
-                    <input asp-for="ImageUrl" class="form-control" placeholder="https://example.com/image.jpg" />
+                <div class="col-12">
+                    <div class="form-floating mb-3">
+                        <input asp-for="formFile" type="file" onchange="loadfile(event)">
+                        <img id="output" width="200px" height="200px" />
+                    </div>
                 </div>
-
                 <div class="col-md-6 mb-4">
                     <label asp-for="CategoryId" class="form-label">Category</label>
                     <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-select">
@@ -50,3 +51,21 @@
         </form>
     </div>
 </div>
+
+
+@section scripts
+{
+    <script>
+        var loadfile = function (event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('output');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

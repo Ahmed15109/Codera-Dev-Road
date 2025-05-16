@@ -27,23 +27,21 @@ namespace progect_DEPI.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Add(AddCourseViewModel viewModel)
+        public async Task<IActionResult> Add(Course viewModel)
         {
-            var course = new Course
+            if (viewModel.formFile != null)
             {
-                Title = viewModel.Title,
-                Description = viewModel.Description,
-                Price = viewModel.Price,
-                CreatedAt = viewModel.CreatedAt,
-                UpdateAt = viewModel.UpdateAt,
-                CategoryId = viewModel.CategoryId
-            };
+                MemoryStream memoryStream = new MemoryStream();
+                viewModel.formFile.CopyTo(memoryStream);
+                viewModel.Image = memoryStream.ToArray();
+            }
+           
 
-            await dbContext.Courses.AddAsync(course);
+            await dbContext.Courses.AddAsync(viewModel);
             await dbContext.SaveChangesAsync();
 
             ViewBag.Message = "Course Added successfully!";
-            return View();
+            return RedirectToAction("List");
         }
 
         [HttpGet]
