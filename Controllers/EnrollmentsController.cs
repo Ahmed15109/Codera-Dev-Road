@@ -72,7 +72,7 @@ namespace progect_DEPI.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "تم التسجيل في الكورس بنجاح";
-            return RedirectToAction("CourseContent", new { courseId });
+            return RedirectToAction("MyCourses", new { courseId });
         }
 
         // عرض محتوى الكورس بعد التسجيل

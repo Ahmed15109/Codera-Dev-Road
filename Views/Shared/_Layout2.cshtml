@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿ @using Microsoft.AspNetCore.Identity
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,26 +50,27 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        @if (!User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        }
+                        <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="List">Tracks</a></li>
+
                         @if (User.Identity.IsAuthenticated)
                         {
                             @if (User.IsInRole("Admin"))
                             {
                                 <!-- Admin Links -->
-                                <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="Add">Add Track</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="List">Courses</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Quizzes" asp-action="List">Quizzes</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Questions" asp-action="Add">Add Questions</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="QuizResults" asp-action="List">All Results</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="Enrollments" asp-action="List">Enrollments</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Certificates" asp-action="List">Certificates</a></li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Notifications" asp-action="AllNotifications">Add Notifications</a></li>
                             }
                             else
                             {
-                                <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="List">Tracks</a></li>
                                 <!-- Student Links -->
                                 <li class="nav-item"><a class="nav-link" asp-controller="Enrollment" asp-action="MyCourses">My Courses</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="QuizResults" asp-action="MyResults">Quiz Results</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Certificates" asp-action="List">Certificates</a></li>
                             }
                         }
@@ -89,7 +90,6 @@
                                     <li><h6 class="dropdown-header">Notifications</h6></li>
                                     <li class="dropdown-divider"></li>
                                     <div class="notification-list px-3">
-                                        <!-- سيتم تعبئة الإشعارات هنا باستخدام JS -->
                                         <p class="text-center text-muted py-2" id="noNotifications">No new notifications</p>
                                     </div>
                                     <li class="dropdown-divider"></li>
@@ -181,12 +181,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script>
-        // مثال لجلب عدد الإشعارات من السيرفر (تحديث لاحق ممكن تعمله)
         document.addEventListener('DOMContentLoaded', () => {
-            // يمكنك استبدال هذا الجزء بطلب AJAX لجلب العدد من السيرفر
             const badge = document.getElementById("notificationCount");
             if (badge) {
-                // مثلاً: badge.innerText = "5";
             }
         });
     </script>

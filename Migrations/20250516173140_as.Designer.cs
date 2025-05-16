@@ -12,8 +12,8 @@ using progect_DEPI.Models;
 namespace progect_DEPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250516132236_insHelooo")]
-    partial class insHelooo
+    [Migration("20250516173140_as")]
+    partial class @as
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -263,6 +263,9 @@ namespace progect_DEPI.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int>("LessonsCount")
                         .HasColumnType("int");

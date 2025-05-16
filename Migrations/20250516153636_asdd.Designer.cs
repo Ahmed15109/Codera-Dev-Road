@@ -12,8 +12,8 @@ using progect_DEPI.Models;
 namespace progect_DEPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250516142218_andinsHelooo")]
-    partial class andinsHelooo
+    [Migration("20250516153636_asdd")]
+    partial class asdd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

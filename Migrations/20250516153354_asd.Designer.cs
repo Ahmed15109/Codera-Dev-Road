@@ -12,7 +12,7 @@ using progect_DEPI.Models;
 namespace progect_DEPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250508134247_asd")]
+    [Migration("20250516153354_asd")]
     partial class asd
     {
         /// <inheritdoc />
@@ -264,6 +264,9 @@ namespace progect_DEPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<int>("LessonsCount")
                         .HasColumnType("int");
 
@@ -323,8 +326,8 @@ namespace progect_DEPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
