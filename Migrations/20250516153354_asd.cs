@@ -59,7 +59,8 @@ namespace progect_DEPI.Migrations
                     CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LessonsCount = table.Column<int>(type: "int", nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -201,7 +202,7 @@ namespace progect_DEPI.Migrations
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

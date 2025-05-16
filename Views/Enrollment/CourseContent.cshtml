@@ -45,8 +45,8 @@
                                         @lesson.Content
                                     }
                                 </p>
-                                <a asp-action="LessonContent" asp-route-lessonId="@lesson.LessonId" class="btn btn-outline-primary btn-sm">
-                                    View Lesson <i class="bi bi-arrow-right"></i>
+                                <a asp-controller="Lessons" asp-action="Details" asp-route-id="@lesson.LessonId" class="btn btn-outline-primary btn-sm">
+                                    view lesson <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
                         }

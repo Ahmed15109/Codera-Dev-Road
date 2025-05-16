@@ -19,7 +19,7 @@ namespace progect_DEPI.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 if (User.IsInRole("Admin"))
-                    return RedirectToAction("List", "Courses");
+                    return RedirectToAction("List", "Category");
 
                 if (User.IsInRole("Student"))
                     return RedirectToAction("MyResults", "QuizResults");

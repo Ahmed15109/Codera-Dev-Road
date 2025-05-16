@@ -24,10 +24,14 @@
                                 <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.CourseId" class="btn btn-sm btn-outline-info me-2">
                                     <i class="fa fa-eye"></i> View Details
                                 </a>
+                                <form id="enrollForm-@course.CourseId" asp-controller="Enrollment" asp-action="Enroll" method="post" class="d-inline">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="courseId" value="@course.CourseId" />
+                                    <a href="javascript:void(0);" onclick="document.getElementById('enrollForm-@course.CourseId').submit();" class="btn btn-sm btn-outline-success">
+                                        <i class="fa fa-check-circle"></i> Enroll
+                                    </a>
+                                </form>
 
-                                <a asp-controller="Enrollment" asp-action="Enroll" asp-route-courseId="@course.CourseId" class="btn btn-sm btn-outline-success">
-                                    <i class="fa fa-check-circle"></i> Enroll
-                                </a>
                             </div>
                         </div>
                     </div>

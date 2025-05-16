@@ -19,7 +19,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
     .card-img-top {
@@ -37,6 +37,26 @@
     .alert-warning {
         font-size: 1.1rem;
     }
+
+    /* Stylish add button */
+    .add-track-btn {
+        background-color: #28a745;
+        color: white;
+        border-radius: 30px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+        .add-track-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
 </style>
 
 <!-- Banner -->
@@ -49,9 +69,19 @@
 
 <!-- Main Content -->
 <div class="container py-5">
-    <div class="text-center mb-5">
-        <h6 class="text-secondary text-uppercase">Our Tracks</h6>
-        <h2 class="fw-bold">Check Out New Releases Of Our Tracks</h2>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h6 class="text-secondary text-uppercase">Our Tracks</h6>
+            <h2 class="fw-bold">Check Out New Releases Of Our Tracks</h2>
+        </div>
+
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="text-right">
+                <a class="btn btn-primary" asp-area="" asp-action="Add" class="btn btn-success">Add Track</a>
+            </div>
+        }
     </div>
 
     @if (!Model.Any())
