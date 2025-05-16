@@ -9,8 +9,10 @@
         {
             <div class="col-lg-4 col-md-6">
                 <div class="card h-100 shadow-sm border-0">
-                    <img src="~/img/course-default.jpg" class="card-img-top" style="height: 220px; object-fit: cover;" alt="@course.Title" />
-                    <div class="card-body d-flex flex-column">
+                    @if (course.ImageUrl != null)
+                    {
+                        <img class="card-img-top" src="@course.ImageUrl" alt="Card image cap">
+                    }                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-center fw-bold">@course.Title</h5>
                         <p class="card-text text-center text-muted">@course.Description?.Substring(0, Math.Min(100, course.Description.Length))...</p>
                         <div class="mt-auto">

@@ -4,22 +4,60 @@
     var keyword = ViewBag.Keyword as string;
 }
 
-<div class="container-fluid bg-dark text-white py-4">
-    <div class="container text-center">
+<style>
+    .hero-banner {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 12px;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+    .card-img-top {
+        height: 220px;
+        object-fit: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .alert-warning {
+        font-size: 1.1rem;
+    }
+</style>
+
+<!-- Banner -->
+<div class="hero-banner">
+    <div class="container">
         <h1 class="display-5 fw-bold">Explore Our Tracks</h1>
         <p class="lead">Find your learning path and start your journey today.</p>
     </div>
 </div>
-<div class="container pb-5">
+
+<!-- Main Content -->
+<div class="container py-5">
     <div class="text-center mb-5">
         <h6 class="text-secondary text-uppercase">Our Tracks</h6>
-        <h2 class="fw-bold">Checkout New Releases Of Our Tracks</h2>
+        <h2 class="fw-bold">Check Out New Releases Of Our Tracks</h2>
     </div>
 
     @if (!Model.Any())
     {
         <div class="alert alert-warning text-center">
-            No tracks found for "<strong>@keyword</strong>"
+            No tracks found for <strong>"@keyword"</strong>
         </div>
     }
     else
@@ -29,17 +67,20 @@
             {
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow-sm border-0">
-                        <img src="~/img/courses-1.jpg" class="card-img-top" style="height: 220px; object-fit: cover;" alt="@category.CategoryName" />
+                        @if (!string.IsNullOrEmpty(category.ImageUrl))
+                        {
+                            <img class="card-img-top" src="@category.ImageUrl" alt="@category.CategoryName">
+                        }
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title text-center fw-bold">@category.CategoryName</h5>
+                            <h5 class="card-title text-center">@category.CategoryName</h5>
                             <p class="card-text text-center text-muted">@category.Description</p>
                             <div class="mt-auto">
-                                <div class="d-flex justify-content-between text-muted small">
+                                <div class="d-flex justify-content-between text-muted small mb-2">
                                     <span><i class="fa fa-book me-1"></i>@category.LessonsCount Lessons</span>
                                     <span><i class="fa fa-calendar me-1"></i>@(category.UpdateAt?.ToString("yyyy-MM-dd") ?? "Not updated")</span>
                                 </div>
-                                <div class="text-center mt-3">
-                                    <a asp-controller="Category" asp-action="Details" asp-route-id="@category.CategoryId" class="btn btn-sm btn-outline-info me-2">
+                                <div class="text-center">
+                                    <a asp-controller="Category" asp-action="Details" asp-route-id="@category.CategoryId" class="btn btn-outline-primary btn-sm px-4">
                                         <i class="fa fa-eye"></i> View Courses
                                     </a>
                                 </div>

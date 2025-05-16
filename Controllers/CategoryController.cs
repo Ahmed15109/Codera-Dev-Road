@@ -25,20 +25,19 @@ namespace progect_DEPI.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Add(AddCategoryViewModel viewModel)
+        public async Task<IActionResult> Add(Category viewModel)
         {
-            var category = new Category
+            if (viewModel.formFile != null)
             {
-                CategoryName = viewModel.CategoryName,
-                Description = viewModel.Description,
-                LessonsCount = viewModel.LessonsCount,
-                UpdateAt = viewModel.UpdateAt
-            };
-
-            await dbContext.Categories.AddAsync(category);
+                MemoryStream memoryStream = new MemoryStream();
+                viewModel.formFile.CopyTo(memoryStream);
+                viewModel.Image = memoryStream.ToArray();
+            }
+            
+            await dbContext.Categories.AddAsync(viewModel);
             await dbContext.SaveChangesAsync();
 
-            return View();
+            return RedirectToAction("List");
         }
 
         [HttpGet]
@@ -67,9 +66,9 @@ namespace progect_DEPI.Controllers
                 category.Description = viewModel.Description;
                 category.LessonsCount = viewModel.LessonsCount;
                 category.UpdateAt = viewModel.UpdateAt;
-
-                await dbContext.SaveChangesAsync();
+                category.Image = viewModel.Image;   
             }
+                await dbContext.SaveChangesAsync();
             return RedirectToAction("List", "Category");
         }
 
