@@ -21,7 +21,7 @@
                     }
                     else
                     {
-                        <img src="~/img/default-course.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Default image" />
+                        <img src="~/img/courses-4.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Default image" />
                     }
 
                     <div class="card-body">
@@ -48,6 +48,7 @@
                             </form>
 
                             <a asp-controller="Courses" asp-action="CourseLessons" asp-route-courseId="@course.CourseId" class="btn btn-sm btn-outline-success">Lessons</a>
+                            <a asp-controller="Lessons" asp-action="Create" asp-route-courseId="@course.CourseId" class="btn btn-sm btn-outline-success">Add Lesson</a>
                         }
                     </div>
                 </div>

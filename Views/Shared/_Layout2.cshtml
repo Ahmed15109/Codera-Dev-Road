@@ -51,15 +51,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="List">Tracks</a></li>
-
                         @if (User.Identity.IsAuthenticated)
                         {
                             @if (User.IsInRole("Admin"))
                             {
                                 <!-- Admin Links -->
+                                <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="Add">Add Track</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="List">Courses</a></li>
-                                <li class="nav-item"><a class="nav-link" asp-controller="Courses" asp-action="CourseLessons">Lessons</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Quizzes" asp-action="List">Quizzes</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Questions" asp-action="Add">Add Questions</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="QuizResults" asp-action="List">All Results</a></li>
@@ -68,6 +66,7 @@
                             }
                             else
                             {
+                                <li class="nav-item"><a class="nav-link" asp-controller="Category" asp-action="List">Tracks</a></li>
                                 <!-- Student Links -->
                                 <li class="nav-item"><a class="nav-link" asp-controller="Enrollment" asp-action="MyCourses">My Courses</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="QuizResults" asp-action="MyResults">Quiz Results</a></li>
