@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using progect_DEPI.Models;
 using progect_DEPI.ViewModels;
 using Rotativa.AspNetCore;
+using System.Security.Claims;
 
 namespace progect_DEPI.Controllers
 {
+    [Authorize]
     public class CertificatesController : Controller
     {
         private readonly ApplicationDbContext dbContext;
@@ -16,6 +18,11 @@ namespace progect_DEPI.Controllers
         public CertificatesController(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        private string? GetIdentityId()
+        {
+            return User.FindFirstValue(ClaimTypes.NameIdentifier);
         }
 
         [Authorize(Roles = "Admin")]
@@ -55,10 +62,22 @@ namespace progect_DEPI.Controllers
         [HttpGet]
         public async Task<IActionResult> List()
         {
-            var certificates = await dbContext.Certificates
+            var identityId = GetIdentityId();
+            IQueryable<Certificate> certificatesQuery = dbContext.Certificates
                 .Include(c => c.User)
-                .Include(c => c.Course) 
-                .ToListAsync();
+                .Include(c => c.Course);
+
+            if (!User.IsInRole("Admin"))
+            {
+                if (string.IsNullOrWhiteSpace(identityId))
+                {
+                    return Unauthorized();
+                }
+
+                certificatesQuery = certificatesQuery.Where(c => c.User.IdentityId == identityId);
+            }
+
+            var certificates = await certificatesQuery.ToListAsync();
 
             return View(certificates);
         }
@@ -116,6 +135,11 @@ namespace progect_DEPI.Controllers
 
             if (certificate == null) return NotFound();
 
+            if (!User.IsInRole("Admin") && certificate.User?.IdentityId != GetIdentityId())
+            {
+                return Forbid();
+            }
+
             return View(certificate);
         }
 
@@ -129,6 +153,11 @@ namespace progect_DEPI.Controllers
 
             if (certificate == null)
                 return NotFound();
+
+            if (!User.IsInRole("Admin") && certificate.User?.IdentityId != GetIdentityId())
+            {
+                return Forbid();
+            }
 
             return new ViewAsPdf("Print", certificate)
             {

@@ -16,30 +16,29 @@ namespace progect_DEPI.Controllers
             _context = context;
         }
 
-        // تسجيل الطالب في كورس باستخدام UserId من الكوكيز
+        private async Task<User?> GetCurrentUserAsync()
+        {
+            var identityId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrWhiteSpace(identityId))
+            {
+                return null;
+            }
+
+            return await _context.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
+        }
+
+        // Register the authenticated user in a course.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Enroll(int courseId)
         {
-            // 👇 نبدأ باستخدام الكوكيز هنا
-            string userIdStr = Request.Cookies["UserId"];
-
-            if (string.IsNullOrEmpty(userIdStr))
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            if (!int.TryParse(userIdStr, out int userId))
-            {
-                return BadRequest("Invalid User ID in cookie.");
-            }
-
-            // 👇 التحقق من وجود المستخدم في جدول Users
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            var user = await GetCurrentUserAsync();
             if (user == null)
             {
                 return Unauthorized();
             }
+
+            var userId = user.UserId;
 
             // 👇 التحقق من وجود الكورس
             var course = await _context.Courses.FindAsync(courseId);
@@ -79,17 +78,13 @@ namespace progect_DEPI.Controllers
         [HttpGet]
         public async Task<IActionResult> CourseContent(int courseId)
         {
-            string userIdStr = Request.Cookies["UserId"];
-            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out int userId))
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            var user = await GetCurrentUserAsync();
             if (user == null)
             {
                 return Unauthorized();
             }
+
+            var userId = user.UserId;
 
             // 👇 التحقق من تسجيل الطالب في الكورس
             var isEnrolled = await _context.Enrollments
@@ -114,17 +109,13 @@ namespace progect_DEPI.Controllers
         // عرض جميع الكورسات المسجل فيها الطالب
         public async Task<IActionResult> MyCourses()
         {
-            string userIdStr = Request.Cookies["UserId"];
-            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out int userId))
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            var user = await GetCurrentUserAsync();
             if (user == null)
             {
                 return Unauthorized();
             }
+
+            var userId = user.UserId;
 
             var enrolledCourses = await _context.Enrollments
                 .Where(e => e.UserId == userId)
@@ -139,17 +130,13 @@ namespace progect_DEPI.Controllers
         // عرض محتوى درس معين
         public async Task<IActionResult> LessonContent(int lessonId)
         {
-            string userIdStr = Request.Cookies["UserId"];
-            if (string.IsNullOrEmpty(userIdStr) || !int.TryParse(userIdStr, out int userId))
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserId == userId);
+            var user = await GetCurrentUserAsync();
             if (user == null)
             {
                 return Unauthorized();
             }
+
+            var userId = user.UserId;
 
             var lesson = await _context.Lessons
                 .Include(l => l.Course)

@@ -1,0 +1,36 @@
+@model IEnumerable<progect_DEPI.Models.QuizResult>
+
+<h1 class="text-primary">All Quiz Results</h1>
+
+<div class="d-flex mb-3" style="gap: 10px;">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Home</a>
+</div>
+
+<table class="table table-bordered table-striped mt-3">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Quiz</th>
+            <th>Score</th>
+            <th>Taken At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td>@result.User?.FullName</td>
+                <td>@result.Quiz?.Title</td>
+                <td>@result.Score</td>
+                <td>@result.TakenAt.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@result.QuizResultId" class="btn btn-info btn-sm">Details</a>
+                    <form asp-action="Delete" asp-route-id="@result.QuizResultId" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

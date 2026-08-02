@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using progect_DEPI.Models;
@@ -12,11 +13,20 @@ namespace progect_DEPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                throw new InvalidOperationException("ConnectionStrings:DefaultConnection must be configured before starting the application.");
+            }
+
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(connectionString);
             });
 
             builder.Services.AddAuthorization(options =>
@@ -29,6 +39,13 @@ namespace progect_DEPI
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             //.AddDefaultTokenProviders();
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+                options.Cookie.SameSite = SameSiteMode.Strict;
+            });
 
             var app = builder.Build();
 
@@ -46,7 +63,6 @@ namespace progect_DEPI
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // 🧾 تفعيل Rotativa لطباعة الشهادات PDF
             RotativaConfiguration.Setup(app.Environment.WebRootPath, "Rotativa");
 
             app.MapControllerRoute(
@@ -64,23 +80,116 @@ namespace progect_DEPI
                 }
             }
 
-            using (var scope = app.Services.CreateScope())
+            var bootstrapAdminEnabled = builder.Configuration.GetValue<bool>("BootstrapAdmin:Enabled");
+
+            if (bootstrapAdminEnabled)
             {
-                var userManager =
-                   scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-                string email = "admin@admin.com";
-                string password = "Admin123#";
-                if (await userManager.FindByEmailAsync(email) == null)
-                {
-                    var user = new IdentityUser();
-                    user.UserName = email;
-                    user.Email = email;
-                    await userManager.CreateAsync(user, password);
-                    await userManager.AddToRoleAsync(user, "Admin");
-                }
+                using var scope = app.Services.CreateScope();
+                await EnsureBootstrapAdminAsync(scope.ServiceProvider, builder.Configuration);
             }
 
             app.Run();
+        }
+
+        private static async Task EnsureBootstrapAdminAsync(IServiceProvider services, IConfiguration configuration)
+        {
+            var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+            var dbContext = services.GetRequiredService<ApplicationDbContext>();
+            var email = configuration["BootstrapAdmin:Email"];
+            var fullName = configuration["BootstrapAdmin:FullName"];
+            var password = configuration["BootstrapAdmin:Password"];
+
+            if (string.IsNullOrWhiteSpace(email)
+                || string.IsNullOrWhiteSpace(fullName)
+                || string.IsNullOrWhiteSpace(password))
+            {
+                throw new InvalidOperationException("BootstrapAdmin:Email, BootstrapAdmin:FullName and BootstrapAdmin:Password are required when BootstrapAdmin:Enabled is true.");
+            }
+
+            await using var transaction = await dbContext.Database.BeginTransactionAsync();
+            try
+            {
+                var identityUser = await userManager.FindByEmailAsync(email);
+                if (identityUser == null)
+                {
+                    identityUser = new IdentityUser
+                    {
+                        UserName = email,
+                        Email = email
+                    };
+
+                    var createResult = await userManager.CreateAsync(identityUser, password);
+                    if (!createResult.Succeeded)
+                    {
+                        throw new InvalidOperationException("Bootstrap administrator creation failed.");
+                    }
+                }
+
+                var linkedProfiles = await dbContext.Users
+                    .Where(user => user.IdentityId == identityUser.Id)
+                    .ToListAsync();
+
+                if (linkedProfiles.Count > 1)
+                {
+                    throw new InvalidOperationException("Bootstrap administrator has duplicate domain profiles.");
+                }
+
+                var domainUser = linkedProfiles.SingleOrDefault();
+                if (domainUser == null)
+                {
+                    var matchingProfiles = await dbContext.Users
+                        .Where(user => user.Email == email)
+                        .ToListAsync();
+
+                    if (matchingProfiles.Count > 1)
+                    {
+                        throw new InvalidOperationException("Bootstrap administrator has duplicate email profiles.");
+                    }
+
+                    domainUser = matchingProfiles.SingleOrDefault();
+                    if (domainUser != null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(domainUser.IdentityId)
+                            && domainUser.IdentityId != identityUser.Id)
+                        {
+                            throw new InvalidOperationException("Bootstrap administrator email is already linked to another profile.");
+                        }
+
+                        domainUser.IdentityId = identityUser.Id;
+                    }
+                    else
+                    {
+                        domainUser = new User
+                        {
+                            FullName = fullName,
+                            Email = email,
+                            Picture = null,
+                            CreatedAt = DateTime.Now,
+                            UpdateAt = DateTime.Now,
+                            IdentityId = identityUser.Id
+                        };
+
+                        dbContext.Users.Add(domainUser);
+                    }
+                }
+
+                if (!await userManager.IsInRoleAsync(identityUser, "Admin"))
+                {
+                    var roleResult = await userManager.AddToRoleAsync(identityUser, "Admin");
+                    if (!roleResult.Succeeded)
+                    {
+                        throw new InvalidOperationException("Bootstrap administrator role assignment failed.");
+                    }
+                }
+
+                await dbContext.SaveChangesAsync();
+                await transaction.CommitAsync();
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
     }
 }

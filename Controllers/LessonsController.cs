@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +11,42 @@ namespace progect_DEPI.Controllers
     {
             private readonly ApplicationDbContext dbContext;
 
+            private static readonly HashSet<string> AllowedVideoExtensions = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ".mp4", ".webm", ".ogg", ".mov"
+            };
+
+            private static readonly HashSet<string> AllowedImageExtensions = new(StringComparer.OrdinalIgnoreCase)
+            {
+                ".jpg", ".jpeg", ".png", ".gif", ".webp"
+            };
+
+            private const long MaxVideoBytes = 100 * 1024 * 1024;
+            private const long MaxImageBytes = 10 * 1024 * 1024;
+
             public LessonsController(ApplicationDbContext dbContext)
             {
                 this.dbContext = dbContext;
             }
+
+        private List<SelectListItem> GetCourses()
+        {
+            return dbContext.Courses
+                .Select(c => new SelectListItem
+                {
+                    Value = c.CourseId.ToString(),
+                    Text = c.Title
+                }).ToList();
+        }
+
+        private static bool IsAllowedUpload(IFormFile file, HashSet<string> allowedExtensions, long maxBytes, params string[] allowedContentTypes)
+        {
+            var extension = Path.GetExtension(file.FileName);
+            return file.Length <= maxBytes
+                && allowedExtensions.Contains(extension)
+                && allowedContentTypes.Contains(file.ContentType, StringComparer.OrdinalIgnoreCase);
+        }
+
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Create(int? courseId = null)
@@ -37,39 +68,71 @@ namespace progect_DEPI.Controllers
         [Authorize(Roles = "Admin")]
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public async Task<IActionResult> Create(AddLessonViewModel model, IFormFile videoFile, IFormFile imageFile)
+            public async Task<IActionResult> Create(AddLessonViewModel model, IFormFile? videoFile, IFormFile? imageFile)
             {
+            if (!ModelState.IsValid)
+            {
+                model.Courses = GetCourses();
+                return View(model);
+            }
 
-
-            string videoPath = null;
-                string imagePath = null;
+            string? videoPath = null;
+            string? imagePath = null;
 
                 // رفع الفيديو
                 if (videoFile != null && videoFile.Length > 0)
                 {
-                    var videoFileName = Path.GetFileName(videoFile.FileName);
-                    var videoSavePath = Path.Combine("wwwroot/uploads/videos", videoFileName);
-
-                    using (var stream = new FileStream(videoSavePath, FileMode.Create))
+                    if (!IsAllowedUpload(videoFile, AllowedVideoExtensions, MaxVideoBytes,
+                        "video/mp4", "video/webm", "video/ogg", "video/quicktime"))
                     {
-                        await videoFile.CopyToAsync(stream);
+                        ModelState.AddModelError(nameof(videoFile), "Upload an MP4, WebM, OGG, or MOV video up to 100 MB.");
                     }
+                    else
+                    {
+                        var videosDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "videos");
+                        Directory.CreateDirectory(videosDirectory);
+                        var extension = Path.GetExtension(videoFile.FileName).ToLowerInvariant();
+                        var videoFileName = $"{Guid.NewGuid():N}{extension}";
+                        var videoSavePath = Path.Combine(videosDirectory, videoFileName);
 
-                    videoPath = "/uploads/videos/" + videoFileName;
+                        using (var stream = new FileStream(videoSavePath, FileMode.CreateNew))
+                        {
+                            await videoFile.CopyToAsync(stream);
+                        }
+
+                        videoPath = "/uploads/videos/" + videoFileName;
+                    }
                 }
 
                 // رفع الصورة
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    var imageFileName = Path.GetFileName(imageFile.FileName);
-                    var imageSavePath = Path.Combine("wwwroot/uploads/images", imageFileName);
-
-                    using (var stream = new FileStream(imageSavePath, FileMode.Create))
+                    if (!IsAllowedUpload(imageFile, AllowedImageExtensions, MaxImageBytes,
+                        "image/jpeg", "image/png", "image/gif", "image/webp"))
                     {
-                        await imageFile.CopyToAsync(stream);
+                        ModelState.AddModelError(nameof(imageFile), "Upload a JPG, PNG, GIF, or WebP image up to 10 MB.");
                     }
+                    else
+                    {
+                        var imagesDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "images");
+                        Directory.CreateDirectory(imagesDirectory);
+                        var extension = Path.GetExtension(imageFile.FileName).ToLowerInvariant();
+                        var imageFileName = $"{Guid.NewGuid():N}{extension}";
+                        var imageSavePath = Path.Combine(imagesDirectory, imageFileName);
 
-                    imagePath = "/uploads/images/" + imageFileName;
+                        using (var stream = new FileStream(imageSavePath, FileMode.CreateNew))
+                        {
+                            await imageFile.CopyToAsync(stream);
+                        }
+
+                        imagePath = "/uploads/images/" + imageFileName;
+                    }
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    model.Courses = GetCourses();
+                    return View(model);
                 }
 
                 // إنشاء Lesson جديد
@@ -83,18 +146,9 @@ namespace progect_DEPI.Controllers
                     VideoUrl = videoPath,
                     ImageUrl = imagePath
                 };
-            if (ModelState.IsValid)
-            {
-                dbContext.Lessons.Add(lesson);
-                await dbContext.SaveChangesAsync();
-                return RedirectToAction("CourseLessons", new { courseId = lesson.CourseId });
-            }
-
             dbContext.Lessons.Add(lesson);
-                await dbContext.SaveChangesAsync();
-
-
-            return RedirectToAction("CourseLessons", "Lessons", new { courseId = model.CourseId });
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("CourseLessons", new { courseId = lesson.CourseId });
         }
         [HttpGet]
         public IActionResult CourseLessons(int courseId)

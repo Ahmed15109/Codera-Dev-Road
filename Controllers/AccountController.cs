@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using progect_DEPI.Models;
 using progect_DEPI.ViewModels;
@@ -90,26 +91,6 @@ namespace progect_DEPI.Controllers
 
                 if (result.Succeeded)
                 {
-                    var identityUser = await _userManager.FindByEmailAsync(model.Email);
-
-                    
-                    var appUser = _dbContext.Users
-                        .FirstOrDefault(u => u.IdentityId == identityUser.Id);
-
-                    if (appUser != null)
-                    {
-                       
-                        var cookieOptions = new CookieOptions
-                        {
-                            Expires = DateTimeOffset.Now.AddDays(7),
-                            HttpOnly = true,
-                            Secure = false, 
-                            SameSite = SameSiteMode.Strict
-                        };
-
-                        Response.Cookies.Append("UserId", appUser.UserId.ToString(), cookieOptions);
-                    }
-
                     return LocalRedirect(ReturnUrl);
                 }
 
@@ -119,12 +100,10 @@ namespace progect_DEPI.Controllers
             return View(model);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            
-            Response.Cookies.Delete("UserId");
-
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }

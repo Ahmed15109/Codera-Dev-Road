@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using progect_DEPI.Models;
+using System.Security.Claims;
 
 namespace progect_DEPI.Controllers
 {
+    [Authorize]
     public class NotificationsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -13,7 +16,18 @@ namespace progect_DEPI.Controllers
             _context = context;
         }
 
-     
+        private async Task<User?> GetCurrentUserAsync()
+        {
+            var identityId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrWhiteSpace(identityId))
+            {
+                return null;
+            }
+
+            return await _context.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Send(int userId, string message)
         {
@@ -31,7 +45,7 @@ namespace progect_DEPI.Controllers
             return RedirectToAction("AllNotifications");
         }
 
-        
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> SendToAll(string message)
         {
@@ -55,22 +69,14 @@ namespace progect_DEPI.Controllers
 
         public async Task<IActionResult> MyNotifications()
         {
-            // 🔍 جيب الـ UserId من الـ Cookie
-            string userIdStr = Request.Cookies["UserId"];
-
-            if (string.IsNullOrEmpty(userIdStr))
+            var user = await GetCurrentUserAsync();
+            if (user == null)
             {
-                return RedirectToAction("Login", "Account");
+                return Unauthorized();
             }
 
-            if (!int.TryParse(userIdStr, out int userId))
-            {
-                return BadRequest("Invalid User ID in cookie.");
-            }
-
-            // 💾 جيب الإشعارات بناءً على userId
             var notifications = await _context.Notifications
-                .Where(n => n.UserId == userId)
+                .Where(n => n.UserId == user.UserId)
                 .OrderByDescending(n => n.CreatedAt)
                 .ToListAsync();
 
@@ -81,28 +87,42 @@ namespace progect_DEPI.Controllers
         [HttpPost]
         public async Task<IActionResult> MarkAsRead(int id)
         {
-            var notification = await _context.Notifications.FindAsync(id);
+            var user = await GetCurrentUserAsync();
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var notification = await _context.Notifications
+                .FirstOrDefaultAsync(n => n.NotificationId == id && n.UserId == user.UserId);
             if (notification == null) return NotFound();
 
             notification.IsRead = true;
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("MyNotifications", new { userId = notification.UserId });
+            return RedirectToAction(nameof(MyNotifications));
         }
 
-        
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            var notification = await _context.Notifications.FindAsync(id);
+            var user = await GetCurrentUserAsync();
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            var notification = await _context.Notifications
+                .FirstOrDefaultAsync(n => n.NotificationId == id && n.UserId == user.UserId);
             if (notification == null) return NotFound();
 
             _context.Notifications.Remove(notification);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("MyNotifications", new { userId = notification.UserId });
+            return RedirectToAction(nameof(MyNotifications));
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AllNotifications()
         {
             var all = await _context.Notifications

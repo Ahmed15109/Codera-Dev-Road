@@ -11,9 +11,25 @@ namespace progect_DEPI.Controllers
     {
         private readonly ApplicationDbContext dbContext;
 
+        private static readonly HashSet<string> AllowedImageExtensions = new(StringComparer.OrdinalIgnoreCase)
+        {
+            ".jpg", ".jpeg", ".png", ".gif", ".webp"
+        };
+
+        private const long MaxCategoryImageBytes = 10 * 1024 * 1024;
+
         public CategoryController(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        private static bool IsAllowedImage(IFormFile file)
+        {
+            var extension = Path.GetExtension(file.FileName);
+            var allowedContentTypes = new[] { "image/jpeg", "image/png", "image/gif", "image/webp" };
+            return file.Length <= MaxCategoryImageBytes
+                && AllowedImageExtensions.Contains(extension)
+                && allowedContentTypes.Contains(file.ContentType, StringComparer.OrdinalIgnoreCase);
         }
 
         [Authorize(Roles = "Admin")]
@@ -25,16 +41,36 @@ namespace progect_DEPI.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Add(Category viewModel)
+        public async Task<IActionResult> Add(AddCategoryViewModel viewModel)
         {
-            if (viewModel.formFile != null)
+            var category = new Category
             {
-                MemoryStream memoryStream = new MemoryStream();
-                viewModel.formFile.CopyTo(memoryStream);
-                viewModel.Image = memoryStream.ToArray();
+                CategoryName = viewModel.CategoryName,
+                Description = viewModel.Description,
+                LessonsCount = viewModel.LessonsCount,
+                UpdateAt = viewModel.UpdateAt
+            };
+
+            if (viewModel.formFile != null && viewModel.formFile.Length > 0)
+            {
+                if (!IsAllowedImage(viewModel.formFile))
+                {
+                    ModelState.AddModelError(nameof(viewModel.formFile), "Upload a JPG, PNG, GIF, or WebP image up to 10 MB.");
+                }
+                else
+                {
+                    using var memoryStream = new MemoryStream();
+                    await viewModel.formFile.CopyToAsync(memoryStream);
+                    category.Image = memoryStream.ToArray();
+                }
             }
-            
-            await dbContext.Categories.AddAsync(viewModel);
+
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            await dbContext.Categories.AddAsync(category);
             await dbContext.SaveChangesAsync();
 
             return RedirectToAction("List");
@@ -66,7 +102,18 @@ namespace progect_DEPI.Controllers
                 category.Description = viewModel.Description;
                 category.LessonsCount = viewModel.LessonsCount;
                 category.UpdateAt = viewModel.UpdateAt;
-                category.Image = viewModel.Image;   
+                if (viewModel.formFile != null && viewModel.formFile.Length > 0)
+                {
+                    if (!IsAllowedImage(viewModel.formFile))
+                    {
+                        ModelState.AddModelError(nameof(viewModel.formFile), "Upload a JPG, PNG, GIF, or WebP image up to 10 MB.");
+                        return View(viewModel);
+                    }
+
+                    using var memoryStream = new MemoryStream();
+                    await viewModel.formFile.CopyToAsync(memoryStream);
+                    category.Image = memoryStream.ToArray();
+                }
             }
                 await dbContext.SaveChangesAsync();
             return RedirectToAction("List", "Category");

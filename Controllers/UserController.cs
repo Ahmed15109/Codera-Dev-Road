@@ -1,43 +1,48 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 using progect_DEPI.Models;
+using System.Security.Claims;
 
 namespace progect_DEPI.Controllers
 {
     
 
+    [Authorize]
     public class UserController : Controller
     {
         private readonly ApplicationDbContext _context;
+
+        private static readonly HashSet<string> AllowedImageExtensions = new(StringComparer.OrdinalIgnoreCase)
+        {
+            ".jpg", ".jpeg", ".png", ".gif", ".webp"
+        };
+
+        private const long MaxProfileImageBytes = 5 * 1024 * 1024;
 
         public UserController(ApplicationDbContext context)
         {
             _context = context;
         }
 
+        private async Task<User?> GetCurrentUserAsync()
+        {
+            var identityId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrWhiteSpace(identityId))
+            {
+                return null;
+            }
+
+            return await _context.Users.FirstOrDefaultAsync(u => u.IdentityId == identityId);
+        }
+
         [HttpGet]
-       
         public async Task<IActionResult> Profile()
         {
-            string userIdStr = Request.Cookies["UserId"];
-
-            if (string.IsNullOrEmpty(userIdStr))
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            if (!int.TryParse(userIdStr, out int userId))
-            {
-                return BadRequest("Invalid User ID in cookie.");
-            }
-
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.UserId == userId);
-
+            var user = await GetCurrentUserAsync();
             if (user == null)
             {
-                return NotFound();
+                return Unauthorized();
             }
 
             return View(user);
@@ -48,50 +53,63 @@ namespace progect_DEPI.Controllers
         {
             try
             {
-                var user = await _context.Users.FindAsync(userId);
-                if (user == null)
+                var currentUser = await GetCurrentUserAsync();
+                if (currentUser == null)
                 {
-                    return Json(new { success = false, message = "User not found" });
+                    return Unauthorized();
                 }
 
-                if (profileImage != null && profileImage.Length > 0)
+                if (currentUser.UserId != userId)
                 {
-                    var uploadsDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "img");
-                    if (!Directory.Exists(uploadsDir))
-                    {
-                        Directory.CreateDirectory(uploadsDir);
-                    }
-
-                    // Delete old image if exists
-                    if (!string.IsNullOrEmpty(user.Picture))
-                    {
-                        var oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", user.Picture.TrimStart('/'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
-
-                    var fileName = $"user_{userId}_{DateTime.Now:yyyyMMddHHmmss}{Path.GetExtension(profileImage.FileName)}";
-                    var filePath = Path.Combine(uploadsDir, fileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await profileImage.CopyToAsync(stream);
-                    }
-
-                    user.Picture = $"/uploads/img/{fileName}";
-                    user.UpdateAt = DateTime.Now;
-                    await _context.SaveChangesAsync();
-
-                    return Json(new { success = true, newImagePath = user.Picture });
+                    return Forbid();
                 }
 
-                return Json(new { success = false, message = "No image provided" });
+                if (profileImage == null || profileImage.Length == 0)
+                {
+                    return Json(new { success = false, message = "No image provided" });
+                }
+
+                if (profileImage.Length > MaxProfileImageBytes)
+                {
+                    return Json(new { success = false, message = "Profile images must be 5 MB or smaller." });
+                }
+
+                var extension = Path.GetExtension(profileImage.FileName);
+                var allowedContentTypes = new[] { "image/jpeg", "image/png", "image/gif", "image/webp" };
+                if (!AllowedImageExtensions.Contains(extension) || !allowedContentTypes.Contains(profileImage.ContentType, StringComparer.OrdinalIgnoreCase))
+                {
+                    return Json(new { success = false, message = "Unsupported image type." });
+                }
+
+                var uploadsDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "img");
+                Directory.CreateDirectory(uploadsDir);
+
+                if (!string.IsNullOrEmpty(currentUser.Picture))
+                {
+                    var oldImagePath = Path.Combine(uploadsDir, Path.GetFileName(currentUser.Picture));
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
+                var fileName = $"user_{userId}_{Guid.NewGuid():N}{extension.ToLowerInvariant()}";
+                var filePath = Path.Combine(uploadsDir, fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.CreateNew))
+                {
+                    await profileImage.CopyToAsync(stream);
+                }
+
+                currentUser.Picture = $"/uploads/img/{fileName}";
+                currentUser.UpdateAt = DateTime.Now;
+                await _context.SaveChangesAsync();
+
+                return Json(new { success = true, newImagePath = currentUser.Picture });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Json(new { success = false, message = ex.Message });
+                return Json(new { success = false, message = "Unable to update the profile image." });
             }
         }
 
@@ -99,24 +117,10 @@ namespace progect_DEPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit()
         {
-            string userIdStr = Request.Cookies["UserId"];
-
-            if (string.IsNullOrEmpty(userIdStr))
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            if (!int.TryParse(userIdStr, out int userId))
-            {
-                return BadRequest("Invalid User ID in cookie.");
-            }
-
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.UserId == userId);
-
+            var user = await GetCurrentUserAsync();
             if (user == null)
             {
-                return NotFound();
+                return Unauthorized();
             }
 
             return View(user);
@@ -127,21 +131,15 @@ namespace progect_DEPI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(User user)
         {
-            string userIdStr = Request.Cookies["UserId"];
-
-            if (string.IsNullOrEmpty(userIdStr))
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser == null)
             {
-                return RedirectToAction("Login", "Account");
+                return Unauthorized();
             }
 
-            if (!int.TryParse(userIdStr, out int userId))
+            if (currentUser.UserId != user.UserId)
             {
-                return BadRequest("Invalid User ID in cookie.");
-            }
-
-            if (userId != user.UserId)
-            {
-                return BadRequest("Mismatched user ID.");
+                return Forbid();
             }
 
             if (!ModelState.IsValid)
@@ -152,11 +150,7 @@ namespace progect_DEPI.Controllers
             try
             {
                 // الحصول على بيانات المستخدم الحالية من قاعدة البيانات
-                var existingUser = await _context.Users.FindAsync(user.UserId);
-                if (existingUser == null)
-                {
-                    return NotFound();
-                }
+                var existingUser = currentUser;
 
                 // تحديث الخصائص النصية فقط
                 existingUser.FullName = user.FullName;
@@ -177,18 +171,11 @@ namespace progect_DEPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Users.Any(u => u.UserId == user.UserId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                ModelState.AddModelError("", "حدث خطأ أثناء حفظ التعديلات: " + ex.Message);
+                ModelState.AddModelError("", "Unable to save the profile changes.");
                 return View(user);
             }
         }

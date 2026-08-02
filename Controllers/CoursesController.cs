@@ -11,9 +11,25 @@ namespace progect_DEPI.Controllers
     {
         private readonly ApplicationDbContext dbContext;
 
+        private static readonly HashSet<string> AllowedImageExtensions = new(StringComparer.OrdinalIgnoreCase)
+        {
+            ".jpg", ".jpeg", ".png", ".gif", ".webp"
+        };
+
+        private const long MaxCourseImageBytes = 10 * 1024 * 1024;
+
         public CoursesController(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        private static bool IsAllowedImage(IFormFile file)
+        {
+            var extension = Path.GetExtension(file.FileName);
+            var allowedContentTypes = new[] { "image/jpeg", "image/png", "image/gif", "image/webp" };
+            return file.Length <= MaxCourseImageBytes
+                && AllowedImageExtensions.Contains(extension)
+                && allowedContentTypes.Contains(file.ContentType, StringComparer.OrdinalIgnoreCase);
         }
 
         [Authorize(Roles = "Admin")]
@@ -27,17 +43,39 @@ namespace progect_DEPI.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> Add(Course viewModel)
+        public async Task<IActionResult> Add(AddCourseViewModel viewModel)
         {
-            if (viewModel.formFile != null)
+            var course = new Course
             {
-                MemoryStream memoryStream = new MemoryStream();
-                viewModel.formFile.CopyTo(memoryStream);
-                viewModel.Image = memoryStream.ToArray();
-            }
-           
+                Title = viewModel.Title,
+                Description = viewModel.Description,
+                Price = viewModel.Price,
+                CreatedAt = viewModel.CreatedAt,
+                UpdateAt = viewModel.UpdateAt,
+                CategoryId = viewModel.CategoryId
+            };
 
-            await dbContext.Courses.AddAsync(viewModel);
+            if (viewModel.formFile != null && viewModel.formFile.Length > 0)
+            {
+                if (!IsAllowedImage(viewModel.formFile))
+                {
+                    ModelState.AddModelError(nameof(viewModel.formFile), "Upload a JPG, PNG, GIF, or WebP image up to 10 MB.");
+                }
+                else
+                {
+                    using var memoryStream = new MemoryStream();
+                    await viewModel.formFile.CopyToAsync(memoryStream);
+                    course.Image = memoryStream.ToArray();
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Categories = new SelectList(dbContext.Categories.ToList(), "CategoryId", "CategoryName");
+                return View(viewModel);
+            }
+
+            await dbContext.Courses.AddAsync(course);
             await dbContext.SaveChangesAsync();
 
             ViewBag.Message = "Course Added successfully!";

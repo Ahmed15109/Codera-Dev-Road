@@ -109,6 +109,12 @@ namespace progect_DEPI.Controllers
 
             if (result == null) return NotFound();
 
+            var identityId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            if (!User.IsInRole("Admin") && result.User?.IdentityId != identityId)
+            {
+                return Forbid();
+            }
+
             return View(result);
         }
 
