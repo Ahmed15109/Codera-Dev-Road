@@ -152,15 +152,23 @@ This repository is owned and maintained by **Ahmed Abdelmonem**. Codera Dev Road
 
 ### My Contributions — Ahmed Abdelmonem
 
-Ahmed’s contributions include:
+As the primary backend developer on the project, I was responsible for designing and implementing most of the server-side application, including core business logic, data access, authentication, and administrative workflows.
 
-- Linking ASP.NET Core Identity accounts to domain profiles through `IdentityId`, strengthening registration validation, and removing password storage from domain profile data.
-- Extending certificates with course relationships and updating certificate queries and views.
-- Implementing database-backed course and category image upload, storage, and rendering.
-- Refining enrollment redirects, category enrollment, admin navigation, and role-aware UI behavior.
-- Consolidating migrations and integrating collaborative branches while preserving contributor attribution.
+My contributions include:
 
-Original attribution remains available through the [Git history](https://github.com/Ahmed15109/Codera-Dev-Road/commits) and the [GitHub contributors graph](https://github.com/Ahmed15109/Codera-Dev-Road/graphs/contributors).
+- Designed and implemented the majority of the ASP.NET Core MVC backend architecture and business logic.
+- Developed and maintained most Controllers, including administrative and learner workflows.
+- Designed and implemented Entity Framework Core data models, relationships, and database migrations.
+- Integrated ASP.NET Core Identity with domain profiles using `IdentityId` and strengthened authentication and registration workflows.
+- Implemented role-based authorization, ownership validation, and application security improvements.
+- Developed course enrollment, lessons, quizzes, quiz results, certificates, notifications, and profile management features.
+- Implemented image upload, storage, and rendering for courses and categories.
+- Enhanced certificate generation and course-linked certificate management.
+- Refactored application startup, configuration, and security settings.
+- Consolidated database migrations and merged collaborative work while preserving contributor history.
+- Wrote and maintained the project documentation and repository structure.
+
+The project was developed collaboratively during the Digital Egypt Pioneers Initiative (DEPI). Original authorship and all team contributions remain preserved through Git history. Original attribution remains available through the [Git history](https://github.com/Ahmed15109/Codera-Dev-Road/commits) and the [GitHub contributors graph](https://github.com/Ahmed15109/Codera-Dev-Road/graphs/contributors).
 
 ## License
 
